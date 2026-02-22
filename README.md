@@ -2,9 +2,9 @@
 
 Official binary releases for Dinero (DNR) - Real Money for Free People.
 
-## v0.2.0-stable
+## v0.3.0-stable
 
-Wallet security hardening release. All seed/mnemonic persistence is now encrypted-at-rest.
+Major daemon and wallet hardening release with sync profiles, CLI parser fix, and export seed support.
 
 ### Downloads
 
@@ -27,14 +27,22 @@ cd mac && shasum -a 256 -c SHA256SUMS.txt
 cd linux && shasum -a 256 -c SHA256SUMS.txt
 ```
 
-### What's new in v0.2.0
+### What's new in v0.3.0
 
-- **Encrypted-at-rest wallet storage** - seed and mnemonic are always AES-256-GCM encrypted on disk, even for unencrypted wallets (sealed with empty passphrase)
-- **KDF parameter persistence** - encryption metadata table now records algorithm, iteration count, cipher, and salt with every encrypted blob
-- **Version-dispatched seed decryption** - loadMasterSeed reads encryption_version from DB instead of brute-forcing iteration candidates
-- **Legacy plaintext load blocked** - HDWalletManager refuses to load old mnemonic_plaintext entries (migration required)
-- **FFI security hardening** - global mnemonic variable removed, ScopeExit RAII cleanup for sensitive data, mnemonic readback APIs disabled
-- **Migration-safe** - legacy encrypted formats (Argon2id, old PBKDF2) still load correctly
+- **wallet.exportseed RPC** — new endpoint returns HD mnemonic phrase for cross-device restore
+- **dinero-qt Export Seed fix** — "Export Seed for Mobile" button now works correctly
+- **Sync profile policy** — platform-aware sync profiles (mac_fullblock, ios_utreexo) with capability gating
+- **Mining context RPC gating** — mining RPCs hard-gated by sync profile capabilities
+- **CLI arg parser fix** — space-separated args (`--datadir /path`) now parsed correctly; `--listen`, `--rpc`, `--server` support optional-value semantics
+- **Wallet hardening** — per-address balance computation, defensive seed recovery, empty-result failsafe on getnewaddress
+- **NodeCore FFI** — utreexo_stateless wired from config, platform-default sync profiles
+
+### What was in v0.2.0
+
+- Encrypted-at-rest wallet storage (AES-256-GCM)
+- KDF parameter persistence and version-dispatched seed decryption
+- Legacy plaintext load blocked (migration required)
+- FFI security hardening (global mnemonic removed, ScopeExit RAII cleanup)
 
 ### What was in v0.1.0
 
@@ -42,8 +50,7 @@ cd linux && shasum -a 256 -c SHA256SUMS.txt
 - BIP39 12-word mnemonic seed backup
 - SHA256d Proof-of-Work consensus
 - PSBT support (hardware wallet compatible)
-- Canonical PBKDF2-HMAC-SHA512 key derivation (broken HMAC fallback removed)
-- BIP86 derivation regression test pinned
+- Canonical PBKDF2-HMAC-SHA512 key derivation
 
 ## Quick Start
 
