@@ -12,6 +12,14 @@
 		<data>
 		5h5YGTiQpGOOaUFw8Dmo537j3uE=
 		</data>
+		<key>Resources/dinero-miner</key>
+		<data>
+		ekSJFqT9oBWkrSrZ4acehunfypA=
+		</data>
+		<key>Resources/dinerod</key>
+		<data>
+		5Sx+ulmTfEN/8qd5oHZH/ipnfCo=
+		</data>
 		<key>Resources/qt.conf</key>
 		<data>
 		4D+noZq5SOz56uyiQpYsXgw04/U=
@@ -679,6 +687,20 @@
 			<key>hash2</key>
 			<data>
 			prfd4JHMPByssDVw2eKDPfPiEkG6d1Ns3lnDj3KeHBE=
+			</data>
+		</dict>
+		<key>Resources/dinero-miner</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			PH80FFWWHTecla6+VmTwnfZGhBWoRVPmmbCTNKbnGGg=
+			</data>
+		</dict>
+		<key>Resources/dinerod</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			5L7mIOAU0r7iTFaD3C+ubr4jtA7hzweJGXoOxUTnQ0w=
 			</data>
 		</dict>
 		<key>Resources/qt.conf</key>
