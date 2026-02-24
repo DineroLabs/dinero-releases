@@ -2,9 +2,35 @@
 
 Official binary releases for Dinero (DNR) - Real Money for Free People.
 
-## v0.3.0-stable
+## v0.5.0-stable — Chain Reset
 
-Major daemon and wallet hardening release with sync profiles, CLI parser fix, and export seed support.
+**BREAKING**: New genesis block. All nodes must wipe chain data and resync.
+
+Genesis: `0000002ef4d930597e7978d7b3b6864fe212bef920dc95ddb9794184dbcfecad`
+
+### What changed
+
+- **New genesis block** — remined with v2 Utreexo commitment and fixed merkle root byte order
+- **New premine block** — checkpoint `00000026ec31b18fca329fc77084cdfaa9c446a8097cc76061098a54c467bad4`
+- **Utreexo v2 commitment** — empty forest uses SHA256(numLeaves || roots) instead of all-zeros
+- **Domain-separated hashing** — BIP340 taggedHash for Utreexo leaf computation
+- **dinero-qt** — GUI wallet with embedded one-click miner
+- **Legacy wallet compatibility** — HMAC-SHA512 KDF fallback for pre-v0.4.0 wallets
+
+### Upgrade Instructions
+
+```bash
+# 1. Stop dinerod
+pkill -f dinerod
+
+# 2. Wipe old chain data (wallet seeds are NOT affected)
+DATA_DIR=~/Dinero-Coin/data-main
+rm -rf "$DATA_DIR/blocks" "$DATA_DIR/chainstate" "$DATA_DIR/peers.dat" \
+       "$DATA_DIR/utreexo" "$DATA_DIR/banlist.dat" "$DATA_DIR/fee_estimates.dat"
+
+# 3. Replace binaries and start
+./dinerod
+```
 
 ### Downloads
 
@@ -26,31 +52,6 @@ Major daemon and wallet hardening release with sync profiles, CLI parser fix, an
 cd mac && shasum -a 256 -c SHA256SUMS.txt
 cd linux && shasum -a 256 -c SHA256SUMS.txt
 ```
-
-### What's new in v0.3.0
-
-- **wallet.exportseed RPC** — new endpoint returns HD mnemonic phrase for cross-device restore
-- **dinero-qt Export Seed fix** — "Export Seed for Mobile" button now works correctly
-- **Sync profile policy** — platform-aware sync profiles (mac_fullblock, ios_utreexo) with capability gating
-- **Mining context RPC gating** — mining RPCs hard-gated by sync profile capabilities
-- **CLI arg parser fix** — space-separated args (`--datadir /path`) now parsed correctly; `--listen`, `--rpc`, `--server` support optional-value semantics
-- **Wallet hardening** — per-address balance computation, defensive seed recovery, empty-result failsafe on getnewaddress
-- **NodeCore FFI** — utreexo_stateless wired from config, platform-default sync profiles
-
-### What was in v0.2.0
-
-- Encrypted-at-rest wallet storage (AES-256-GCM)
-- KDF parameter persistence and version-dispatched seed decryption
-- Legacy plaintext load blocked (migration required)
-- FFI security hardening (global mnemonic removed, ScopeExit RAII cleanup)
-
-### What was in v0.1.0
-
-- BIP86 Taproot-only wallet (m/86'/1447'/0'/0/*)
-- BIP39 12-word mnemonic seed backup
-- SHA256d Proof-of-Work consensus
-- PSBT support (hardware wallet compatible)
-- Canonical PBKDF2-HMAC-SHA512 key derivation
 
 ## Quick Start
 
