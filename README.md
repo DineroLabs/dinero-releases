@@ -2,10 +2,14 @@
 
 Official binary releases for Dinero (DNR) - Real Money for Free People.
 
-## v0.7.1 - Mainnet Chain Reset Release (2026-02-24)
+## v0.7.2 - Mainnet Chain Reset Release (2026-02-25)
 
 This release includes a consensus-locked premine re-mine and Utreexo v2 commitment alignment.
-It also refreshes `dinero-qt` with improved mining console cinematic rendering.
+It refreshes `dinero-qt` with mining UX and cinematic output polish:
+
+- Mining-tab focus dim after a short active-mining delay
+- Branded Dinero icons in mining output for templates and found blocks
+- Additional rare long vertical comets in cinematic matrix mode
 
 ### Mandatory Action: wipe all existing chain data
 
