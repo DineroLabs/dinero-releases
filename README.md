@@ -2,42 +2,38 @@
 
 Official binary releases for Dinero (DNR) - Real Money for Free People.
 
-## v0.5.0-stable — Chain Reset
+## v0.7.0 - Mainnet Chain Reset Release (2026-02-24)
 
-**BREAKING**: New genesis block. All nodes must wipe chain data and resync.
+This release includes a consensus-locked premine re-mine and Utreexo v2 commitment alignment.
 
-Genesis: `0000002ef4d930597e7978d7b3b6864fe212bef920dc95ddb9794184dbcfecad`
+### Mandatory Action: wipe all existing chain data
 
-### What changed
-
-- **New genesis block** — remined with v2 Utreexo commitment and fixed merkle root byte order
-- **New premine block** — checkpoint `00000026ec31b18fca329fc77084cdfaa9c446a8097cc76061098a54c467bad4`
-- **Utreexo v2 commitment** — empty forest uses SHA256(numLeaves || roots) instead of all-zeros
-- **Domain-separated hashing** — BIP340 taggedHash for Utreexo leaf computation
-- **dinero-qt** — GUI wallet with embedded one-click miner
-- **Legacy wallet compatibility** — HMAC-SHA512 KDF fallback for pre-v0.4.0 wallets
-
-### Upgrade Instructions
+Do this before starting upgraded nodes, otherwise you can stay pinned to stale state.
 
 ```bash
-# 1. Stop dinerod
-pkill -f dinerod
-
-# 2. Wipe old chain data (wallet seeds are NOT affected)
-DATA_DIR=~/Dinero-Coin/data-main
-rm -rf "$DATA_DIR/blocks" "$DATA_DIR/chainstate" "$DATA_DIR/peers.dat" \
-       "$DATA_DIR/utreexo" "$DATA_DIR/banlist.dat" "$DATA_DIR/fee_estimates.dat"
-
-# 3. Replace binaries and start
-./dinerod
+# Linux/macOS daemon nodes
+rm -rf ~/.dinero/blockchain ~/.dinero/blocks ~/.dinero/headers ~/.dinero/utreexo \
+       ~/.dinero/blockchaindb ~/.dinero/mempool.db ~/.dinero/peers.db ~/.dinero/blocks.db
 ```
+
+For DineroDPI, this release path expects a full reset (wallet + chain data).
+Full operator runbook: `CHAIN_RESET.md`.
+
+### Canonical chain anchors
+
+- `genesis_hash`: `0000002ef4d930597e7978d7b3b6864fe212bef920dc95ddb9794184dbcfecad`
+- `genesis_nonce`: `3762293379`
+- `premine_hash` (height 1): `00000026ec31b18fca329fc77084cdfaa9c446a8097cc76061098a54c467bad4`
+- `premine_nonce`: `2695050871`
+- `premine_utreexo_root`: `cff69d5f4f799c9f8d024df3acb6dd1bdf0e3e7988f8789bc2a6b07d0665abfc`
+- `premine_address`: `dnr1pegrzhlug8ak32yd89fu2p8e6zl9kwd8ee6z5874xdalrsr2c6xmss6h8k0`
 
 ### Downloads
 
 | Platform | Status |
 |----------|--------|
-| **macOS** (Apple Silicon arm64) | Available |
-| **Linux** (x86_64) | Available |
+| **macOS** (Apple Silicon arm64) | Updated in this release |
+| **Linux** (x86_64) | Binaries unchanged from previous release |
 
 ### Binaries
 
@@ -53,16 +49,19 @@ cd mac && shasum -a 256 -c SHA256SUMS.txt
 cd linux && shasum -a 256 -c SHA256SUMS.txt
 ```
 
-## Quick Start
+### Post-start sanity check
 
-1. Download binaries for your platform
-2. **macOS: remove quarantine flag before first run:**
-   ```bash
-   xattr -cr dinerod dinero-cli dinero-miner dinero-qt.app
-   ```
-3. Run `dinerod` to start the node
-4. Run `dinero-qt.app` for GUI wallet (macOS)
-5. Create wallet with 12-word seed phrase
+After the wipe + first start:
+
+```bash
+dinero-cli getblockhash 0
+dinero-cli getblockhash 1
+```
+
+Expected:
+
+- height 0: `0000002ef4d930597e7978d7b3b6864fe212bef920dc95ddb9794184dbcfecad`
+- height 1: `00000026ec31b18fca329fc77084cdfaa9c446a8097cc76061098a54c467bad4`
 
 ## Links
 
