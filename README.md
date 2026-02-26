@@ -2,6 +2,29 @@
 
 Official binary releases for Dinero (DNR) - Real Money for Free People.
 
+## v0.7.5 - Wallet Switching + Seed Reveal UX (2026-02-26)
+
+This release focuses on safer, clearer wallet operations in `dinero-qt` and daemon RPC:
+
+- Added `wallet.open` RPC handler for explicit active-wallet switching
+- Added wallet selector + `Load Wallet` action in the `dinero-qt` top toolbar
+- Fixed seed display UX in wallet creation:
+  - Seed now appears automatically after generation
+  - Reveal action is click/toggle (no press-and-hold requirement)
+  - Added fallback seed-field parsing for compatibility (`mnemonic`, `seed_phrase`, `seedPhrase`)
+  - Prevents continuing when seed phrase is unavailable
+
+### Chain reset requirement
+
+No additional chain reset is required for v0.7.5.
+
+### Downloads
+
+| Platform | Status |
+|----------|--------|
+| **macOS** (Apple Silicon arm64) | Updated in this release |
+| **Linux** (x86_64) | Binaries unchanged from previous release |
+
 ## v0.7.4 - Mainnet Chain Reset Release (2026-02-25)
 
 This release includes a consensus-locked premine re-mine and Utreexo v2 commitment alignment.
