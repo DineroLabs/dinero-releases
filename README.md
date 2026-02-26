@@ -2,6 +2,21 @@
 
 Official binary releases for Dinero (DNR) - Real Money for Free People.
 
+## v0.7.6 - Correct Daemon Embed (2026-02-26)
+
+This release refreshes bundled daemon binaries so GUI wallet switching uses the correct RPC-capable daemon build:
+
+- Updated `dinerod` to include `wallet.open` (active-wallet switching)
+- Updated bundled `dinero-cli` and `dinero-miner` to the same build set
+- Refreshed both **macOS arm64** and **Linux x86_64** artifacts
+
+### Downloads
+
+| Platform | Status |
+|----------|--------|
+| **macOS** (Apple Silicon arm64) | Updated in this release |
+| **Linux** (x86_64) | Updated in this release |
+
 ## v0.7.5 - Wallet Switching + Seed Reveal UX (2026-02-26)
 
 This release focuses on safer, clearer wallet operations in `dinero-qt` and daemon RPC:
