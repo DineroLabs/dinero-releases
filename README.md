@@ -2,6 +2,32 @@
 
 Official binary releases for Dinero (DNR) - Real Money for Free People.
 
+## v0.7.7 - Single-Wallet Mode, Block-Scanning Rescan, Mining Fixes (2026-02-26)
+
+### dinero-qt
+- **Single wallet mode**: auto-loads "default" wallet, hides multi-wallet selector
+- **Rescan Wallet button**: explicit blockchain rescan with confirmation dialog
+- **wallet.load fallback**: compatibility with daemons that expose `wallet.load` instead of `wallet.open`
+- **Emergency restore hardening**: wizard warns restore is for migration/recovery only
+- **BIP39 checksum bypass**: checkbox to recover wallets created by older versions with checksum bugs
+- **Disconnect cleanup**: properly resets wallet name, flags, and UI on daemon disconnect
+- **Mining animation**: 100-character comet trails replace single-glyph flares
+
+### dinerod
+- **Gap-limit address derivation on restore**: pre-derives 20 external + 20 change addresses so rescan discovers all historical UTXOs
+- **Block-scanning rescan**: replaces broken `forEachUTXO` approach (Utreexo nodes don't store full UTXO set) with proper block-walking rescan
+- **storeMasterSeed clears stale tx history**: prevents ghost transactions from previous wallet seed
+- **Mining `setThreadCount` race fix**: inline clean shutdown instead of calling `stopMining()`; `threads=0` means auto-detect
+- **`mining.start` RPC improvements**: supports object params `{"threads":N, "address":"..."}`, reads `--miningthreads` config, max threads bumped to 256
+- **NodeCore xcframework**: deterministic production-only lib list (no more test archive symbol collisions)
+
+### Downloads
+
+| Platform | Status |
+|----------|--------|
+| **macOS** (Apple Silicon arm64) | Updated in this release |
+| **Linux** (x86_64) | Binaries unchanged from v0.7.6 |
+
 ## v0.7.6 - Correct Daemon Embed (2026-02-26)
 
 This release refreshes bundled daemon binaries so GUI wallet switching uses the correct RPC-capable daemon build:
