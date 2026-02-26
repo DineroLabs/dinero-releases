@@ -490,10 +490,10 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			K/Qqb+H1L5ely+d+l/IX9tfzXZg=
+			JFCmdGv7hAnFi75x+WQlxYqSB1E=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"2bf42a6fe1f52f97a5cbe77e97f217f6d7f35d98"</string>
+			<string>cdhash H"2450a6746bfb8409c58bbe71f96425c58a920751"</string>
 		</dict>
 		<key>PlugIns/iconengines/libqsvgicon.dylib</key>
 		<dict>
