@@ -2,6 +2,34 @@
 
 Official binary releases for Dinero (DNR) - Real Money for Free People.
 
+## v0.8.0 - Dark Chrome UI, Wallet Fixes, Mining Console (2026-02-26)
+
+### dinero-qt
+- **Dark chrome theme**: Professional dark UI with unified styling across all tabs
+- **Single wallet mode**: Auto-loads "default" wallet on startup
+- **Merged toolbar**: Status bar folded into single toolbar row
+- **Wallet lock fix**: Lock button no longer overridden by daemon polling
+- **Rescan Wallet button**: Explicit blockchain rescan with confirmation
+- **wallet.load fallback**: Compat with daemons exposing `wallet.load`
+- **Emergency restore hardening**: Wizard warns restore is migration/recovery only
+- **BIP39 checksum bypass**: Recover wallets from older versions
+- **Space Mono mining console**: Deterministic font fallback chain
+- **100-char comet mining animation**
+
+### dinerod
+- **Gap-limit address derivation on restore** (20 external + 20 change)
+- **Block-scanning rescan** (replaces broken forEachUTXO for Utreexo)
+- **wallet.getinfo `unlocked` field** in both handlers
+- **Mining setThreadCount race fix**, threads=0 auto-detect
+- **mining.start**: object params, --miningthreads config, max 256
+
+### Downloads
+
+| Platform | Status |
+|----------|--------|
+| **macOS** (Apple Silicon arm64) | Updated |
+| **Linux** (x86_64) | Updated |
+
 ## v0.7.7 - Single-Wallet Mode, Block-Scanning Rescan, Mining Fixes (2026-02-26)
 
 ### dinero-qt
