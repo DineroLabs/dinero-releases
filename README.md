@@ -2,6 +2,24 @@
 
 Official binary releases for Dinero (DNR) - Real Money for Free People.
 
+## v0.8.1 - Genesis Guard: Stale Chain Data Detection (2026-02-27)
+
+### dinerod
+- **Genesis guard**: Detects incompatible chain data from pre-chain-reset versions before full daemon init
+- **Exit code 10**: Stable contract for GUI to detect genesis mismatch
+- **`--wipe-stale-chain` flag**: Backs up wallet, wipes stale chain data, proceeds with fresh sync
+
+### dinero-qt
+- **Automatic stale chain detection**: Shows dialog when embedded daemon exits with genesis mismatch
+- **"Wipe and Restart" button**: One-click fix — backs up wallet and re-syncs from scratch
+
+### Downloads
+
+| Platform | Status |
+|----------|--------|
+| **macOS** (Apple Silicon arm64) | Updated |
+| **Linux** (x86_64) | Binaries unchanged from v0.8.0 |
+
 ## v0.8.0 - Dark Chrome UI, Wallet Fixes, Mining Console (2026-02-26)
 
 ### dinero-qt
