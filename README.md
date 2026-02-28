@@ -2,6 +2,28 @@
 
 Official binary releases for Dinero (DNR) - Real Money for Free People.
 
+## v0.8.2 - P2P Networking Fix: Multi-Peer Deadlock (2026-02-28)
+
+### dinerod
+- **Fix peers_mutex_ deadlock**: Mutex was held during message deserialization, causing 188+ threads to pile up in futex_wait — nodes with 2+ peers would stall
+- **Fix global send_mutex_ bottleneck**: One slow peer send (e.g. 260KB headers) blocked ALL other peer sends; replaced with per-socket send locks
+- **Fix double-lock deadlock**: send_to_peer + send_message both acquiring same mutex caused immediate deadlock on std::mutex (non-reentrant)
+- **P2PService scheduler tick loop**: Block download schedulers now tick every 5s to prevent stalls during headers-first sync
+- **Getheaders storm prevention**: Only request headers on outbound connections; inbound peers initiate their own
+
+### dinero-qt
+- **Updated embedded dinerod** with all P2P fixes above
+
+### Impact
+Any node with 2+ peers was affected. Symptoms: sync stalls, blocks requested but never received, TCP receive window closure (`rwnd_limited`). Single-peer connections worked but multi-peer topologies would deadlock within minutes.
+
+### Downloads
+
+| Platform | Status |
+|----------|--------|
+| **macOS** (Apple Silicon arm64) | Updated |
+| **Linux** (x86_64) | Updated |
+
 ## v0.8.1 - Genesis Guard: Stale Chain Data Detection (2026-02-27)
 
 ### dinerod
