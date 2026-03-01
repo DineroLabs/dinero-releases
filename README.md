@@ -2,6 +2,29 @@
 
 Official binary releases for Dinero (DNR) - Real Money for Free People.
 
+## v0.8.3 - P2P Auto-Connect Fix (2026-02-28)
+
+### dinerod
+- **Fix automatic seed connection**: Nodes now reliably auto-connect to `-addnode` peers on startup without requiring manual `addnode "onetry"` RPC calls
+- **Fix one-seed-per-cycle bottleneck**: Connection manager now tries ALL unconnected seeds per iteration instead of only one every 10 seconds
+- **Fix duplicate connection race**: Added `connecting_peers_` guard to prevent overlapping handshakes to the same peer
+- **Fix multiple `-addnode` CLI flags**: Multiple `-addnode=X -addnode=Y` flags now append correctly instead of the last one overwriting all previous
+- **Deduplicate seed nodes**: Same seed from CLI + hardcoded list no longer creates duplicate entries
+
+### dinero-qt
+- **Updated embedded dinerod** with all auto-connect fixes above
+- **Dark theme styling**: Receive tab now matches dark chrome theme
+
+### Impact
+All nodes were affected — seeds configured via `-addnode` or hardcoded would not auto-connect. Users had to manually run `addnode "onetry"` via RPC after every restart.
+
+### Downloads
+
+| Platform | Status |
+|----------|--------|
+| **macOS** (Apple Silicon arm64) | Updated |
+| **Linux** (x86_64) | Updated |
+
 ## v0.8.2 - P2P Networking Fix: Multi-Peer Deadlock (2026-02-28)
 
 ### dinerod
