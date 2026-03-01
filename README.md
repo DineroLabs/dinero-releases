@@ -2,6 +2,27 @@
 
 Official binary releases for Dinero (DNR) - Real Money for Free People.
 
+## v0.8.4 - P2P Peer Discovery (2026-03-01)
+
+### dinerod
+- **DNS seed resolution**: Nodes now resolve `seed1.dinero-coin.com` / `seed2.dinero-coin.com` at startup for decentralized peer discovery
+- **DNS fallback in socket creation**: Hostnames work anywhere IPs work (getaddrinfo fallback when inet_pton fails)
+- **Peer address exchange**: Nodes send `getaddr` after outbound handshake and process `addr` responses — discovered peers are added to the connection pool
+- **Persistent peer storage**: `peers.dat` now saves both connected and discovered peers, surviving restarts without hitting DNS/seeds again
+
+### dinero-qt
+- **Updated embedded dinerod** with all peer discovery features above
+
+### Impact
+New nodes can now bootstrap from DNS seeds, discover additional peers through address exchange, and reconnect from saved peers on restart. The network is self-sustaining — if hardcoded seed IPs change, DNS seeds provide seamless failover without new binary releases.
+
+### Downloads
+
+| Platform | Status |
+|----------|--------|
+| **macOS** (Apple Silicon arm64) | Updated |
+| **Linux** (x86_64) | Updated |
+
 ## v0.8.3 - P2P Auto-Connect Fix (2026-02-28)
 
 ### dinerod
