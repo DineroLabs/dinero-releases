@@ -2,6 +2,27 @@
 
 Official binary releases for Dinero (DNR) - Real Money for Free People.
 
+## v0.8.5 - Metal GPU Mining (2026-03-01)
+
+### dinerod
+- **Metal GPU mining backend**: Apple Silicon GPUs (M1/M2/M3/M4) now mine SHA-256d natively via Metal compute shaders — 50-200x faster than CPU
+- **Multi-backend GPU architecture**: Runtime detection selects best backend — CUDA (NVIDIA), Metal (Apple), OpenCL (AMD/Intel)
+- **Auto-detect on macOS**: Metal enables automatically on Apple Silicon without any flags — GPU is detected at startup
+- **16M nonce batches on GPU**: GPU mining thread dispatches 16 million nonces per batch alongside CPU threads
+
+### dinero-qt
+- **Updated embedded dinerod** with Metal GPU mining
+
+### Impact
+On Apple Silicon Macs, starting mining via `mining.start` or the GUI mining tab now automatically activates the M-series GPU. CPU threads continue in parallel. Expected hash rates: 50-200 MH/s on GPU vs ~1.5 MH/s CPU-only.
+
+### Downloads
+
+| Platform | Status |
+|----------|--------|
+| **macOS** (Apple Silicon arm64) | Updated |
+| **Linux** (x86_64) | Unchanged from v0.8.4 |
+
 ## v0.8.4 - P2P Peer Discovery (2026-03-01)
 
 ### dinerod
