@@ -196,8 +196,8 @@ jobs:
           cmake -S . -B build -G "Visual Studio 17 2022" -A x64 `
             -DCMAKE_BUILD_TYPE=Release `
             -DCMAKE_PREFIX_PATH="$env:Qt6_DIR" `
-            -DNR_ENABLE_WEBSOCKETS=ON `
-            -DNR_ENABLE_QRENCODE=OFF `
+            -DIN_ENABLE_WEBSOCKETS=ON `
+            -DIN_ENABLE_QRENCODE=OFF `
             -DCMAKE_MSVC_RUNTIME_LIBRARY="MultiThreaded"
 
       - name: Build dinero-qt
