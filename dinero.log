@@ -1,0 +1,82 @@
+[INFO] [LoggerService] Log file opened: dinero.log
+[INFO] [ConfigService] Configuration loaded
+[INFO] [ConfigService]   datadir: /Users/haydarevich/.dinero
+[INFO] [ConfigService]   rpcport: 20998
+[INFO] [ConfigService]   p2pport: 20999
+[INFO] [ChainstateService] Starting chainstate...
+[INFO] [ChainstateService] ChainDB already initialized, skipping genesis
+[INFO] ✅ Genesis invariant verified: DB matches code
+[INFO]    Genesis: 000000127a16de2416e3d5ee104436e1cc7806bb47927bac266497d726acc29a
+[INFO] ══════════════════════════════════════════════════════════
+[INFO] [GENESIS] Dinero Post-Utreexo v2.0.0
+[INFO] [GENESIS] Hash: 000000127a16de2416e3d5ee104436e1cc7806bb47927bac266497d726acc29a
+[INFO] [GENESIS] Header size: 128 bytes (Phase 3: BlockHeader v1)
+[INFO] [GENESIS] Timestamp: 1772496000 (Unix epoch)
+[INFO] [GENESIS] Difficulty: 0x489816014
+[INFO] [GENESIS] Motto: "Dinero: Real Money For Free People"
+[INFO] [GENESIS] Status: CANONICAL
+[INFO] ══════════════════════════════════════════════════════════
+[INFO] [ChainstateService] Blockchain loaded successfully
+[INFO] [ChainstateService]   Height: 0
+[INFO] [ChainstateService]   Best block: 000000127a16de2416e3d5ee104436e1cc7806bb47927bac266497d726acc29a
+[INFO] [ChainstateService]   Data directory: /Users/haydarevich/.dinero
+[INFO] [BlockIndex] Added block (global): height=0 hash=000000127a16de24... pprev=NULL
+[INFO] [AddCandidate] Added: height=0, chainwork=...00000000051ebd71, status=9
+[INFO] [ChainstateService] Loaded 1 block index entries from ChainDB into g_block_index
+[INFO] [ChainstateService] Seeded 1 candidates from active chain height index
+[INFO] [ChainstateService] active_tip_ set to genesis (height=0)
+[INFO] [ChainstateService] active_tip_ aligned with DB tip (height=0)
+[INFO] ════════════════════════════════════════════════════════════════
+[INFO] 🔄 INITIAL BLOCK DOWNLOAD DETECTED
+[INFO] ════════════════════════════════════════════════════════════════
+[INFO] Node is syncing from scratch (height: 0)
+[INFO] 
+[INFO] 💡 TIP: Speed up sync with snapshot bootstrap:
+[INFO]    1. Obtain a trusted snapshot file
+[INFO]    2. Run: dinero-cli loadtxoutset <snapshot_path>
+[INFO]    3. Node will be immediately usable for RPC/mining/wallets
+[INFO]    4. Background validation ensures snapshot is valid
+[INFO] 
+[INFO] For automated bootstrap, set in config:
+[INFO]    assumeutxo_snapshot=/path/to/snapshot.dat
+[INFO] ════════════════════════════════════════════════════════════════
+[INFO] [ChainstateService] Running startup ActivateBestChain pass
+[INFO] [MetricsService] Starting metrics service...
+[INFO] [MetricsService] MetricsRegistry initialized successfully
+[INFO] [MetricsService] Metrics available at /metrics endpoint
+[INFO] [RPCService] Starting RPC server...
+[WARNING] [RPCService] Could not load existing cookie, generating new one
+[INFO] [RPCService] Cookie path: /Users/haydarevich/.dinero/.cookie
+[INFO] [RPCService] Cookie authentication ready: /Users/haydarevich/.dinero/.cookie
+[INFO] [RPCService] HttpRpcServer created
+[INFO] [RPCService] Connected to global RPC registry
+[INFO] [RPCService] ✅ RPC context wired successfully
+[INFO] [RPCService] Context-aware handlers are now active
+[INFO] [RPCService] HTTP RPC server started
+[INFO] [RPCService] RPC server ready at http://127.0.0.1:20998
+[INFO] [RPCService] Cookie auth: /Users/haydarevich/.dinero/.cookie
+[INFO] [BlockIndex] Added block (global): height=1 hash=00000049054d889b... pprev=SET
+[INFO] [AddCandidate] Added: height=1, chainwork=...0000000006666d29, status=28
+[INFO] [ActivateBestChain] Switching to higher work chain
+[WARNING] [ActivateBestChain] REORG DETECTED: disconnect=0 blocks, connect=1 blocks
+[INFO] [ConnectTip] Attempting to read block at height 1, hash=00000049054d889b383a0a72c70999abd8452dcec193c96fde04f0bd1c7d1c3f
+[INFO] [ConnectTip] Connecting block: height=1, hash=00000049054d889b...
+[INFO] [ConnectTip] Persisted UTXOs for 1 transactions to ChainDB
+[INFO] [ConnectTip] Phase 11a: Removed 0 positions, added 1 positions
+[INFO] [ConnectTip] Saved Utreexo checkpoint at height 1 (86 bytes, SHA256 checksum)
+[INFO] [ConnectTip] Set CHECKSUM_VERSION=1 (checksums enforced from now on)
+[INFO] [ActivateBestChain] New tip: height=1, hash=00000049054d889b...
+[INFO] [ChainstateService] Broadcasting new block: 00000049054d889b383a0a72c70999abd8452dcec193c96fde04f0bd1c7d1c3f
+[INFO] [ChainstateService] Block announced via Phase G.2 BlockRelayManager: 00000049054d889b383a0a72c70999abd8452dcec193c96fde04f0bd1c7d1c3f
+[INFO] [BlockIndex] Added block (global): height=2 hash=0000004bf58e6852... pprev=SET
+[INFO] [AddCandidate] Added: height=2, chainwork=...0000000007e9cf7b, status=28
+[INFO] [ActivateBestChain] Switching to higher work chain
+[WARNING] [ActivateBestChain] REORG DETECTED: disconnect=0 blocks, connect=1 blocks
+[INFO] [ConnectTip] Attempting to read block at height 2, hash=0000004bf58e6852ae54aa0df8ea5e8a1e80933ff11295eb5da98da436859606
+[INFO] [ConnectTip] Connecting block: height=2, hash=0000004bf58e6852...
+[INFO] [ConnectTip] Persisted UTXOs for 1 transactions to ChainDB
+[INFO] [ConnectTip] Phase 11a: Removed 0 positions, added 1 positions
+[INFO] [ConnectTip] Saved Utreexo checkpoint at height 2 (119 bytes, SHA256 checksum)
+[INFO] [ActivateBestChain] New tip: height=2, hash=0000004bf58e6852...
+[INFO] [ChainstateService] Broadcasting new block: 0000004bf58e6852ae54aa0df8ea5e8a1e80933ff11295eb5da98da436859606
+[INFO] [ChainstateService] Block announced via Phase G.2 BlockRelayManager: 0000004bf58e6852ae54aa0df8ea5e8a1e80933ff11295eb5da98da436859606
