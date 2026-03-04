@@ -495,6 +495,15 @@
 			<key>requirement</key>
 			<string>identifier "dinero-miner" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = JXJS6ZA5FJ</string>
 		</dict>
+		<key>MacOS/dinero-solo-miner</key>
+		<dict>
+			<key>cdhash</key>
+			<data>
+			UUKmYoW+UBpHzf2KFtiqBvXdRcA=
+			</data>
+			<key>requirement</key>
+			<string>identifier "dinero-solo-miner" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = JXJS6ZA5FJ</string>
+		</dict>
 		<key>MacOS/dinerod</key>
 		<dict>
 			<key>cdhash</key>
