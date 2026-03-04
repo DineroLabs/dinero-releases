@@ -18,7 +18,7 @@
 		</data>
 		<key>Resources/dinerod</key>
 		<data>
-		b8JJpyUUyTS0tHtFVIG5/DGFMow=
+		5LuPgnAtmLhRkzZcNERGmq1VMHM=
 		</data>
 		<key>Resources/qt.conf</key>
 		<data>
@@ -490,7 +490,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			LJUsRAm/qmGSrpOso5bZlk1bPxY=
+			dsKNk+YUnRQvrYihkH0WvE5Ev64=
 			</data>
 			<key>requirement</key>
 			<string>identifier "dinero-miner" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = JXJS6ZA5FJ</string>
@@ -499,7 +499,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			t7CCmTrEA7QKy52JEqt28RH9oW4=
+			E3JOBGkiIpsErQH4YyG06dKIf7k=
 			</data>
 			<key>requirement</key>
 			<string>identifier dinerod and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = JXJS6ZA5FJ</string>
@@ -727,7 +727,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			A+iZchDEemD21zHujU251EzOwag6m2TtijTond4oRcs=
+			HsaUMJIpiSbTziqd4ikjmXE5BRcSurSSCMmf1DcldHE=
 			</data>
 		</dict>
 		<key>Resources/qt.conf</key>

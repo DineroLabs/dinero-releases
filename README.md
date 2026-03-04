@@ -12,7 +12,7 @@ This is a **full chain reset** release. All nodes must wipe chain data and start
 - **Premine removed**: All premine code deleted (~25,000 lines). Genesis coinbase burns 100 DIN via OP_RETURN — zero coins minted at launch
 - **Ticker renamed**: DNR → DIN, RDNR → RDIN, TDNR → TDIN
 - **Address prefix changed**: `dnr1p...` → `din1p...` (Bech32m HRP updated)
-- **New genesis block**: Fair Launch v2 — mined fresh with no premine
+- **New genesis block**: Fair Launch v3 — mined fresh with no premine
 
 ### Mandatory: Wipe all chain data
 
@@ -25,10 +25,10 @@ rm -rf ~/.dinero
 
 ### New genesis anchors
 
-- `genesis_hash`: `0000000d20f34068ad683b98484f45c7e6e9b5c2fda061791558ee9ea371a8a0`
-- `genesis_nonce`: `4038889668`
+- `genesis_hash`: `000000127a16de2416e3d5ee104436e1cc7806bb47927bac266497d726acc29a`
+- `genesis_nonce`: `276919913`
 - `genesis_difficulty`: `0x1d31ffce` (50x easier than Bitcoin)
-- `genesis_timestamp`: `1772323200` (2026-03-01 00:00:00 UTC)
+- `genesis_timestamp`: `1772496000` (2026-03-03 00:00:00 UTC)
 - `genesis_merkle_root`: `0f7d1982fb9c5ae07428dfa0a4acfa6fb540fcc967ea61904c503e248e6c6a41`
 - `motto`: "Dinero: Real Money For Free People"
 - **No premine** — coinbase burned via OP_RETURN, empty UTXO set at genesis
@@ -37,7 +37,7 @@ rm -rf ~/.dinero
 - All premine code removed (subsidy, treasury, governance)
 - Ticker DIN with 8 decimal places (1 DIN = 100,000,000 unas)
 - Address HRP: `din` (mainnet), `tdin` (testnet), `rdin` (regtest)
-- Fair Launch v2 genesis block
+- Fair Launch v3 genesis block
 - OpenSSL link fix for test_block_storage_roundtrip
 - Hardcoded utreexo root to prevent platform divergence (GCC vs Clang)
 
@@ -74,7 +74,7 @@ After wipe + first start:
 
 ```bash
 dinero-cli getblockhash 0
-# Expected: 0000000d20f34068ad683b98484f45c7e6e9b5c2fda061791558ee9ea371a8a0
+# Expected: 000000127a16de2416e3d5ee104436e1cc7806bb47927bac266497d726acc29a
 ```
 
 Commit: `f1c5a10aa`
@@ -86,17 +86,17 @@ Commit: `f1c5a10aa`
 <details>
 <summary>v0.8.7 and earlier</summary>
 
-### v0.8.7 - Block Height Fix (2026-03-01)
+### v0.8.7 - Block Height Fix (2026-03-03)
 - Peer heights update on block receipt
 - Live peer height tracking in getpeerinfo RPC
 - Wallet sync RPC (getreorginfo, getsyncstatus, getslowreason)
 - GPU miner fixes
 
-### v0.8.5 - Metal GPU Mining (2026-03-01)
+### v0.8.5 - Metal GPU Mining (2026-03-03)
 - Apple Silicon GPUs (M1/M2/M3/M4) mine SHA-256d natively via Metal compute shaders
 - Multi-backend GPU architecture: CUDA, Metal, OpenCL
 
-### v0.8.4 - P2P Peer Discovery (2026-03-01)
+### v0.8.4 - P2P Peer Discovery (2026-03-03)
 - DNS seed resolution, peer address exchange, persistent peer storage
 
 ### v0.8.3 - P2P Auto-Connect Fix (2026-02-28)
