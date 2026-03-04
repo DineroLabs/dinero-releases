@@ -1,3 +1,4 @@
 2fad2c47de2cc21a9596e5aef65e51821828f85bbb37e61030bae3de6aa80bd8  linux-arm64/dinerod
 c15adf0d7fbc9f51a0b2d36de30c2da3bc14d0d26be15449e34ce6926c3d357d  linux-arm64/dinero-cli
 837c33dec509995030956e0e35ba40b57ce53d458a06fb07aa0c4d5f650cac12  linux-arm64/dinero-miner
+4f95610ff90df9bceabd3fd731c43f9580039312c2502abad22342e77b4f44ae  linux-arm64/dinero-gpu-miner
