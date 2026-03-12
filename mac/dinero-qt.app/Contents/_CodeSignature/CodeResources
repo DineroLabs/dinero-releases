@@ -14,15 +14,19 @@
 		</data>
 		<key>Resources/dinero-miner</key>
 		<data>
-		KlkuDMnmgzkT74bRTMyAwv4cBvw=
+		Qxl2lTxrSUUoF1RE/47uaAIwnz8=
 		</data>
 		<key>Resources/dinerod</key>
 		<data>
-		MR92ISk2lEYzsqJgegVQUwa1NmQ=
+		AhjKRM1gmmn3dmEQkYTwshb6jEk=
 		</data>
 		<key>Resources/qt.conf</key>
 		<data>
 		4D+noZq5SOz56uyiQpYsXgw04/U=
+		</data>
+		<key>Resources/release-identity.json</key>
+		<data>
+		Y7iT2xY6i9JkDPdZGg4ZAHN1wxU=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -477,11 +481,20 @@
 			<key>requirement</key>
 			<string>identifier "libzstd.1" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = JXJS6ZA5FJ</string>
 		</dict>
+		<key>MacOS/dinero-cli</key>
+		<dict>
+			<key>cdhash</key>
+			<data>
+			9wUlgKei2+/fc2cqmDU4EjdnDqQ=
+			</data>
+			<key>requirement</key>
+			<string>identifier "dinero-cli" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = JXJS6ZA5FJ</string>
+		</dict>
 		<key>MacOS/dinero-gpu-miner</key>
 		<dict>
 			<key>cdhash</key>
 			<data>
-			40Ae/NOO4kOqx/mX8WLLG0DqHS4=
+			oBmoTifVbKINCCAmXzXBIH5dPQ0=
 			</data>
 			<key>requirement</key>
 			<string>identifier "dinero-gpu-miner" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = JXJS6ZA5FJ</string>
@@ -490,7 +503,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			Qd6u6BUC/yYDt9QZ03+AeihCJ/s=
+			38dEQBa5GbctsYJrNWLYfru+1iA=
 			</data>
 			<key>requirement</key>
 			<string>identifier "dinero-miner" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = JXJS6ZA5FJ</string>
@@ -499,7 +512,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			UUKmYoW+UBpHzf2KFtiqBvXdRcA=
+			dKLAP0hcuVP1XN5i0Ok/xmw2zpI=
 			</data>
 			<key>requirement</key>
 			<string>identifier "dinero-solo-miner" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = JXJS6ZA5FJ</string>
@@ -508,7 +521,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			5FFb2kK5Umcp3Y+R1lQCnpJyJK0=
+			ZT87ZbdzfARu5K1tC1Dolgk9kfg=
 			</data>
 			<key>requirement</key>
 			<string>identifier dinerod and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = JXJS6ZA5FJ</string>
@@ -729,14 +742,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			47Zuy/FGyaA25wXpjecBltc+IdWwikenHjGjkPSSV+s=
+			lbQATb3jn2wY2K1MYFHLlkvpqBQs+F4k0r/8kC1O6qI=
 			</data>
 		</dict>
 		<key>Resources/dinerod</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Fv5OrZ1Sb3tmQYMr8ff7Sa6GieEMyPhYlG4DRGF03O8=
+			mIWH96ccuxS6vC5aVPqqfAf1W+ya1bwc1i1/Jf+440k=
 			</data>
 		</dict>
 		<key>Resources/qt.conf</key>
@@ -744,6 +757,13 @@
 			<key>hash2</key>
 			<data>
 			faLeNCbEeN2VcZcFMS8kUFfMRVzuk2+trVagHfylq20=
+			</data>
+		</dict>
+		<key>Resources/release-identity.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			yBg6p9k479gQwrfzEk65YAE82xHo7JKLcBeyzY+dHCo=
 			</data>
 		</dict>
 	</dict>
