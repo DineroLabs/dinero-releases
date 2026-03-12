@@ -1,0 +1,3 @@
+15a77aa736c50e679e7414db4357424dc3549bc131d5a8cb80ff225da04bb32f  staging/linux-x86_64/dinerod
+59ceafa95cecd91079c8d0a8aa1c31ef732a14125ebc82a13b434ff8f72df680  staging/linux-x86_64/dinero-cli
+eb33871be3d39742280a4cce0e5910e0e243e8884b0992b58c1e3b44a752acd7  staging/linux-x86_64/dinero-miner

@@ -1,0 +1,4 @@
+a533cf84cf491d81aaaefc71f17e480af1ccfc5d104550914ab658599d179794  staging/macos-arm64/dinerod
+70925b1c5e976f47a5390f0d74e3efeea974ab5a6e35aaa92941d45e8a62490c  staging/macos-arm64/dinero-cli
+ff13206ea88eb944af4f1a6b92ef37fc4a3c37814a529f2e5db74b895fea1ebf  staging/macos-arm64/dinero-miner
+95a14ce88fc9e02d76e4405890a3e76f0f1f63a9388bfa50eb010c536bb39c83  staging/macos-arm64/dinero-gpu-miner
