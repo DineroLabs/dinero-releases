@@ -6,7 +6,7 @@
 	<dict>
 		<key>Resources/Dinero-Coin.png</key>
 		<data>
-		A57uxSGV8aZNg8UEgYr4BjxD8kM=
+		ZhaTAKd5Fbhm8tZHo6CpP/oK0p4=
 		</data>
 		<key>Resources/Dinero.icns</key>
 		<data>
@@ -18,7 +18,7 @@
 		</data>
 		<key>Resources/dinerod</key>
 		<data>
-		uuaciziN34x3i94jghAIj5SGLeI=
+		Cd4eYEllAQbb0B6JqQHkR5bAQhY=
 		</data>
 		<key>Resources/qt.conf</key>
 		<data>
@@ -26,7 +26,7 @@
 		</data>
 		<key>Resources/release-identity.json</key>
 		<data>
-		Y7iT2xY6i9JkDPdZGg4ZAHN1wxU=
+		4/+3ROJVMVN8SP7ExThG0JOetjU=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -233,7 +233,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			Kb7+w4ngJmpjQnd6VhIUVYvQxYQ=
+			rY+ti26cMxTMoKBR8VBdRye1LM8=
 			</data>
 			<key>requirement</key>
 			<string>identifier "libfreetype.6" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = JXJS6ZA5FJ</string>
@@ -242,7 +242,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			HFhHgVx1LfLmQRGsxxFAENVo2nU=
+			GpEDbgrBXi7sdp7f8SYyMuGvVoU=
 			</data>
 			<key>requirement</key>
 			<string>identifier "libgio-2" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = JXJS6ZA5FJ</string>
@@ -251,7 +251,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			JJQ9kXY+9FZF70d9vY5yiuM0jt0=
+			kw8D1kiEEoo66sk6hGkol+1xNo0=
 			</data>
 			<key>requirement</key>
 			<string>identifier "libglib-2" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = JXJS6ZA5FJ</string>
@@ -260,7 +260,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			RfWQVp3RGTY1+XMXXe/na5Zt/xo=
+			+tMcyNa0Et1iD7upJpisZsVTB4A=
 			</data>
 			<key>requirement</key>
 			<string>identifier "libgmodule-2" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = JXJS6ZA5FJ</string>
@@ -269,7 +269,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			Q2djlOlIsyT8gnAuzp3/2hMAOo4=
+			Zoxw+BShewfzf+0GDSbYQvv+BDw=
 			</data>
 			<key>requirement</key>
 			<string>identifier "libgobject-2" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = JXJS6ZA5FJ</string>
@@ -287,7 +287,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			FKBVqPvu8UjJ648XuaKQEH3jDdg=
+			ELZvIBksewpyVHk5a6ia4pymPko=
 			</data>
 			<key>requirement</key>
 			<string>identifier "libgthread-2" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = JXJS6ZA5FJ</string>
@@ -494,7 +494,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			rBCXgz4uL5CK0XqeBywmRevseLI=
+			LaUUp1cPaQf2/dFlM0pQaIRJDuQ=
 			</data>
 			<key>requirement</key>
 			<string>identifier "dinero-gpu-miner" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = JXJS6ZA5FJ</string>
@@ -503,7 +503,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			38dEQBa5GbctsYJrNWLYfru+1iA=
+			GAIpcWO37OuStLBHZa/v5uAbxLs=
 			</data>
 			<key>requirement</key>
 			<string>identifier "dinero-miner" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = JXJS6ZA5FJ</string>
@@ -521,7 +521,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			9NmnXuaFKucSYwBLHue/qXqQ+Lw=
+			WbcPkQcnUa5v2dVqWqAHpqKDvCk=
 			</data>
 			<key>requirement</key>
 			<string>identifier dinerod and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = JXJS6ZA5FJ</string>
@@ -728,7 +728,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			PfS4RhRRlEVrv5hEbSGHKJcr8kWZ7N33qAA51EazJDE=
+			9u3vIX70AsxIqy91NvORnJLIdrxZRUIknX8avLAbBso=
 			</data>
 		</dict>
 		<key>Resources/Dinero.icns</key>
@@ -749,7 +749,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			jN0RwxtDDOkCmTnhh0yDfCf0cj/cKZVphoT4sJuocM8=
+			Tncotf5htvumHkhfdhzlLdG0MWJdJKhc19W0WXVk2LU=
 			</data>
 		</dict>
 		<key>Resources/qt.conf</key>
@@ -763,7 +763,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			yBg6p9k479gQwrfzEk65YAE82xHo7JKLcBeyzY+dHCo=
+			jFLoMMbPlR/E33FP+6aS4IeJP7R7aQhRL1QKbQs4szE=
 			</data>
 		</dict>
 	</dict>
