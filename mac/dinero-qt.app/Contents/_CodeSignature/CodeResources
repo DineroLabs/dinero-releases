@@ -14,11 +14,11 @@
 		</data>
 		<key>Resources/dinero-miner</key>
 		<data>
-		rImLqXPUad0q04JiMRpjSA36wtU=
+		sx/q+LyZaBGrxlFKUfBuz4RNj3A=
 		</data>
 		<key>Resources/dinerod</key>
 		<data>
-		Cd4eYEllAQbb0B6JqQHkR5bAQhY=
+		tZ+TINPmn4EBz9uZfZ98FP4ySug=
 		</data>
 		<key>Resources/qt.conf</key>
 		<data>
@@ -26,7 +26,7 @@
 		</data>
 		<key>Resources/release-identity.json</key>
 		<data>
-		4/+3ROJVMVN8SP7ExThG0JOetjU=
+		DcwRFONxJ8pis2TuPemDcxoI7QQ=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -494,7 +494,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			LaUUp1cPaQf2/dFlM0pQaIRJDuQ=
+			IRWR1jMZBpqgiNayxs7ID+9Wr7U=
 			</data>
 			<key>requirement</key>
 			<string>identifier "dinero-gpu-miner" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = JXJS6ZA5FJ</string>
@@ -503,7 +503,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			GAIpcWO37OuStLBHZa/v5uAbxLs=
+			78Pfvsci0fM3oPnLa1NmK0NVj3w=
 			</data>
 			<key>requirement</key>
 			<string>identifier "dinero-miner" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = JXJS6ZA5FJ</string>
@@ -521,7 +521,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			WbcPkQcnUa5v2dVqWqAHpqKDvCk=
+			9yBXu23OGhk9vUTZ0UN7t433nfQ=
 			</data>
 			<key>requirement</key>
 			<string>identifier dinerod and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = JXJS6ZA5FJ</string>
@@ -742,14 +742,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			yhHSa91ljZhRRxybUi2DGGdUNByyERBANXeN4uaMygs=
+			vv5vT5VP5/+b4b3PV8U3Q3FO8SNeJR4YtV4iadUXPrI=
 			</data>
 		</dict>
 		<key>Resources/dinerod</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Tncotf5htvumHkhfdhzlLdG0MWJdJKhc19W0WXVk2LU=
+			MlKKOIOmITgKkex0rOsPXFdTAtpn2d7Q8g75FjLcCGw=
 			</data>
 		</dict>
 		<key>Resources/qt.conf</key>
@@ -763,7 +763,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			jFLoMMbPlR/E33FP+6aS4IeJP7R7aQhRL1QKbQs4szE=
+			3zTvO6VDcFbl6iFa0YM2R8xmpXai4R5Xy2+SA2Bc7G4=
 			</data>
 		</dict>
 	</dict>

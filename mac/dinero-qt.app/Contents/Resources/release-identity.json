@@ -3,11 +3,11 @@
   "qt": {
     "repo": "dinero-qt",
     "version": "0.9.3",
-    "commit": "847022f9ab0896a1c13c59cebec9e8976dc71724",
-    "build_time": "2026-03-14T01:01:40+0000"
+    "commit": "98ab0e8e1d2758aa7f5de0928adfee25614224ba",
+    "build_time": "2026-03-18T15:09:42+0000"
   },
   "expected_repo_heads": {
-    "dinero": "9f82cb7747ac27d2a5e4fa6120b5b94bad665616",
+    "dinero": "25bc95991dd3a9d4ec6edcec4d2901bc9c543185",
     "dinero_solo_miner": "67783ff7805d517b9cb4c66ee38c89af8cfd644a",
     "stratum": "626b5e35780bd0bbdbc6447dd14c78e03d93dd12"
   }
