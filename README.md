@@ -2,6 +2,42 @@
 
 Official binary releases for Dinero (DIN) - Real Money for Free People.
 
+## v1.0.0-Utreexo - Validated macOS Utreexo milestone (2026-03-20)
+
+This tag freezes the first fully validated macOS Dinero-Qt release bundle with the
+new Utreexo CSN architecture and embedded updated daemon/miners.
+
+### Verified in this release
+
+- Archived chain history replayed to exact bridge parity
+- Proof-serving path validated across historical replay
+- Restart, reorg, stale-proof recovery, and live-spend sync validated
+- macOS Dinero-Qt bundle rebuilt with embedded:
+  - `dinerod` at commit `582a4449050513080a39e7ba2661b44d0ac2342d`
+  - `dinero-miner` at commit `582a4449050513080a39e7ba2661b44d0ac2342d`
+  - `dinero-gpu-miner` at commit `582a4449050513080a39e7ba2661b44d0ac2342d`
+  - `dinero-qt` at commit `5663fa65b5e8b1830f385ca77fc0f9c12e0594d9`
+
+### Downloads
+
+| Platform | File | Status |
+|----------|------|--------|
+| **macOS** (Apple Silicon arm64) | `dinero-v1.0.0-Utreexo-macos-arm64.tar.gz` | Updated |
+| **macOS Qt** (Apple Silicon arm64) | `dinero-v1.0.0-Utreexo-macos-arm64-qt.zip` | Updated |
+
+### Operational note
+
+Old unverified pre-fix CSN state should be wiped and resynced unless exact tip and
+stump parity has already been proven after upgrade. Parity-verified current state
+does not need to be wiped.
+
+### Scope note
+
+This tag refreshes the validated macOS artifacts. Existing Linux and Windows
+artifacts in this repository are left unchanged.
+
+Commit: `582a44490`
+
 ## v0.9.0 - Fair Launch: No Premine, DIN Ticker (2026-03-02)
 
 ### BREAKING CHANGES — CHAIN RESET REQUIRED
