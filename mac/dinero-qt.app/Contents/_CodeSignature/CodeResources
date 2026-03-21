@@ -14,11 +14,11 @@
 		</data>
 		<key>Resources/dinero-miner</key>
 		<data>
-		EQB0b0n3bufFUvugg0+ePQfBbNE=
+		xKw5p4O1B6xdnAKVxvkkfR6SayU=
 		</data>
 		<key>Resources/dinerod</key>
 		<data>
-		2O8Xpt2cmLB2I683cBAdQrRLb+E=
+		7CDR+OU3PWEuu8UqEJQ/EeoEmYM=
 		</data>
 		<key>Resources/qt.conf</key>
 		<data>
@@ -26,7 +26,7 @@
 		</data>
 		<key>Resources/release-identity.json</key>
 		<data>
-		dP7xYYQuTDhJ+CmhEibJMHjTibo=
+		BZsGWiLJHDetuz4PW/aZ+t+98as=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -494,19 +494,19 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			L/CN23fkunNZfrgweY0aqCPGvh0=
+			FHIY5FvEI1qLM9AYZBOgrYx75ZU=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"2ff08ddb77e4ba73597eb830798d1aa823c6be1d"</string>
+			<string>cdhash H"147218e45bc4235a8b33d0186413a0ad8c7be595"</string>
 		</dict>
 		<key>MacOS/dinero-miner</key>
 		<dict>
 			<key>cdhash</key>
 			<data>
-			aJFBCqw7zyMgTq82xBDPERHWRPg=
+			CZpNukNQ/4hEKCTtf5afj8+vL+I=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"6891410aac3bcf23204eaf36c410cf1111d644f8"</string>
+			<string>cdhash H"099a4dba4350ff88442824ed7f969f8fcfaf2fe2"</string>
 		</dict>
 		<key>MacOS/dinero-solo-miner</key>
 		<dict>
@@ -521,10 +521,10 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			6zwtbx/YoLXquOWk/Taz+ivjrUk=
+			HxnRqAW8pvo+UHTTo7IvZek2uR0=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"eb3c2d6f1fd8a0b5eab8e5a4fd36b3fa2be3ad49"</string>
+			<string>cdhash H"1f19d1a805bca6fa3e5074d3a3b22f65e936b91d"</string>
 		</dict>
 		<key>PlugIns/iconengines/libqsvgicon.dylib</key>
 		<dict>
@@ -742,14 +742,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			AMszc3XE4oH75rQPoa2c7ouKcWVQEqH+oQINQXuQouc=
+			tKANTFiyc10yQVvTVWZS5GQNrZdMEcjo20QzZPHTdDo=
 			</data>
 		</dict>
 		<key>Resources/dinerod</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			0x3imjDFz63Gb5+t2zxMQcen4zRbFo5R5yR3SbdbGUE=
+			qrM5dpyr5+jYrwruo3HfbHa7GvPPZp3nBbAmnJ5Ttv0=
 			</data>
 		</dict>
 		<key>Resources/qt.conf</key>
@@ -763,7 +763,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ao+p37nbBTpzfydMwZBngfgkkOSuy81YqXyY5PlHDJc=
+			y3plpqBPYhOu4hdjml1e30xMVZNvUfTN+35QQFqyv30=
 			</data>
 		</dict>
 	</dict>

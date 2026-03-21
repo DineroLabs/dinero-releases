@@ -2,6 +2,38 @@
 
 Official binary releases for Dinero (DIN) - Real Money for Free People.
 
+## v1.0.1-Utreexo - macOS Utreexo patch refresh (2026-03-21)
+
+This tag refreshes the macOS Dinero bundle after the `v1.0.0-Utreexo` milestone.
+It keeps the validated Utreexo architecture and updates the downloadable artifacts
+to match the current approved desktop build.
+
+### Verified in this release
+
+- Switchable multi-wallet desktop flow with safer wallet unload/switch behavior
+- Utreexo bridge diagnostics expanded into a real operator-facing proof dashboard
+- Mining cinematic solved-block renderer hardened and crash-trimmed
+- Mining solved-block card now ships with the approved single chain frame styling
+- macOS Dinero-Qt bundle rebuilt with embedded:
+  - `dinerod` at commit `0924ee6c5700fc82d66f15cc80b48527a359d306`
+  - `dinero-miner` at commit `0924ee6c5700fc82d66f15cc80b48527a359d306`
+  - `dinero-gpu-miner` at commit `0924ee6c5700fc82d66f15cc80b48527a359d306`
+  - `dinero-qt` at commit `097f6dc3860385fc049745571c321f408e87a8f7`
+
+### Downloads
+
+| Platform | File | Status |
+|----------|------|--------|
+| **macOS** (Apple Silicon arm64) | `dinero-v1.0.1-Utreexo-macos-arm64.tar.gz` | Updated |
+| **macOS Qt** (Apple Silicon arm64) | `dinero-v1.0.1-Utreexo-macos-arm64-qt.zip` | Updated |
+
+### Scope note
+
+This is a macOS patch refresh only. It supersedes the older macOS `v1.0.0-Utreexo`
+bundle and leaves existing Linux and Windows artifacts unchanged.
+
+Commit: `0924ee6c5` / `097f6dc38`
+
 ## v1.0.0-Utreexo - Validated macOS Utreexo milestone (2026-03-20)
 
 This tag freezes the first fully validated macOS Dinero-Qt release bundle with the
