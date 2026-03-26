@@ -16,7 +16,7 @@ Dinero is a fair-launch proof-of-work cryptocurrency. There was no premine, no I
 | **Initial block reward** | 100 DIN |
 | **Halving interval** | 1,314,000 blocks |
 | **Tail emission** | 1 DIN per block (perpetual floor) |
-| **Maximum supply** | ~97,850,000 DIN (asymptotic) |
+| **Maximum supply** | ~265,428,000 DIN (asymptotic) |
 | **Launch date** | March 7, 2026 |
 
 ## Emission Schedule
