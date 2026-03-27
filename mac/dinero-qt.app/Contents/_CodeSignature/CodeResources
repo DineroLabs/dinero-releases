@@ -18,7 +18,11 @@
 		</data>
 		<key>Resources/dinerod</key>
 		<data>
-		7CDR+OU3PWEuu8UqEJQ/EeoEmYM=
+		zS8z8Ijtjn8nt0lZl7USOdAhNKY=
+		</data>
+		<key>Resources/dinerod.bak</key>
+		<data>
+		zS8z8Ijtjn8nt0lZl7USOdAhNKY=
 		</data>
 		<key>Resources/qt.conf</key>
 		<data>
@@ -26,7 +30,7 @@
 		</data>
 		<key>Resources/release-identity.json</key>
 		<data>
-		BZsGWiLJHDetuz4PW/aZ+t+98as=
+		rAqdnK2uvIczJBeAZP+L4a4bdJ4=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -242,37 +246,37 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			MiKTYN+xxGaiS+xXaFksEP7V4bs=
+			sEj5VWV7E8TVplXaDjbV51fjjBI=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"32229360dfb1c466a24bec5768592c10fed5e1bb"</string>
+			<string>cdhash H"b048f955657b13c4d5a655da0e36d5e757e38c12"</string>
 		</dict>
 		<key>Frameworks/libglib-2.0.0.dylib</key>
 		<dict>
 			<key>cdhash</key>
 			<data>
-			gwKTcruM2OlWQfSwcQVyIner/qk=
+			j1nPsFLRQ6HaXCh6W4e4RByKJYw=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"83029372bb8cd8e95641f4b07105722277abfea9"</string>
+			<string>cdhash H"8f59cfb052d143a1da5c287a5b87b8441c8a258c"</string>
 		</dict>
 		<key>Frameworks/libgmodule-2.0.0.dylib</key>
 		<dict>
 			<key>cdhash</key>
 			<data>
-			9FKEIKYI/eyh70tyRRL30FVTw2c=
+			8bhNN8fOX5Ir9LMpJFjZ4RgfRu8=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"f4528420a608fdeca1ef4b724512f7d05553c367"</string>
+			<string>cdhash H"f1b84d37c7ce5f922bf4b3292458d9e1181f46ef"</string>
 		</dict>
 		<key>Frameworks/libgobject-2.0.0.dylib</key>
 		<dict>
 			<key>cdhash</key>
 			<data>
-			by1JrcoIzdZLkZ5L2ra2rpqEVPg=
+			NNuaaHcwJdYQQd5XnsFpXt4HwxY=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"6f2d49adca08cdd64b919e4bdab6b6ae9a8454f8"</string>
+			<string>cdhash H"34db9a68773025d61041de579ec1695ede07c316"</string>
 		</dict>
 		<key>Frameworks/libgraphite2.3.dylib</key>
 		<dict>
@@ -287,46 +291,46 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			e/UDJorkWet5cXnyLt2iF6fysws=
+			W2CQz6StN5eTQlf8As32i9NvQeE=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"7bf503268ae459eb797179f22edda217a7f2b30b"</string>
+			<string>cdhash H"5b6090cfa4ad3797934257fc02cdf68bd36f41e1"</string>
 		</dict>
 		<key>Frameworks/libharfbuzz.0.dylib</key>
 		<dict>
 			<key>cdhash</key>
 			<data>
-			Kp6auKtpGv3qpzKkMWxuPhwmy4A=
+			SQnH99rTa16Q8LLnZi0uSs1i8zk=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"2a9e9ab8ab691afdeaa732a4316c6e3e1c26cb80"</string>
+			<string>cdhash H"4909c7f7dad36b5e90f0b2e7662d2e4acd62f339"</string>
 		</dict>
 		<key>Frameworks/libicudata.78.dylib</key>
 		<dict>
 			<key>cdhash</key>
 			<data>
-			XhUvra561Q7CAfLScTp2IyhoMSQ=
+			kErlihO8nIawrorZqy0C7173cTE=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"5e152fadae7ad50ec201f2d2713a762328683124"</string>
+			<string>cdhash H"904ae58a13bc9c86b0ae8ad9ab2d02ef5ef77131"</string>
 		</dict>
 		<key>Frameworks/libicui18n.78.dylib</key>
 		<dict>
 			<key>cdhash</key>
 			<data>
-			rdHOLSYx3C3NKWLNfMP5UzUB8lQ=
+			naht2O8XO5i2yYY3RrJPvjgSBp8=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"add1ce2d2631dc2dcd2962cd7cc3f9533501f254"</string>
+			<string>cdhash H"9da86dd8ef173b98b6c9863746b24fbe3812069f"</string>
 		</dict>
 		<key>Frameworks/libicuuc.78.dylib</key>
 		<dict>
 			<key>cdhash</key>
 			<data>
-			N0wM8Qpb9NKQuzL1wrbK05GBVoo=
+			Cf3PlalG76EdoXOb0qpyr4D/1Wc=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"374c0cf10a5bf4d290bb32f5c2b6cad39181568a"</string>
+			<string>cdhash H"09fdcf95a946efa11da1739bd2aa72af80ffd567"</string>
 		</dict>
 		<key>Frameworks/libintl.8.dylib</key>
 		<dict>
@@ -494,10 +498,10 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			FHIY5FvEI1qLM9AYZBOgrYx75ZU=
+			yUyqQ8jeKBo+lvAwyaEZBKD0Ow4=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"147218e45bc4235a8b33d0186413a0ad8c7be595"</string>
+			<string>cdhash H"c94caa43c8de281a3e96f030c9a11904a0f43b0e"</string>
 		</dict>
 		<key>MacOS/dinero-miner</key>
 		<dict>
@@ -521,10 +525,10 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			HxnRqAW8pvo+UHTTo7IvZek2uR0=
+			3MY2H6QR6KeMCMU2kGLMk+M6Dj8=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"1f19d1a805bca6fa3e5074d3a3b22f65e936b91d"</string>
+			<string>cdhash H"dcc6361fa411e8a78c08c5369062cc93e33a0e3f"</string>
 		</dict>
 		<key>PlugIns/iconengines/libqsvgicon.dylib</key>
 		<dict>
@@ -749,7 +753,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			qrM5dpyr5+jYrwruo3HfbHa7GvPPZp3nBbAmnJ5Ttv0=
+			t15GUeS3icuj+ZQJmedT8J3jAP9dn0fBenEFBJA+EOY=
+			</data>
+		</dict>
+		<key>Resources/dinerod.bak</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			t15GUeS3icuj+ZQJmedT8J3jAP9dn0fBenEFBJA+EOY=
 			</data>
 		</dict>
 		<key>Resources/qt.conf</key>
@@ -763,7 +774,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			y3plpqBPYhOu4hdjml1e30xMVZNvUfTN+35QQFqyv30=
+			9DNzuPJqudmnQfGTKNbeYE9gsdnBdN1f/wZUq3a6uAM=
 			</data>
 		</dict>
 	</dict>
