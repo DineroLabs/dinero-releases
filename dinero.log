@@ -24671,3 +24671,26 @@ din_mining_shares_accepted_total 0
 # H... (truncated)
 [INFO] [MetricsService] ----------------------------------------
 [INFO] [MetricsService] Metrics service stopped cleanly
+[INFO] [LoggerService] Log file opened: dinero.log
+[INFO] [ConfigService] Configuration loaded
+[INFO] [ConfigService]   datadir: /Users/haydarevich/.dinero
+[INFO] [ConfigService]   rpcport: 20998
+[INFO] [ConfigService]   p2pport: 20999
+[INFO] [ChainstateService] Starting chainstate...
+[INFO] [ChainstateService] ChainDB already initialized, skipping genesis
+[ERROR] ═══════════════════════════════════════════════════════════
+[ERROR]   ❌ FATAL: GENESIS MISMATCH - REFUSING TO START
+[ERROR] ═══════════════════════════════════════════════════════════
+[ERROR] Database genesis:  0000000104e9560854067dd7620e75723c719e0ef6395f559531608b236c648e
+[ERROR] Code genesis:      0000000fe25d451d1b89fb0bc1714f0dcaa44ecc60a3f38d8a804685b214a282
+[ERROR] 
+[ERROR] This means:
+[ERROR]   • You are running the wrong binary for this database
+[ERROR]   • Or: database is from a different network
+[ERROR]   • Or: code genesis was changed after DB initialization
+[ERROR] 
+[ERROR] To fix:
+[ERROR]   1. Use correct binary matching this database
+[ERROR]   2. OR: Delete database and resync from genesis
+[ERROR]      rm -rf ~/.dinero && ./dinerod --chain=main
+[ERROR] ═══════════════════════════════════════════════════════════

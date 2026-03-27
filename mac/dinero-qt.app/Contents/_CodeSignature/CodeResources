@@ -18,7 +18,7 @@
 		</data>
 		<key>Resources/dinerod</key>
 		<data>
-		6CZ09euvR9XjkExL4WsmlcU2xnk=
+		pHa+AKCbrF6FRQVI44MejF+6mB0=
 		</data>
 		<key>Resources/qt.conf</key>
 		<data>
@@ -26,7 +26,7 @@
 		</data>
 		<key>Resources/release-identity.json</key>
 		<data>
-		c1AfKuA6AoahFH75kFWDQwH/VwQ=
+		KPFax4SHDeHQFrT0Y5Xuf8u+4Wc=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -116,10 +116,10 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			/QJsV04TuwacHABZW8hybO7PCPA=
+			8q1Nrf6R7aIltLbhXLa2HnirPiM=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"fd026c574e13bb069c1c00595bc8726ceecf08f0"</string>
+			<string>cdhash H"f2ad4dadfe91eda225b4b6e15cb6b61e78ab3e23"</string>
 		</dict>
 		<key>PlugIns/iconengines/libqsvgicon.dylib</key>
 		<dict>
@@ -236,7 +236,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Zq+BHHuVuAMhOcou6fFP1d3X05nVBVfwjC1pANT/H8M=
+			LmwM+Meyo/QD+Y7b5Fffv7og9yFVGcMYzY3OhR9o3As=
 			</data>
 		</dict>
 		<key>Resources/qt.conf</key>
@@ -250,7 +250,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			95SmatV95D1VOWe9VOG8Y+G1CjIWTFZnq/+P0uUZ2ak=
+			vruodoCjyMJL/IYZYJZQWMREs8ROG1YvWb58LTSp6bI=
 			</data>
 		</dict>
 	</dict>
