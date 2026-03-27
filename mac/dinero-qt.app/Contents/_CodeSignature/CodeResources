@@ -12,13 +12,9 @@
 		<data>
 		5h5YGTiQpGOOaUFw8Dmo537j3uE=
 		</data>
-		<key>Resources/dinero-miner</key>
-		<data>
-		zq7vCAVRPaw9MwiRfjGu790XJMU=
-		</data>
 		<key>Resources/dinerod</key>
 		<data>
-		pHa+AKCbrF6FRQVI44MejF+6mB0=
+		jZolyE85cOEVZXtvWKL9XdqCt3k=
 		</data>
 		<key>Resources/qt.conf</key>
 		<data>
@@ -26,7 +22,7 @@
 		</data>
 		<key>Resources/release-identity.json</key>
 		<data>
-		KPFax4SHDeHQFrT0Y5Xuf8u+4Wc=
+		8Q4rionWWo2G6/QnGqFF00O5Kds=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -103,23 +99,14 @@
 			<key>requirement</key>
 			<string>cdhash H"11ededa9c9c1f3d34ad040d73abb9676a950e042"</string>
 		</dict>
-		<key>MacOS/dinero-miner</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			KSsRIzfUd92+JlaAc5fLKhQuvBQ=
-			</data>
-			<key>requirement</key>
-			<string>cdhash H"292b112337d477ddbe2656807397cb2a142ebc14"</string>
-		</dict>
 		<key>MacOS/dinerod</key>
 		<dict>
 			<key>cdhash</key>
 			<data>
-			8q1Nrf6R7aIltLbhXLa2HnirPiM=
+			08r6Qn9/VxSZuJgbQb9iUOPBYws=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"f2ad4dadfe91eda225b4b6e15cb6b61e78ab3e23"</string>
+			<string>cdhash H"d3cafa427f7f571499b8981b41bf6250e3c1630b"</string>
 		</dict>
 		<key>PlugIns/iconengines/libqsvgicon.dylib</key>
 		<dict>
@@ -225,18 +212,11 @@
 			prfd4JHMPByssDVw2eKDPfPiEkG6d1Ns3lnDj3KeHBE=
 			</data>
 		</dict>
-		<key>Resources/dinero-miner</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			RP2bnUkLaCS5dftTlY6tUGTuQ+YrMCJsrrn39a96Kaw=
-			</data>
-		</dict>
 		<key>Resources/dinerod</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			LmwM+Meyo/QD+Y7b5Fffv7og9yFVGcMYzY3OhR9o3As=
+			OUS9R0E14PuFOQWZzvZ2kfQ+5nQNvo025bhPgkh/aks=
 			</data>
 		</dict>
 		<key>Resources/qt.conf</key>
@@ -250,7 +230,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			vruodoCjyMJL/IYZYJZQWMREs8ROG1YvWb58LTSp6bI=
+			Rcc5C9M6RkWDUAQb9l49jNlj0xFdJErJAsGE2z9l+oo=
 			</data>
 		</dict>
 	</dict>
