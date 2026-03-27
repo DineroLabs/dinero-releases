@@ -14,15 +14,11 @@
 		</data>
 		<key>Resources/dinero-miner</key>
 		<data>
-		xKw5p4O1B6xdnAKVxvkkfR6SayU=
+		zq7vCAVRPaw9MwiRfjGu790XJMU=
 		</data>
 		<key>Resources/dinerod</key>
 		<data>
 		6CZ09euvR9XjkExL4WsmlcU2xnk=
-		</data>
-		<key>Resources/dinerod.bak</key>
-		<data>
-		zS8z8Ijtjn8nt0lZl7USOdAhNKY=
 		</data>
 		<key>Resources/qt.conf</key>
 		<data>
@@ -30,7 +26,7 @@
 		</data>
 		<key>Resources/release-identity.json</key>
 		<data>
-		4xltNWzaNhluYjj1QUJP8sP9mI4=
+		c1AfKuA6AoahFH75kFWDQwH/VwQ=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -71,69 +67,6 @@
 			<key>requirement</key>
 			<string>cdhash H"c9d0fd18639c668cf44b00e904fb784573a00bd4" or cdhash H"e9317d6c4e361eaff794ebf21593c6ba29d649c8"</string>
 		</dict>
-		<key>Frameworks/QtOpenGL.framework</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			31BYQpRHKKBHioD2ld2rfOdVMXI=
-			</data>
-			<key>requirement</key>
-			<string>cdhash H"df505842944728a0478a80f695ddab7ce7553172"</string>
-		</dict>
-		<key>Frameworks/QtPdf.framework</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			xDaDa6Bgz1bvA17ldd0NpcXAPoU=
-			</data>
-			<key>requirement</key>
-			<string>cdhash H"c436836ba060cf56ef035ee575dd0da5c5c03e85"</string>
-		</dict>
-		<key>Frameworks/QtQml.framework</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			YIzXv4I9R2Ewwu+Wrx9FNfN23+U=
-			</data>
-			<key>requirement</key>
-			<string>cdhash H"608cd7bf823d476130c2ef96af1f4535f376dfe5"</string>
-		</dict>
-		<key>Frameworks/QtQmlMeta.framework</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			WUwXAXUPb3M5gbgboqbEp1dMSDQ=
-			</data>
-			<key>requirement</key>
-			<string>cdhash H"594c1701750f6f733981b81ba2a6c4a7574c4834"</string>
-		</dict>
-		<key>Frameworks/QtQmlModels.framework</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			252uxiKjwklwr/LBF660t65hltA=
-			</data>
-			<key>requirement</key>
-			<string>cdhash H"db9daec622a3c24970aff2c117aeb4b7ae6196d0"</string>
-		</dict>
-		<key>Frameworks/QtQmlWorkerScript.framework</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			umKZmKkwY1j2WK/X9R9nX4YaBbo=
-			</data>
-			<key>requirement</key>
-			<string>cdhash H"ba629998a9306358f658afd7f51f675f861a05ba"</string>
-		</dict>
-		<key>Frameworks/QtQuick.framework</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			DVLwzZkGXjsB353PmJyfz9upzIs=
-			</data>
-			<key>requirement</key>
-			<string>cdhash H"0d52f0cd99065e3b01df9dcf989c9fcfdba9cc8b"</string>
-		</dict>
 		<key>Frameworks/QtSvg.framework</key>
 		<dict>
 			<key>cdhash</key>
@@ -142,33 +75,6 @@
 			</data>
 			<key>requirement</key>
 			<string>cdhash H"afeafe1d3e909f359f0fea804b33cd7b0bcfb066" or cdhash H"70ffdedfa3fd7679e49960717a158ef306b2a795"</string>
-		</dict>
-		<key>Frameworks/QtVirtualKeyboard.framework</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			qLnD35Go3HBpWhtBtfMT732cZQ0=
-			</data>
-			<key>requirement</key>
-			<string>cdhash H"a8b9c3df91a8dc70695a1b41b5f313ef7d9c650d"</string>
-		</dict>
-		<key>Frameworks/QtVirtualKeyboardQml.framework</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			cOwy73BzCP89sMP76rgWvEitZ5s=
-			</data>
-			<key>requirement</key>
-			<string>cdhash H"70ec32ef707308ff3db0c3fbeab816bc48ad679b"</string>
-		</dict>
-		<key>Frameworks/QtWebSockets.framework</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			28qN8sC/pNhfeaqaHTwYLIOW8tQ=
-			</data>
-			<key>requirement</key>
-			<string>cdhash H"dbca8df2c0bfa4d85f79aa9a1d3c182c8396f2d4"</string>
 		</dict>
 		<key>Frameworks/QtWidgets.framework</key>
 		<dict>
@@ -179,33 +85,6 @@
 			<key>requirement</key>
 			<string>cdhash H"f6e39c2d2bef0448fec9960aa89455e9b0524356" or cdhash H"995aacce6ab0307fb4a2154acd229880ed622849"</string>
 		</dict>
-		<key>Frameworks/libb2.1.dylib</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			dSDpt0O4deL38bFjATLyIxWRn7s=
-			</data>
-			<key>requirement</key>
-			<string>cdhash H"7520e9b743b875e2f7f1b1630132f22315919fbb"</string>
-		</dict>
-		<key>Frameworks/libbrotlicommon.1.dylib</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			LwFX/r6vSI+vyj5d/O0a+R9M7Bs=
-			</data>
-			<key>requirement</key>
-			<string>cdhash H"2f0157febeaf488fafca3e5dfced1af91f4cec1b"</string>
-		</dict>
-		<key>Frameworks/libbrotlidec.1.dylib</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			+aw2j0+tBOUHRMMqatIGDeh9LHs=
-			</data>
-			<key>requirement</key>
-			<string>cdhash H"f9ac368f4fad04e50744c32a6ad2060de87d2c7b"</string>
-		</dict>
 		<key>Frameworks/libcrypto.3.dylib</key>
 		<dict>
 			<key>cdhash</key>
@@ -215,311 +94,23 @@
 			<key>requirement</key>
 			<string>cdhash H"d02af1745ef41a82b7660c52c60a3928f8dd0b39"</string>
 		</dict>
-		<key>Frameworks/libdbus-1.3.dylib</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			L75EXNM6s+xhlGyVEY1iPvWzmdU=
-			</data>
-			<key>requirement</key>
-			<string>cdhash H"2fbe445cd33ab3ec61946c95118d623ef5b399d5"</string>
-		</dict>
-		<key>Frameworks/libdouble-conversion.3.dylib</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			UWKRD43sM/f8NCfIiO+62dJlBWo=
-			</data>
-			<key>requirement</key>
-			<string>cdhash H"5162910f8dec33f7fc3427c888efbad9d265056a"</string>
-		</dict>
-		<key>Frameworks/libfreetype.6.dylib</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			WaKBX19McwskDLwgOk094nc8ezk=
-			</data>
-			<key>requirement</key>
-			<string>cdhash H"59a2815f5f4c730b240cbc203a4d3de2773c7b39"</string>
-		</dict>
-		<key>Frameworks/libgio-2.0.0.dylib</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			sEj5VWV7E8TVplXaDjbV51fjjBI=
-			</data>
-			<key>requirement</key>
-			<string>cdhash H"b048f955657b13c4d5a655da0e36d5e757e38c12"</string>
-		</dict>
-		<key>Frameworks/libglib-2.0.0.dylib</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			j1nPsFLRQ6HaXCh6W4e4RByKJYw=
-			</data>
-			<key>requirement</key>
-			<string>cdhash H"8f59cfb052d143a1da5c287a5b87b8441c8a258c"</string>
-		</dict>
-		<key>Frameworks/libgmodule-2.0.0.dylib</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			8bhNN8fOX5Ir9LMpJFjZ4RgfRu8=
-			</data>
-			<key>requirement</key>
-			<string>cdhash H"f1b84d37c7ce5f922bf4b3292458d9e1181f46ef"</string>
-		</dict>
-		<key>Frameworks/libgobject-2.0.0.dylib</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			NNuaaHcwJdYQQd5XnsFpXt4HwxY=
-			</data>
-			<key>requirement</key>
-			<string>cdhash H"34db9a68773025d61041de579ec1695ede07c316"</string>
-		</dict>
-		<key>Frameworks/libgraphite2.3.dylib</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			m5UJRXCr8Riu7lgn+9YIQ10ky1A=
-			</data>
-			<key>requirement</key>
-			<string>cdhash H"9b95094570abf118aeee5827fbd608435d24cb50"</string>
-		</dict>
-		<key>Frameworks/libgthread-2.0.0.dylib</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			W2CQz6StN5eTQlf8As32i9NvQeE=
-			</data>
-			<key>requirement</key>
-			<string>cdhash H"5b6090cfa4ad3797934257fc02cdf68bd36f41e1"</string>
-		</dict>
-		<key>Frameworks/libharfbuzz.0.dylib</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			SQnH99rTa16Q8LLnZi0uSs1i8zk=
-			</data>
-			<key>requirement</key>
-			<string>cdhash H"4909c7f7dad36b5e90f0b2e7662d2e4acd62f339"</string>
-		</dict>
-		<key>Frameworks/libicudata.78.dylib</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			kErlihO8nIawrorZqy0C7173cTE=
-			</data>
-			<key>requirement</key>
-			<string>cdhash H"904ae58a13bc9c86b0ae8ad9ab2d02ef5ef77131"</string>
-		</dict>
-		<key>Frameworks/libicui18n.78.dylib</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			naht2O8XO5i2yYY3RrJPvjgSBp8=
-			</data>
-			<key>requirement</key>
-			<string>cdhash H"9da86dd8ef173b98b6c9863746b24fbe3812069f"</string>
-		</dict>
-		<key>Frameworks/libicuuc.78.dylib</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			Cf3PlalG76EdoXOb0qpyr4D/1Wc=
-			</data>
-			<key>requirement</key>
-			<string>cdhash H"09fdcf95a946efa11da1739bd2aa72af80ffd567"</string>
-		</dict>
-		<key>Frameworks/libintl.8.dylib</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			z+OuszGtBdHdBdQLFFc95KDMSEY=
-			</data>
-			<key>requirement</key>
-			<string>cdhash H"cfe3aeb331ad05d1dd05d40b14573de4a0cc4846"</string>
-		</dict>
-		<key>Frameworks/libjasper.7.dylib</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			2ShgJhhT/o2te2QHV3xdKxUDj4U=
-			</data>
-			<key>requirement</key>
-			<string>cdhash H"d92860261853fe8dad7b6407577c5d2b15038f85"</string>
-		</dict>
-		<key>Frameworks/libjpeg.8.dylib</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			x+a1ZX5stmU0oZ5fkoDaJQ4gbMI=
-			</data>
-			<key>requirement</key>
-			<string>cdhash H"c7e6b5657e6cb66534a19e5f9280da250e206cc2"</string>
-		</dict>
-		<key>Frameworks/liblcms2.2.dylib</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			byswc3+BNIbdflP8NULbjULcYxQ=
-			</data>
-			<key>requirement</key>
-			<string>cdhash H"6f2b30737f813486dd7e53fc3542db8d42dc6314"</string>
-		</dict>
-		<key>Frameworks/liblzma.5.dylib</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			wPmuqHhoo1haG4e6FJIBnuG2fXY=
-			</data>
-			<key>requirement</key>
-			<string>cdhash H"c0f9aea87868a3585a1b87ba1492019ee1b67d76"</string>
-		</dict>
-		<key>Frameworks/libmd4c.0.dylib</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			uDITPnpFM53pqXeEzNaYhQoHIVs=
-			</data>
-			<key>requirement</key>
-			<string>cdhash H"b832133e7a45339de9a97784ccd698850a07215b"</string>
-		</dict>
-		<key>Frameworks/libmng.2.dylib</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			W1Wa5BvL9xSPlou5YAsuIm6FVXU=
-			</data>
-			<key>requirement</key>
-			<string>cdhash H"5b559ae41bcbf7148f968bb9600b2e226e855575"</string>
-		</dict>
-		<key>Frameworks/libpcre2-16.0.dylib</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			254kBY+Vyc3f9QCN8U7rSp0+QwY=
-			</data>
-			<key>requirement</key>
-			<string>cdhash H"db9e24058f95c9cddff5008df14eeb4a9d3e4306"</string>
-		</dict>
-		<key>Frameworks/libpcre2-8.0.dylib</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			D3V8D4y/+Kedftj3+n9IA1GLE4g=
-			</data>
-			<key>requirement</key>
-			<string>cdhash H"0f757c0f8cbff8a79d7ed8f7fa7f4803518b1388"</string>
-		</dict>
-		<key>Frameworks/libpng16.16.dylib</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			7YjLegRx7Jtd4lzv6oTN+dNdnNQ=
-			</data>
-			<key>requirement</key>
-			<string>cdhash H"ed88cb7a0471ec9b5de25cefea84cdf9d35d9cd4"</string>
-		</dict>
-		<key>Frameworks/libsharpyuv.0.dylib</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			C3v1q+s+kAMXFo7kvp+QO3O6VYw=
-			</data>
-			<key>requirement</key>
-			<string>cdhash H"0b7bf5abeb3e900317168ee4be9f903b73ba558c"</string>
-		</dict>
-		<key>Frameworks/libssl.3.dylib</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			0/mC4fvanMxMfzQ8MWtUJkgMhK4=
-			</data>
-			<key>requirement</key>
-			<string>cdhash H"d3f982e1fbda9ccc4c7f343c316b5426480c84ae"</string>
-		</dict>
-		<key>Frameworks/libtiff.6.dylib</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			MErzASfRnxFEj6KFkpiy1BpDt1k=
-			</data>
-			<key>requirement</key>
-			<string>cdhash H"304af30127d19f11448fa2859298b2d41a43b759"</string>
-		</dict>
-		<key>Frameworks/libwebp.7.dylib</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			9bmsLv6drBm09oYlw0b70N2Re2A=
-			</data>
-			<key>requirement</key>
-			<string>cdhash H"f5b9ac2efe9dac19b4f68625c346fbd0dd917b60"</string>
-		</dict>
-		<key>Frameworks/libwebpdemux.2.dylib</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			yIRvDgMgRUh1UyAEPpPagqbNFi4=
-			</data>
-			<key>requirement</key>
-			<string>cdhash H"c8846f0e03204548755320043e93da82a6cd162e"</string>
-		</dict>
-		<key>Frameworks/libwebpmux.3.dylib</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			P2GShCGYSshbiWEI4vYoIw15I5A=
-			</data>
-			<key>requirement</key>
-			<string>cdhash H"3f61928421984ac85b896108e2f628230d792390"</string>
-		</dict>
-		<key>Frameworks/libzstd.1.dylib</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			spe8lrJuZeHamifHhgZBox8gFIE=
-			</data>
-			<key>requirement</key>
-			<string>cdhash H"b297bc96b26e65e1da9a27c7860641a31f201481"</string>
-		</dict>
-		<key>MacOS/dinero-cli</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			xAae/LTYUVs4iiTrOFBHbqrt5Bc=
-			</data>
-			<key>requirement</key>
-			<string>cdhash H"c4069efcb4d8515b388a24eb3850476eaaede417"</string>
-		</dict>
 		<key>MacOS/dinero-gpu-miner</key>
 		<dict>
 			<key>cdhash</key>
 			<data>
-			yUyqQ8jeKBo+lvAwyaEZBKD0Ow4=
+			Ee3tqcnB89NK0EDXOruWdqlQ4EI=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"c94caa43c8de281a3e96f030c9a11904a0f43b0e"</string>
+			<string>cdhash H"11ededa9c9c1f3d34ad040d73abb9676a950e042"</string>
 		</dict>
 		<key>MacOS/dinero-miner</key>
 		<dict>
 			<key>cdhash</key>
 			<data>
-			CZpNukNQ/4hEKCTtf5afj8+vL+I=
+			KSsRIzfUd92+JlaAc5fLKhQuvBQ=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"099a4dba4350ff88442824ed7f969f8fcfaf2fe2"</string>
-		</dict>
-		<key>MacOS/dinero-solo-miner</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			cpVx3K8IT5syHZGz8BwJN5+OuG0=
-			</data>
-			<key>requirement</key>
-			<string>cdhash H"729571dcaf084f9b321d91b3f01c09379f8eb86d"</string>
+			<string>cdhash H"292b112337d477ddbe2656807397cb2a142ebc14"</string>
 		</dict>
 		<key>MacOS/dinerod</key>
 		<dict>
@@ -548,15 +139,6 @@
 			<key>requirement</key>
 			<string>cdhash H"447e692d70728bab05814c967db47741b7d6f16d" or cdhash H"b2fd50d9ba4e779050cec495d1f9a4d34e68a425"</string>
 		</dict>
-		<key>PlugIns/imageformats/libqicns.dylib</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			//2f/cfugz4hpdLJMGUbLPSsqIs=
-			</data>
-			<key>requirement</key>
-			<string>cdhash H"fffd9ffdc7ee833e21a5d2c930651b2cf4aca88b"</string>
-		</dict>
 		<key>PlugIns/imageformats/libqico.dylib</key>
 		<dict>
 			<key>cdhash</key>
@@ -565,15 +147,6 @@
 			</data>
 			<key>requirement</key>
 			<string>cdhash H"cec67d0b040805a41ca4fb96a3d526490ad2d7f9" or cdhash H"23dcb25a2ec23397c19b7268d6385883fafdfb2d"</string>
-		</dict>
-		<key>PlugIns/imageformats/libqjp2.dylib</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			aT3mIXox6Pw7VMd1CaG7fFeVhjU=
-			</data>
-			<key>requirement</key>
-			<string>cdhash H"693de6217a31e8fc3b54c77509a1bb7c57958635"</string>
 		</dict>
 		<key>PlugIns/imageformats/libqjpeg.dylib</key>
 		<dict>
@@ -584,96 +157,6 @@
 			<key>requirement</key>
 			<string>cdhash H"03d840702e385647f2025eec88e5e56fc0d79f5b" or cdhash H"64ce5e249d8c5fc08340c96c107bca7736e8fe37"</string>
 		</dict>
-		<key>PlugIns/imageformats/libqmacheif.dylib</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			JVbsLIoDLNld7lXgjY8iB8PnRi0=
-			</data>
-			<key>requirement</key>
-			<string>cdhash H"2556ec2c8a032cd95dee55e08d8f2207c3e7462d"</string>
-		</dict>
-		<key>PlugIns/imageformats/libqmng.dylib</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			jaIluXzJ9gyvsi8tjQrM7PLVWLM=
-			</data>
-			<key>requirement</key>
-			<string>cdhash H"8da225b97cc9f60cafb22f2d8d0accecf2d558b3"</string>
-		</dict>
-		<key>PlugIns/imageformats/libqpdf.dylib</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			A5gl9sZGYx4WT3syWOHh1MMSZqQ=
-			</data>
-			<key>requirement</key>
-			<string>cdhash H"039825f6c646631e164f7b3258e1e1d4c31266a4"</string>
-		</dict>
-		<key>PlugIns/imageformats/libqsvg.dylib</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			RDAeUp2huYlituIB7ZvRm78f4dA=
-			</data>
-			<key>requirement</key>
-			<string>cdhash H"44301e529da1b98962b6e201ed9bd19bbf1fe1d0"</string>
-		</dict>
-		<key>PlugIns/imageformats/libqtga.dylib</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			67Xx7fNiFh7IFZYeErj5HB0Ovfo=
-			</data>
-			<key>requirement</key>
-			<string>cdhash H"ebb5f1edf362161ec815961e12b8f91c1d0ebdfa"</string>
-		</dict>
-		<key>PlugIns/imageformats/libqtiff.dylib</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			3EP2VZ0aHcI1oYMyQ3fPj66vOUU=
-			</data>
-			<key>requirement</key>
-			<string>cdhash H"dc43f6559d1a1dc235a183324377cf8faeaf3945"</string>
-		</dict>
-		<key>PlugIns/imageformats/libqwbmp.dylib</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			Oc88SjdBfKGfMTT6yBTDaEjCMt0=
-			</data>
-			<key>requirement</key>
-			<string>cdhash H"39cf3c4a37417ca19f3134fac814c36848c232dd"</string>
-		</dict>
-		<key>PlugIns/imageformats/libqwebp.dylib</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			3ewhYH40LjLC89qT1wZ2a7jG8Bo=
-			</data>
-			<key>requirement</key>
-			<string>cdhash H"ddec21607e342e32c2f3da93d706766bb8c6f01a"</string>
-		</dict>
-		<key>PlugIns/networkinformation/libqapplenetworkinformation.dylib</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			8PxHY1niYsPobxTw2KWd4F61aqU=
-			</data>
-			<key>requirement</key>
-			<string>cdhash H"f0fc476359e262c3e86f14f0d8a59de05eb56aa5"</string>
-		</dict>
-		<key>PlugIns/networkinformation/libqglib.dylib</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			WHnuTl89h2ZmhWQyKRhtVqKQWx4=
-			</data>
-			<key>requirement</key>
-			<string>cdhash H"5879ee4e5f3d87666685643229186d56a2905b1e"</string>
-		</dict>
 		<key>PlugIns/networkinformation/libqscnetworkreachability.dylib</key>
 		<dict>
 			<key>cdhash</key>
@@ -682,15 +165,6 @@
 			</data>
 			<key>requirement</key>
 			<string>cdhash H"de461730a941b010cb8d2ffb80464563985db181" or cdhash H"6a84b163612b840aec4c827d3f3345e2038cdd54"</string>
-		</dict>
-		<key>PlugIns/platforminputcontexts/libqtvirtualkeyboardplugin.dylib</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			YbsC3n/SYzUqbu2va8F4Lx7BhaQ=
-			</data>
-			<key>requirement</key>
-			<string>cdhash H"61bb02de7fd263352a6eedaf6bc1782f1ec185a4"</string>
 		</dict>
 		<key>PlugIns/platforms/libqcocoa.dylib</key>
 		<dict>
@@ -755,7 +229,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			tKANTFiyc10yQVvTVWZS5GQNrZdMEcjo20QzZPHTdDo=
+			RP2bnUkLaCS5dftTlY6tUGTuQ+YrMCJsrrn39a96Kaw=
 			</data>
 		</dict>
 		<key>Resources/dinerod</key>
@@ -763,13 +237,6 @@
 			<key>hash2</key>
 			<data>
 			Zq+BHHuVuAMhOcou6fFP1d3X05nVBVfwjC1pANT/H8M=
-			</data>
-		</dict>
-		<key>Resources/dinerod.bak</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			t15GUeS3icuj+ZQJmedT8J3jAP9dn0fBenEFBJA+EOY=
 			</data>
 		</dict>
 		<key>Resources/qt.conf</key>
@@ -783,7 +250,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			LLlim88Wzc13/rpTZZnhAQBmD2N3JhXPHi1tqc/7zRI=
+			95SmatV95D1VOWe9VOG8Y+G1CjIWTFZnq/+P0uUZ2ak=
 			</data>
 		</dict>
 	</dict>
