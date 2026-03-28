@@ -489,22 +489,28 @@ The halving schedule produces approximately 260.75 million DIN through the first
 
 Dinero uses distinct address prefixes for transparent and private outputs, providing unambiguous identification of the intended lane at the address level.
 
-| Address type | Prefix | Encoding | Lane | Contents |
-|---|---|---|---|---|
-| Taproot (transparent) | `din1` | Bech32m | Transparent | 32-byte Taproot output key |
-| Confidential | `dina1` | Bech32m | Private | Taproot key + view public key |
-| Stealth | `dsa1` | Bech32m | Private | ECDH stealth payload for one-time addresses |
-| Confidential (self-contained) | `dinc1` | Bech32m | Private | Spend key + view key in payload |
+| Address type | Prefix | Encoding | Lane |
+|---|---|---|---|
+| Transparent | `din1` | Bech32m | Transparent |
+| Confidential | `dina1` | Bech32m | Private |
+| Stealth | `dsa1` | Bech32m | Private |
 
-The private lane uses multiple address formats for different roles:
+Dinero uses three address formats corresponding to three levels of privacy:
 
-**`dina1` (Dinero Anon)** is the confidential address format. It encodes a Taproot output key and a view public key. Funds sent to a `dina1` address produce confidential outputs with hidden amounts. The view key enables the recipient to detect and decrypt incoming payments.
+**`din1`** is the transparent address format, analogous to Bitcoin's `bc1`. It encodes a 32-byte Taproot output key. Transactions between `din1` addresses are fully visible on-chain: amounts, sender, and recipient are all public.
 
-**`dsa1` (Dinero Stealth Address)** is the stealth address format used for unlinkable private receiving. When a sender pays a `dsa1` address, the protocol performs an ECDH key exchange to derive a fresh one-time destination for each payment. No two payments to the same stealth address produce the same on-chain output. This is the mechanism that provides receiver privacy: the `dsa1` address is reusable, but the resulting on-chain outputs are unlinkable. The `sendprivate` RPC uses stealth addresses for full sender-receiver unlinkability.
+**`dina1`** is the confidential address format. It encodes a Taproot key and a view public key. Funds sent to a `dina1` address produce confidential outputs with hidden amounts (Pedersen commitments + range proofs). The view key enables the recipient to detect and decrypt incoming payments. Shielding moves funds from `din1` to `dina1`, entering the private lane.
 
-**`dinc1` (self-contained confidential)** is a compact format that carries both spend and view keys in the address payload, suitable for direct confidential transactions.
+**`dsa1`** is the stealth address format, used for fully private receiving. When a sender pays a `dsa1` address, the protocol performs an ECDH key exchange to derive a fresh one-time destination for each payment. No two payments to the same `dsa1` address produce the same on-chain output. This provides receiver privacy: the `dsa1` address is reusable, but the resulting on-chain outputs are unlinkable. Private sends (`sendprivate`) use stealth addresses with ring-16 CLSAG signatures for full sender-receiver unlinkability.
 
-This addressing convention ensures that wallets, exchanges, and users can immediately distinguish between transparent destinations (`din1`), confidential destinations (`dina1`/`dinc1`), and fully private stealth destinations (`dsa1`) without inspecting transaction internals.
+Network variants follow the same pattern: mainnet uses `din1`/`dina1`/`dsa1`, testnet uses `tdin1`/`tdina1`, and regtest uses `rdin1`/`rdina1`.
+
+The typical value flow through the address system:
+
+- **Transparent transfer:** `din1` to `din1`
+- **Shield:** `din1` to `dina1` (enters private lane)
+- **Private send:** `dina1` to `dsa1` (ring-16, full privacy)
+- **Unshield:** `dina1` to `din1` (returns to transparent lane)
 
 ---
 
