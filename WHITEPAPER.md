@@ -515,3 +515,43 @@ Dinero gives users both transparent and private monetary behavior on one chain, 
 ---
 
 *This document describes the Dinero protocol as designed and implemented. Specific parameters (ring size, activation height, pool depth thresholds) may be adjusted through the project's governance process before mainnet activation of the private lane.*
+
+---
+
+## Acknowledgments
+
+Dinero does not exist in a vacuum. It builds directly on foundational work by researchers, cryptographers, and engineers whose contributions made this design possible. We acknowledge them here not as a formality, but because intellectual honesty requires it: every major component of Dinero traces back to ideas that others created first.
+
+**Bitcoin and the UTXO model.** The transparent lane, proof-of-work consensus, the UTXO transaction model, script-based spending conditions, and the fundamental architecture of a decentralized electronic cash system originate with Satoshi Nakamoto's 2008 paper *"Bitcoin: A Peer-to-Peer Electronic Cash System."*
+
+**Taproot, Schnorr signatures, and SegWit.** Dinero's transparent lane uses Taproot (BIP341/BIP342), designed by Pieter Wuille and Jonas Nick, building on Schnorr signature proposals by Pieter Wuille, Jonas Nick, and Tim Ruffing (BIP340). The Segregated Witness transaction structure (BIP141) was designed by Pieter Wuille, Eric Lombrozo, and Johnson Lau. Dinero's separation of ring data from the txid follows the same architectural principle as SegWit's separation of witness data.
+
+**secp256k1 and libsecp256k1.** All Dinero cryptography operates on the secp256k1 elliptic curve. The high-performance, constant-time libsecp256k1 library was primarily authored by Pieter Wuille with contributions from Gregory Maxwell, Andrew Poelstra, and others in the Bitcoin Core project.
+
+**Pedersen commitments and confidential transactions.** Amount privacy through Pedersen commitments was proposed for blockchain use by Gregory Maxwell in his 2015 *"Confidential Transactions"* design, building on the commitment scheme introduced by Torben Pedersen in 1991. The secp256k1-zkp library implementing Pedersen commitments and range proofs for Dinero was developed by the ElementsProject (Blockstream), primarily by Andrew Poelstra, Pieter Wuille, and Gregory Maxwell.
+
+**Range proofs and Bulletproofs.** The range proof system ensuring that committed amounts are non-negative derives from Bulletproofs, introduced by Benedikt Bunz, Jonathan Bootle, Dan Boneh, Andrew Poelstra, Pieter Wuille, and Gregory Maxwell in *"Bulletproofs: Short Proofs for Confidential Transactions and More"* (2018). Dinero uses the secp256k1-zkp rangeproof implementation.
+
+**CryptoNote and stealth addresses.** The stealth address construction used for receiver privacy in Dinero's private lane was introduced in the CryptoNote protocol, described by Nicolas van Saberhagen in *"CryptoNote v2.0"* (2013). The dual-key stealth address scheme (scan key + spend key) was refined and deployed by the Monero project.
+
+**Ring signatures and linkable ring signatures.** The concept of ring signatures was introduced by Ronald Rivest, Adi Shamir, and Yael Tauman in *"How to Leak a Secret"* (2001). Linkable ring signatures, which enable double-spend detection without revealing the signer, were developed by Joseph Liu, Victor Wei, and Duncan Wong in *"Linkable Spontaneous Anonymous Group Signature for Ad Hoc Groups"* (LSAG, 2004).
+
+**CLSAG.** The Compact Linkable Spontaneous Anonymous Group signature scheme used by Dinero was introduced by Brandon Goodell, Sarang Noether, and Arthur Blue in *"Concise Linkable Ring Signatures and Forgery Against Adversarial Keys"* (2019). CLSAG achieves the same security as MLSAG with approximately half the signature size and was adopted by the Monero project in November 2020.
+
+**RingCT.** The integration of ring signatures with Pedersen commitments for simultaneous sender ambiguity and amount privacy was formalized by Shen Noether in *"Ring Confidential Transactions"* (2015), building on the Monero Research Lab's work.
+
+**Monero.** The Monero project, initiated in 2014 as a fork of Bytecoin, has been the primary proving ground for ring signatures, stealth addresses, confidential transactions, and key-image-based double-spend prevention in a production cryptocurrency. Dinero's private lane design draws extensively on the lessons, research, and operational experience of the Monero community and the Monero Research Lab.
+
+**Utreexo.** The Utreexo cryptographic accumulator used for UTXO set compression in Dinero was proposed by Thaddeus Dryja in *"Utreexo: A dynamic hash-based accumulator optimized for the Bitcoin UTXO set"* (2019). Dinero's production implementation of Utreexo as a consensus-critical component is documented separately in the Dinero Utreexo whitepaper.
+
+**Bech32 and Bech32m address encoding.** The address encoding used for both `din1` and `dina1` addresses is based on Bech32 (BIP173) by Pieter Wuille and Greg Maxwell, and Bech32m (BIP350) by Pieter Wuille.
+
+**BIP32 hierarchical deterministic wallets.** Dinero's HD wallet derivation follows BIP32, authored by Pieter Wuille.
+
+**BIP39 mnemonic seed phrases.** Wallet backup and recovery uses the BIP39 mnemonic standard, authored by Marek Palatinus, Pavol Rusnak, Aaron Voisine, and Sean Bowe.
+
+**Decoy selection research.** The gamma-distribution-based decoy selection strategy used for ring member sampling was developed through research by the Monero Research Lab, with foundational analysis by Malte Moser, Kyle Soska, Ethan Heilman, Kevin Lee, Henry Heffan, Shashvat Srivastava, Kyle Hogan, Jason Hennessey, Andrew Miller, Arvind Narayanan, and Nicolas Christin in empirical studies of Monero's traceability and anonymity set quality.
+
+---
+
+Dinero is an integration project. The cryptographic and protocol-design innovations acknowledged above were created by their respective authors. Dinero's contribution is the specific architectural combination: a two-lane monetary system that places these constructions into a unified protocol with explicit domain boundaries, mandatory privacy rules inside the private lane, and a shared transparent lane grounded in the Bitcoin UTXO model. We are grateful to the researchers and engineers whose work made this design possible.
