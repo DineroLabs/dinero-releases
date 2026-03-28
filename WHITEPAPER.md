@@ -489,12 +489,14 @@ The halving schedule produces approximately 260.75 million DIN through the first
 
 Dinero uses distinct address prefixes for transparent and private outputs, providing unambiguous identification of the intended lane at the address level.
 
-| Address type | Prefix | Encoding | Lane |
-|---|---|---|---|
-| Taproot (transparent) | `din1` | Bech32m | Transparent |
-| Confidential (private) | `dina1` | Bech32m | Private |
+| Address type | Prefix | Encoding | Lane | Contents |
+|---|---|---|---|---|
+| Taproot (transparent) | `din1` | Bech32m | Transparent | 32-byte Taproot output key |
+| Stealth (private) | `dina1` | Bech32m | Private | Scan public key + spend public key |
 
-This addressing convention ensures that wallets, exchanges, and users can immediately distinguish between transparent and private destinations without inspecting transaction internals.
+The `dina1` address is a stealth address. It encodes two public keys: a scan key (used by the sender to derive a one-time destination and by the recipient to detect incoming payments) and a spend key (used by the recipient to spend received funds). When a sender pays a `dina1` address, the protocol derives a fresh one-time output destination for each payment — no two payments to the same `dina1` address produce the same on-chain output. This is the mechanism that provides receiver privacy: the `dina1` address is reusable, but the resulting on-chain outputs are unlinkable.
+
+This addressing convention ensures that wallets, exchanges, and users can immediately distinguish between transparent and private destinations without inspecting transaction internals. A `din1` address is a transparent Taproot destination. A `dina1` address is a private stealth destination that activates the full privacy stack.
 
 ---
 
