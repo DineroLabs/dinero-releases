@@ -514,19 +514,73 @@ The typical value flow through the address system:
 
 ---
 
-## 13. Conclusion
+## 13. Covenants and Programmable Money
 
-Dinero is a two-lane monetary system that provides both transparent and private value transfer within one chain, one asset, and one monetary policy.
+Dinero extends its Bitcoin-style transaction system with covenant-capable spending constraints that allow value to move only along authorized future paths. The goal is not to reproduce a virtual machine model in which arbitrary programs maintain persistent contract state. Instead, covenants govern how funds may be spent, where they may move next, under what timing conditions they may unlock, and which transaction structures are permitted.
+
+Ordinary signatures answer the question: *who is authorized to spend these funds?* Covenants add a second question: *how may these funds be spent once authorization exists?*
+
+### 13.1 Covenant opcodes
+
+Dinero implements four covenant primitives, all operating within Tapscript (BIP342):
+
+**OP_CHECKTEMPLATEVERIFY (CTV)** commits to a complete spending transaction template. The template hash covers version, locktime, scriptSigs, sequences, outputs, and input index. A CTV-locked output can only be spent by a transaction that exactly matches the pre-committed template. This is the simplest and most constrained covenant primitive.
+
+**OP_CHECKSIGFROMSTACK (CSFS)** verifies a Schnorr signature over an arbitrary message from the stack, rather than over the transaction itself. This enables delegation, oracle-based contracts, and authorization of dynamic data without sharing signing keys.
+
+**OP_TXHASH** pushes a hash of selected transaction fields onto the stack, controlled by a flag-based field selector. This provides granular transaction introspection — scripts can examine individual inputs, outputs, values, and scriptPubKeys without committing to the entire transaction.
+
+**OP_CHECKCONTRACTVERIFY (CCV)** enables state-carrying UTXOs. It verifies that an output's scriptPubKey is derived from a specified public key tweaked with committed data, allowing state machine transitions to be enforced at the consensus level. This supports dynamic vaults with partial withdrawals and stateful contract protocols.
+
+### 13.2 Activation
+
+Covenant opcodes are activation-height-gated. Before the activation height, Taproot script-path spends are rejected (key-path only). After activation, the full Tapscript interpreter executes with all four covenant opcodes enabled. This follows the same pattern as ring signature activation: a clean consensus boundary with deterministic transition.
+
+### 13.3 Use cases
+
+**Vaults.** Funds locked so they can only move through predefined paths: a normal spending route for routine usage, a delayed recovery route for compromised keys, and a cold-storage sweep that can be triggered during the delay period. This is stronger than multisignature protection because it constrains not only who can sign, but where funds may go next and under what timing conditions.
+
+**Treasury controls.** Capped withdrawals, approved-destination disbursement sets, staged release schedules, and emergency recovery branches. Protocol-enforced spending policy for organizations, DAOs, and project treasuries.
+
+**Payroll.** A company funds a single covenant-controlled UTXO that is only spendable into a pre-committed batch of employee payments. The fixed recipient set and output structure reduce operator error, lower average on-chain cost through batching, and ensure that even an authorized signer can only spend along approved payroll paths. Covenants can also enforce a review delay before finalization, an emergency cancellation path if the wrong batch was prepared, and a recovery branch if the payroll key is compromised. This is not HR automation — covenants do not compute withholding or attendance. They constrain how payroll money may move: to the allowed people, on the allowed path, at the allowed time.
+
+**Escrow and staged settlement.** Cooperative settlement to the seller, timeout-based refund to the buyer, an arbitration branch, and staged milestone releases.
+
+**Inheritance.** Normal spend while the primary holder is active, delayed recovery after a timeout, and family or executor multisig release.
+
+**Congestion control.** CTV payment trees where one on-chain output commits to a tree of follow-up transactions paying many recipients. Only the root transaction must confirm during high-fee periods. Sub-branches settle independently when fees drop.
+
+### 13.4 Covenants and the private lane
+
+Covenants interact with Dinero's two-lane system under clear boundary rules:
+
+- **Transparent outputs:** Full covenant support. Amounts visible, inputs directly identified. All vault, treasury, payroll, and escrow patterns work immediately.
+- **Confidential outputs:** Covenant support with commitment-based constraints. CTV templates commit to Pedersen commitment bytes rather than plaintext amounts. The covenant creator must know the blinding factors at template construction time. Amounts remain hidden from observers.
+- **Ring-anonymous spends:** Covenants do not apply inside ring-mixed spending. A covenant-locked output is excluded from the ring decoy pool. To spend a covenanted output, the spender satisfies the covenant script directly (no ring ambiguity). To move funds from a covenanted state into the ring-anonymous pool, the user spends the covenant and creates a regular confidential output, which then becomes ring-eligible.
+
+This boundary is a deliberate design choice. Covenants provide policy enforcement. Rings provide sender anonymity. Users who want vault protection accept that the vault lifecycle is not ring-anonymous. Users who want ring anonymity move funds out of the covenant first.
+
+### 13.5 Scope
+
+Dinero's covenant system is intentionally narrower than Ethereum-style smart contracts. It does not provide a general-purpose virtual machine, persistent contract state beyond CCV, or arbitrary application logic. It programs the movement of money itself: where value may go, when it may move, under what conditions it may unlock, and how recovery or policy branches are enforced.
+
+This narrower scope reduces state growth, constrains denial-of-service surface area, simplifies auditing, and keeps the protocol aligned with monetary use cases. Dinero's covenant model is programmable money, not general-purpose on-chain software.
+
+---
+
+## 14. Conclusion
+
+Dinero is a two-lane monetary system that provides transparent settlement, private settlement, and policy-controlled settlement within one chain, one asset, and one monetary policy.
 
 The transparent lane preserves the strengths of a Bitcoin-style UTXO system: public auditability, operational clarity, and straightforward integration for exchanges, businesses, and miners.
 
 The private lane provides cash-like privacy through stealth addressing, confidential transactions, and mandatory ring signatures. Privacy inside this lane is enforced by consensus, not delegated to external tools or optional wallet behavior.
 
-The boundary between lanes is explicit. Shielding moves funds in. Unshielding moves funds out. Within the private lane, the rules are mandatory.
+The covenant layer adds programmable spending constraints: vaults, treasury controls, payroll batching, escrow, inheritance, and congestion control. Covenants program how money may move, not arbitrary application logic.
 
-The central thesis is straightforward: transparent and private money do not need to exist on separate chains. They can coexist within one system, provided the boundary between them is explicit, the rules of each lane are clear, and the protocol enforces those rules consistently.
+The boundary between lanes is explicit. Shielding moves funds in. Unshielding moves funds out. Within the private lane, the rules are mandatory. Within a covenant, the spending policy is enforced by consensus.
 
-Dinero gives users both transparent and private monetary behavior on one chain, with clear rules for each.
+The central thesis is straightforward: transparent money, private money, and constrained money do not need to exist on separate chains. They can coexist within one system, provided the boundary between them is explicit, the rules of each domain are clear, and the protocol enforces those rules consistently.
 
 ---
 
@@ -568,6 +622,8 @@ Dinero does not exist in a vacuum. It builds directly on foundational work by re
 
 **Decoy selection research.** The gamma-distribution-based decoy selection strategy used for ring member sampling was developed through research by the Monero Research Lab, with foundational analysis by Malte Moser, Kyle Soska, Ethan Heilman, Kevin Lee, Henry Heffan, Shashvat Srivastava, Kyle Hogan, Jason Hennessey, Andrew Miller, Arvind Narayanan, and Nicolas Christin in empirical studies of Monero's traceability and anonymity set quality.
 
+**Covenants and CTV.** The OP_CHECKTEMPLATEVERIFY covenant primitive (BIP-119) was designed by Jeremy Rubin. OP_CHECKSIGFROMSTACK (BIP-348) was formalized by Brandon Black and Jeremy Rubin. OP_CHECKCONTRACTVERIFY (BIP-443, MATT) was designed by Salvatore Ingala. OP_TXHASH (BIP-346) was designed by Steven Roose and Brandon Black. The broader covenant research draws on work by James O'Beirne (vaults), Andrew Poelstra (CAT and Schnorr tricks), and the Blockstream Elements/Liquid team whose production deployment of introspection opcodes with confidential transactions informed Dinero's approach to confidential covenants.
+
 ---
 
-Dinero is an integration project. The cryptographic and protocol-design innovations acknowledged above were created by their respective authors. Dinero's contribution is the specific architectural combination: a two-lane monetary system that places these constructions into a unified protocol with explicit domain boundaries, mandatory privacy rules inside the private lane, and a shared transparent lane grounded in the Bitcoin UTXO model. We are grateful to the researchers and engineers whose work made this design possible.
+Dinero is an integration project. The cryptographic and protocol-design innovations acknowledged above were created by their respective authors. Dinero's contribution is the specific architectural combination: a two-lane monetary system that places these constructions into a unified protocol with explicit domain boundaries, mandatory privacy rules inside the private lane, covenant-driven spending policy, and a shared transparent lane grounded in the Bitcoin UTXO model. We are grateful to the researchers and engineers whose work made this design possible.
