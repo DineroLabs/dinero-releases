@@ -2,6 +2,46 @@
 
 Official binary releases for Dinero (DIN) - Real Money for Free People.
 
+## v2.0.2-PrivateLane - macOS ring-spend + packaging refresh (2026-04-04)
+
+This tag refreshes the macOS Dinero release artifacts after the mainnet ring-spend
+validation fixes and a full rebuild of the portable macOS packaging path.
+
+### Verified in this release
+
+- Ring transaction round-tripping fixed in canonical serialization paths
+- Mempool policy tightened so invalid ring spends no longer poison block templates
+- `TransactionParser` now delegates to canonical transaction serialization logic
+- macOS Dinero-Qt bundle rebuilt from committed heads with embedded:
+  - `dinerod` at commit `7d16460a30d683be431a1de95956b3b9e291eff9`
+  - `dinero-miner` at commit `7d16460a30d683be431a1de95956b3b9e291eff9`
+  - `dinero-gpu-miner` at commit `7d16460a30d683be431a1de95956b3b9e291eff9`
+  - `dinero-solo-miner` at commit `d7f249c8b6c37be3e9f96be0c34c4cd04b0077fc`
+  - `dinero-qt` at commit `b792de850061d1236d352ce0065887eb3fa6fbd0`
+- macOS release packaging now bundles non-system dylib dependencies into the app
+  and standalone release folder so downloaded artifacts no longer depend on
+  Homebrew runtime libraries
+
+### Downloads
+
+| Platform | File | Status |
+|----------|------|--------|
+| **macOS** (Apple Silicon arm64) | `Dinero-v2.0.2-PrivateLane-macOS-arm64.tar.gz` | Updated |
+| **macOS Qt** (Apple Silicon arm64) | `Dinero-v2.0.2-PrivateLane-macOS-arm64-qt.zip` | Updated |
+
+### Gatekeeper note
+
+These macOS artifacts are Developer ID signed and pass local `codesign --verify`
+checks. They are not notarized in this repository refresh, so downloaded files may
+still trigger the standard first-open Gatekeeper warning on another Mac.
+
+### Scope note
+
+This is a macOS refresh only. Existing Linux and Windows artifacts in this
+repository are left unchanged.
+
+Commit: `7d16460a3` / `b792de850`
+
 ## v1.0.1-Utreexo - macOS Utreexo patch refresh (2026-03-21)
 
 This tag refreshes the macOS Dinero bundle after the `v1.0.0-Utreexo` milestone.
