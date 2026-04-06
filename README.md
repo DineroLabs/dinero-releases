@@ -2,6 +2,41 @@
 
 Official binary releases for Dinero (DIN) - Real Money for Free People.
 
+## v2.0.3-PrivateLane - Ring index rebuild RPC + batch verifier hardening (2026-04-05)
+
+macOS rebuild adding the `wallet.rebuildringindexes` RPC and two critical ZK batch
+verifier soundness fixes from adversarial code review.
+
+### What's new
+
+- **`wallet.rebuildringindexes` RPC** — rebuild `ct_output_index` and `keyimages`
+  databases from the active chain without stopping the daemon. Pass `apply=true`
+  to atomically swap the rebuilt databases into place live.
+- **ZK batch verifier soundness** — two adversarial-review findings fixed:
+  - Circuit dimensions (`n`/`N`) now derived from the reconstructed verifier circuit,
+    not from proof-supplied fields — closes the "self-consistency without circuit
+    satisfaction" attack path.
+  - Batch weight hash now covers the full serialized proof payload, preventing
+    correlated two-item cancellation across a batch.
+- Full macOS rebuild: `dinerod`, `dinero-qt`, `dinero-miner`, `dinero-gpu-miner`,
+  `dinero-solo-miner`, `dinero-cli` all rebuilt from the same commit.
+
+### Downloads
+
+| Platform | File | Status |
+|----------|------|--------|
+| **macOS** (Apple Silicon arm64) | `Dinero-v2.0.3-PrivateLane-macOS-arm64.tar.gz` | New |
+| **macOS Qt** (Apple Silicon arm64) | `Dinero-v2.0.3-PrivateLane-macOS-arm64-qt.zip` | New |
+
+### Gatekeeper note
+
+Developer ID signed (`Mirsad Hajdarevic (JXJS6ZA5FJ)`). Not notarized — first
+open on another Mac may show a Gatekeeper prompt. Right-click → Open to proceed.
+
+Commit: `8f09a572c` (daemon) / `b792de850` (qt)
+
+---
+
 ## v2.0.2-PrivateLane - macOS ring-spend + wallet path refresh (2026-04-04)
 
 This tag refreshes the macOS Dinero release artifacts after the mainnet ring-spend
