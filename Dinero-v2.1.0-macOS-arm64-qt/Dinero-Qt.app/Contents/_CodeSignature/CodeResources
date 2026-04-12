@@ -14,23 +14,23 @@
 		</data>
 		<key>Resources/dinero-cli</key>
 		<data>
-		FKgGm7qr30wHd8QMjOzOMzZvRKM=
+		lZqRqHNuvys3DoXktUmhF/OpDiM=
 		</data>
 		<key>Resources/dinero-gpu-miner</key>
 		<data>
-		7gjh/yCPr49pg6Ig+RboB9cEyEA=
+		nUw0JE2/pW6RyPoSoTYVpf8kX88=
 		</data>
 		<key>Resources/dinero-miner</key>
 		<data>
-		KeS2yeFQSjlgVsVPbpeYm54Jyqk=
+		/Bn2SWyZH/iNcqdcv0oYZh5Rr1s=
 		</data>
 		<key>Resources/dinero-solo-miner</key>
 		<data>
-		y9z38AVQuGavLpSiViGZNCaJlr0=
+		/+wRt4fPzlLCio5CjD6KImFvpsw=
 		</data>
 		<key>Resources/dinerod</key>
 		<data>
-		hzhtBR+YdZ5zae8BptqgaGrsqKI=
+		hXLUUBZ9NvDoA24M1+1ckCCgzYs=
 		</data>
 		<key>Resources/qt.conf</key>
 		<data>
@@ -38,7 +38,7 @@
 		</data>
 		<key>Resources/release-identity.json</key>
 		<data>
-		wtsbM6XD4CLSvqIOyTJhMjwe++w=
+		YUm4sEk6qB3etuSeOYw1QRMuMbw=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -524,7 +524,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			2rd6BjFqZNgXqwXrSNTCX9kymPo=
+			zqCoSFL9kapy/tiG0iU1I4a9YMw=
 			</data>
 			<key>requirement</key>
 			<string>identifier "dinero-solo-miner" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = JXJS6ZA5FJ</string>
@@ -754,35 +754,35 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			cYRdL1tn3UckWDoHv93onnjER3pfiCsAYtNIY0p1+nQ=
+			gHMEfwiu3lQl2cuGLacN1UfeiqODRyOv4Kg5PlB1KVY=
 			</data>
 		</dict>
 		<key>Resources/dinero-gpu-miner</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			niESnsTLQ/wPlCfu61Orvzb+DrtUCtBgRF2J5sQnJVo=
+			hAQp4osFWkGnLg+Nu1sqMSaJjsyfCPwFz7yQAX5g67A=
 			</data>
 		</dict>
 		<key>Resources/dinero-miner</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			obgkc57ZYTZ875FdJtUPXXs/Ne2Vt2zcanXYWTHaBR8=
+			WancD6RjcDUo8yR2TJ/3DSBewLLFooaFb2rUryuD2Mw=
 			</data>
 		</dict>
 		<key>Resources/dinero-solo-miner</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			11egt48me+EnkvRz92ncpDa3AoaQqK0Rl/qdLzZTGho=
+			TGiMfUSifiDiNkAJuFaavCHDcYyLY1oChdUU/K+Urcs=
 			</data>
 		</dict>
 		<key>Resources/dinerod</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			zldlBOJWxItoWPvvDk3gOKwZhOA53U5vb4KunvryqYM=
+			iTDEnKJHWBW9kNosgYSVxso1us9R6wUH1sIGXI9yXOo=
 			</data>
 		</dict>
 		<key>Resources/qt.conf</key>
@@ -796,7 +796,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			38uTKgU1IZNcqEVfGxNXdrBeCs+p5tt/0rHeqkX2TbI=
+			rnGk8U99/GFQFxdyniEgIeejXlNYStU9T1gy9B+r0TM=
 			</data>
 		</dict>
 	</dict>

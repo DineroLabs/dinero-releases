@@ -4,7 +4,7 @@
     "repo": "dinero-qt",
     "version": "2.1.0",
     "commit": "35dab83d4c5bf5278b386225a7df3bf522ca907c",
-    "build_time": "2026-04-12T17:01:41+0000"
+    "build_time": "2026-04-12T17:32:50+0000"
   },
   "expected_repo_heads": {
     "dinero": "5f6d5de68c2c7bd374f3e7b1d570eaac1364971d",
