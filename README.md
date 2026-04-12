@@ -5,10 +5,10 @@ Official binary releases for Dinero (DIN) - Real Money for Free People.
 ## v2.1.0 - V5 Genesis Reset + Archival Flatfile Release (2026-04-12)
 
 This release resets Dinero onto the April 11, 2026 v5 genesis and ships the
-first macOS arm64 release built on the new flatfile-authoritative archival
-model. Historical block bodies are now treated like Bitcoin Core-style release
-artifacts: canonical in `blk*.dat` / `rev*.dat`, auditable, and required for
-full replay.
+first macOS arm64 and Linux x86_64 releases built on the new
+flatfile-authoritative archival model. Historical block bodies are now treated
+like Bitcoin Core-style release artifacts: canonical in `blk*.dat` / `rev*.dat`,
+auditable, and required for full replay.
 
 ### What's new
 
@@ -19,6 +19,9 @@ full replay.
   silently masking holes
 - **Qt bundle version normalized to `2.1.0`** — app metadata, release identity,
   and packaging names now agree
+- **Linux Qt AppImage added** — Linux x86_64 now ships as a self-contained
+  `Dinero-Qt` AppImage with the daemon, CLI, CPU miner, GPU miner, and solo
+  miner bundled alongside the GUI entrypoint
 - **Embedded tools refreshed from current heads** — the macOS Qt app now embeds:
   - `dinerod`
   - `dinero-cli`
@@ -34,6 +37,8 @@ full replay.
 |----------|------|--------|
 | **macOS** (Apple Silicon arm64) | `Dinero-v2.1.0-macOS-arm64.tar.gz` | New |
 | **macOS Qt** (Apple Silicon arm64) | `Dinero-v2.1.0-macOS-arm64-qt.zip` | New |
+| **Linux** (x86_64) | `Dinero-v2.1.0-linux-x86_64.tar.gz` | New |
+| **Linux Qt** (x86_64) | `Dinero-v2.1.0-linux-x86_64-qt.AppImage` | New |
 
 ### Gatekeeper note
 
@@ -43,10 +48,11 @@ may still appear on another Mac.
 
 ### Scope note
 
-This repository refresh currently includes new **macOS arm64** artifacts only.
-Existing Linux and Windows artifacts in this repository are unchanged.
+This repository refresh now includes new **macOS arm64** and **Linux x86_64**
+artifacts. Windows artifacts in this repository are unchanged pending a proper
+Windows Qt release toolchain refresh.
 
-Commit: `5f6d5de68` (daemon/CLI/miners) / `35dab83` (qt) / `c15de1f` (solo miner) / `626b5e3` (stratum manifest head)
+Commit: `5f6d5de68` (daemon/CLI/miners) / `8794e3d` (qt) / `c15de1f` (solo miner) / `626b5e3` (stratum manifest head)
 
 ---
 
