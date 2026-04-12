@@ -2,6 +2,54 @@
 
 Official binary releases for Dinero (DIN) - Real Money for Free People.
 
+## v2.1.0 - V5 Genesis Reset + Archival Flatfile Release (2026-04-12)
+
+This release resets Dinero onto the April 11, 2026 v5 genesis and ships the
+first macOS arm64 release built on the new flatfile-authoritative archival
+model. Historical block bodies are now treated like Bitcoin Core-style release
+artifacts: canonical in `blk*.dat` / `rev*.dat`, auditable, and required for
+full replay.
+
+### What's new
+
+- **v5 genesis reset** — fresh fair-launch chain with genesis hash
+  `0000002d6b0abbf955fbf81faa4df1d0349a91c22d92ed9dd31cb4d79390b3d2`
+- **Flatfile-authoritative archival storage** — accepted blocks and undo data
+  now live in flatfiles first; startup refuses missing-body coverage instead of
+  silently masking holes
+- **Qt bundle version normalized to `2.1.0`** — app metadata, release identity,
+  and packaging names now agree
+- **Embedded tools refreshed from current heads** — the macOS Qt app now embeds:
+  - `dinerod`
+  - `dinero-cli`
+  - `dinero-miner`
+  - `dinero-gpu-miner`
+  - `dinero-solo-miner`
+- **Clean bundle packaging** — stale embedded binaries are purged before copy, so
+  new bundles no longer inherit old daemon/miner payloads from prior builds
+
+### Downloads
+
+| Platform | File | Status |
+|----------|------|--------|
+| **macOS** (Apple Silicon arm64) | `Dinero-v2.1.0-macOS-arm64.tar.gz` | New |
+| **macOS Qt** (Apple Silicon arm64) | `Dinero-v2.1.0-macOS-arm64-qt.zip` | New |
+
+### Gatekeeper note
+
+The macOS Qt bundle is Developer ID signed and passes local `codesign --verify`
+checks. It is not notarized in this repository refresh, so first-open warnings
+may still appear on another Mac.
+
+### Scope note
+
+This repository refresh currently includes new **macOS arm64** artifacts only.
+Existing Linux and Windows artifacts in this repository are unchanged.
+
+Commit: `5f6d5de68` (daemon/CLI/miners) / `35dab83` (qt) / `c15de1f` (solo miner) / `626b5e3` (stratum manifest head)
+
+---
+
 ## v2.0.3-PrivateLane - Ring index rebuild RPC + batch verifier hardening (2026-04-05)
 
 macOS rebuild adding the `wallet.rebuildringindexes` RPC and two critical ZK batch

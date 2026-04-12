@@ -1,0 +1,2 @@
+03100cfd1940bbb12984b640c266ac13d1665edd6efcbfde1cd179ec4c3e8b2a  dinero-solo-miner
+dfcb932a053521935ca8455f1b135776b05e0acfa9e6db7fd2b1deaa45f64db2  Dinero-Qt.app/Contents/Resources/release-identity.json
