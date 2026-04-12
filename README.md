@@ -28,6 +28,9 @@ auditable, and required for full replay.
   - `dinero-miner`
   - `dinero-gpu-miner`
   - `dinero-solo-miner`
+- **Linux artifacts hotfixed after chain-identity sync** — the Linux standalone
+  tarball and Qt AppImage now embed the v5 genesis-aware `dinero-solo-miner`,
+  and the Linux Qt `release-identity.json` records the refreshed solo-miner head
 - **Clean bundle packaging** — stale embedded binaries are purged before copy, so
   new bundles no longer inherit old daemon/miner payloads from prior builds
 
@@ -52,7 +55,7 @@ This repository refresh now includes new **macOS arm64** and **Linux x86_64**
 artifacts. Windows artifacts in this repository are unchanged pending a proper
 Windows Qt release toolchain refresh.
 
-Commit: `5f6d5de68` (daemon/CLI/miners) / `8794e3d` (qt) / `c15de1f` (solo miner) / `626b5e3` (stratum manifest head)
+Commit: `5f6d5de68` (daemon/CLI/miners) / `8794e3d` (qt) / `b1a58c6` (solo miner) / `626b5e3` (stratum manifest head)
 
 ---
 
