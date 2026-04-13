@@ -2,6 +2,55 @@
 
 Official binary releases for Dinero (DIN) - Real Money for Free People.
 
+## v2.1.3 - Ring-Covenant Mining Fix + Safety Refresh (2026-04-13)
+
+This release refreshes the macOS arm64 Dinero artifacts after the confidential
+Utreexo leaf hashing mismatch was fixed in consensus and block assembly. That
+bug could cause `ComputeUtreexoRootPure` remove failures and block
+ring-covenant transactions from being mined. The refreshed core also carries
+the recent datadir dual-writer guard and startup consistency repairs for
+KeyImageDB, and the Qt bundle keeps the safer app-scoped daemon shutdown path.
+
+### What's new
+
+- **Ring-covenant mining repaired** — confidential leaves now normalize to the
+  consensus-visible zero amount in the Utreexo path, so pure root validation
+  and mined block assembly agree for confidential outputs
+- **KeyImageDB startup recovery** — the daemon now rebuilds or reconciles
+  KeyImageDB from ChainDB when startup detects inconsistency instead of leaving
+  the private-lane state partially stale
+- **Datadir dual-writer protection** — the daemon now takes an actual datadir
+  guard and PID file before touching chain data, making accidental second
+  writers fail fast instead of silently corrupting the node
+- **Qt shutdown safety retained** — the macOS Qt bundle still scopes daemon
+  shutdown to the local wallet node instead of killing unrelated `dinerod`
+  processes on the machine
+- **macOS artifacts rebuilt from current heads** — standalone binaries and the
+  signed Qt app bundle are refreshed together, still bundling the dedicated
+  Stratum worker and solo miner paths
+
+### Downloads
+
+| Platform | File | Status |
+|----------|------|--------|
+| **macOS** (Apple Silicon arm64) | `Dinero-v2.1.3-macOS-arm64.tar.gz` | New |
+| **macOS Qt** (Apple Silicon arm64) | `Dinero-v2.1.3-macOS-arm64-qt.zip` | New |
+
+### Gatekeeper note
+
+The macOS Qt bundle is Developer ID signed and passes local `codesign --verify`
+checks. It is not notarized in this repository refresh, so first-open warnings
+may still appear on another Mac.
+
+### Scope note
+
+This `v2.1.3` refresh currently ships new **macOS arm64** artifacts. Linux and
+Windows artifacts are unchanged in this release pass.
+
+Commit: `54057cfd4` (daemon/CLI/miners/worker) / `a19c2f4` (qt) / `566e37b` (solo miner) / `560b170` (stratum)
+
+---
+
 ## v2.1.2 - Self-Loop Guard + Fleet Sync Recovery (2026-04-13)
 
 This release refreshes the macOS arm64 Dinero artifacts after the fleet-wide
