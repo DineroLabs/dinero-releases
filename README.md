@@ -2,6 +2,51 @@
 
 Official binary releases for Dinero (DIN) - Real Money for Free People.
 
+## v2.1.4 - Archival Read Crash Fix (2026-04-13)
+
+This release refreshes the macOS arm64 Dinero artifacts after the daemon
+startup crash on missing archival flatfiles was fixed in block storage. Under
+the wrong recovery shape, `dinerod` could abort before RPC came up when the
+block download scheduler touched a missing archival body path. The refreshed
+core now fails that read safely as `NotFound`, letting the daemon stay up and
+recover cleanly instead of crashing the app backend at launch.
+
+### What's new
+
+- **Missing archival files now fail safely** — block and undo flatfile reads
+  no longer throw through the scheduler path when a referenced archival file is
+  absent
+- **Qt app startup is more resilient** — the embedded daemon can now stay up on
+  real datadirs that previously crashed before RPC initialization
+- **Prior safety work is retained** — this refresh keeps the ring-covenant
+  mining fix, datadir dual-writer guard, real `--rpc-readonly` protection, and
+  safer app-scoped daemon shutdown path
+- **macOS artifacts rebuilt from current heads** — standalone binaries and the
+  signed Qt app bundle are refreshed together, still bundling the dedicated
+  Stratum worker and solo miner paths
+
+### Downloads
+
+| Platform | File | Status |
+|----------|------|--------|
+| **macOS** (Apple Silicon arm64) | `Dinero-v2.1.4-macOS-arm64.tar.gz` | New |
+| **macOS Qt** (Apple Silicon arm64) | `Dinero-v2.1.4-macOS-arm64-qt.zip` | New |
+
+### Gatekeeper note
+
+The macOS Qt bundle is Developer ID signed and passes local `codesign --verify`
+checks. It is not notarized in this repository refresh, so first-open warnings
+may still appear on another Mac.
+
+### Scope note
+
+This `v2.1.4` refresh currently ships new **macOS arm64** artifacts. Linux and
+Windows artifacts are unchanged in this release pass.
+
+Commit: `4574de3ae` (daemon/CLI/miners/worker) / `4b2c27a` (qt) / `566e37b` (solo miner) / `560b170` (stratum)
+
+---
+
 ## v2.1.3 - Ring-Covenant Mining Fix + Safety Refresh (2026-04-13)
 
 This release refreshes the macOS arm64 Dinero artifacts after the confidential
