@@ -2,6 +2,51 @@
 
 Official binary releases for Dinero (DIN) - Real Money for Free People.
 
+## v2.1.2 - Self-Loop Guard + Fleet Sync Recovery (2026-04-13)
+
+This release refreshes the macOS arm64 Dinero artifacts after the fleet-wide
+self-loop sync failure was traced, fixed, and rebuilt into the core daemon.
+Nodes now refuse to dial their own advertised interfaces both at peer-source
+load time and at outbound connect time, and the refreshed Qt bundle embeds the
+same repaired core binaries.
+
+### What's new
+
+- **Outbound self-loop protection** — self IPs are filtered from hardcoded
+  seeds, anchors, DNS results, persisted peers, addrman gossip, and direct
+  outbound dials
+- **Sandbox-safe interface detection** — local interface discovery now falls
+  back cleanly when `getifaddrs()` is blocked under the systemd address-family
+  sandbox used on fleet nodes
+- **Fleet recovery hardening** — the repaired core also carries the recent RPC
+  concurrency/body-size fixes that helped private-lane bootstrap and local
+  mining stay stable under heavier traffic
+- **macOS artifacts rebuilt from current heads** — standalone binaries and the
+  signed Qt app bundle are refreshed together, still bundling the dedicated
+  Stratum worker and solo miner paths
+
+### Downloads
+
+| Platform | File | Status |
+|----------|------|--------|
+| **macOS** (Apple Silicon arm64) | `Dinero-v2.1.2-macOS-arm64.tar.gz` | New |
+| **macOS Qt** (Apple Silicon arm64) | `Dinero-v2.1.2-macOS-arm64-qt.zip` | New |
+
+### Gatekeeper note
+
+The macOS Qt bundle is Developer ID signed and passes local `codesign --verify`
+checks. It is not notarized in this repository refresh, so first-open warnings
+may still appear on another Mac.
+
+### Scope note
+
+This `v2.1.2` refresh currently ships new **macOS arm64** artifacts. Linux and
+Windows artifacts are unchanged in this release pass.
+
+Commit: `2b5657560` (daemon/CLI/miners/worker) / `88c65db` (qt) / `998acf0` (solo miner) / `560b170` (stratum)
+
+---
+
 ## v2.1.1 - Pool Worker + Stratum Soak Hardening (2026-04-12)
 
 This release refreshes the macOS arm64 Dinero artifacts after the dedicated
