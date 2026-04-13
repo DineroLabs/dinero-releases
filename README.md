@@ -2,6 +2,51 @@
 
 Official binary releases for Dinero (DIN) - Real Money for Free People.
 
+## v2.1.1 - Pool Worker + Stratum Soak Hardening (2026-04-12)
+
+This release refreshes the macOS arm64 Dinero artifacts after the dedicated
+Stratum worker landed, the pool/restart soak path was hardened, and the Qt
+bundle was updated to package the new worker cleanly alongside the existing
+daemon, CLI, CPU miner, GPU miner, and solo miner.
+
+### What's new
+
+- **Dedicated `dinero-stratum-worker` binary** — pool mining now has a real
+  bundled Stratum client worker instead of relying on unfinished Qt scaffolding
+- **4-worker pool soak coverage** — vardiff on/off, Stratum restart, daemon
+  restart, and explicit mixed-address `--payout` flows were exercised and fixed
+- **Restart recovery hardening** — Stratum now reloads RPC cookies after daemon
+  restarts, refreshes stale templates faster, and serializes socket writes more
+  safely under reconnect pressure
+- **Worker stale-job fixes** — the Stratum worker drops pause jobs and clears
+  stale block-candidate work after accepted submissions
+- **Qt pool mode now targets the real worker** — `Dinero-Qt` pool mining uses
+  the new bundled `dinero-stratum-worker`
+- **Qt packaging cleanup** — unused `QtPdf` bundle dependencies are stripped so
+  the app bundle packages cleanly without the stale PDF framework drag-in
+
+### Downloads
+
+| Platform | File | Status |
+|----------|------|--------|
+| **macOS** (Apple Silicon arm64) | `Dinero-v2.1.1-macOS-arm64.tar.gz` | New |
+| **macOS Qt** (Apple Silicon arm64) | `Dinero-v2.1.1-macOS-arm64-qt.zip` | New |
+
+### Gatekeeper note
+
+The macOS Qt bundle is Developer ID signed and passes local `codesign --verify`
+checks. It is not notarized in this repository refresh, so first-open warnings
+may still appear on another Mac.
+
+### Scope note
+
+This `v2.1.1` refresh currently ships new **macOS arm64** artifacts. Linux and
+Windows artifacts are unchanged in this release pass.
+
+Commit: `2255d7822` (daemon/CLI/miners/worker) / `123b48a` (qt) / `beadf9c` (solo miner) / `560b170` (stratum)
+
+---
+
 ## v2.1.0 - V5 Genesis Reset + Archival Flatfile Release (2026-04-12)
 
 This release resets Dinero onto the April 11, 2026 v5 genesis and ships the
