@@ -2,6 +2,54 @@
 
 Official binary releases for Dinero (DIN) - Real Money for Free People.
 
+## v2.1.5 - Restart Recovery + Consensus Persistence Hardening (2026-04-14)
+
+This release refreshes the macOS arm64 Dinero artifacts after the post-fork
+consensus hardening pass and the Mac restart/bootstrap sync issue were fixed in
+core. The refreshed daemon now restores persisted branch metadata for stored
+better blocks after restart, so nodes no longer get stranded below tip because
+restart import forgot their `BLOCK_VALID_CHAIN` candidacy. This release also
+ships the CtOutputIndexDB startup rebuild, durable `invalidateblock`
+persistence, preserved failed-validation flags on relay re-accept, and a
+leaner Qt bundle that permanently strips unused Qt PDF/SVG/VirtualKeyboard
+framework baggage from the final app.
+
+### What's new
+
+- **Restart bootstrap repaired** — stored non-active branch blocks above tip
+  now rehydrate their persisted metadata on startup, fixing the Mac-style
+  stuck-behind-tip recovery path
+- **CT output index self-heals on startup** — CtOutputIndexDB is rebuilt on
+  startup so cross-node CT pool drift does not survive restarts
+- **Invalidations now survive restart** — `invalidateblock` state is persisted
+  durably instead of being forgotten after daemon restart
+- **Failed-validation flags are preserved** — relay re-accept no longer clears
+  invalidation state and accidentally resurrects known-bad blocks
+- **Qt app bundle trimmed** — the final macOS app no longer ships unused Qt
+  PDF, SVG, or Virtual Keyboard baggage
+
+### Downloads
+
+| Platform | File | Status |
+|----------|------|--------|
+| **macOS** (Apple Silicon arm64) | `Dinero-v2.1.5-macOS-arm64.tar.gz` | New |
+| **macOS Qt** (Apple Silicon arm64) | `Dinero-v2.1.5-macOS-arm64-qt.zip` | New |
+
+### Gatekeeper note
+
+The macOS Qt bundle is Developer ID signed and passes local `codesign --verify`
+checks. It is not notarized in this repository refresh, so first-open warnings
+may still appear on another Mac.
+
+### Scope note
+
+This `v2.1.5` refresh currently ships new **macOS arm64** artifacts. Linux and
+Windows artifacts are unchanged in this release pass.
+
+Commit: `d0543ba59` (daemon/CLI/miners/worker) / `b1028f0` (qt) / `566e37b` (solo miner) / `560b170` (stratum)
+
+---
+
 ## v2.1.4 - Archival Read Crash Fix (2026-04-13)
 
 This release refreshes the macOS arm64 Dinero artifacts after the daemon
