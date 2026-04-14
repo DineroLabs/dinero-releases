@@ -2,6 +2,50 @@
 
 Official binary releases for Dinero (DIN) - Real Money for Free People.
 
+## v2.1.6 - Cross-Architecture ZK Determinism Fix (2026-04-14)
+
+This macOS arm64 release refresh rebuilds Dinero after the Spartan/Hyrax
+verifier drift between x86_64 and Apple Silicon was fixed in core. The
+refreshed daemon now uses deterministic integer math and deterministic function
+argument evaluation in the affected ZK path, eliminating the cross-architecture
+ring-covenant verification mismatch that let server nodes accept a covenant
+transaction while the Mac rejected the same proof.
+
+### What's new
+
+- **Cross-architecture Spartan verification fixed** — Hyrax no longer relies on
+  platform-sensitive floating-point sqrt behavior in the affected path
+- **Deterministic ZK evaluation order enforced** — the `ec_add_complete`
+  argument-evaluation root cause is now fixed so ARM64 and x86_64 derive the
+  same proof result
+- **Recent consensus hardening retained** — this refresh still carries the CT
+  output index rebuild, durable `invalidateblock` persistence, preserved failed
+  validation flags on relay re-accept, and restart branch-metadata recovery
+- **Qt bundle remains trimmed** — the final macOS app still excludes unused Qt
+  PDF, SVG, and Virtual Keyboard baggage
+
+### Downloads
+
+| Platform | File | Status |
+|----------|------|--------|
+| **macOS** (Apple Silicon arm64) | `Dinero-v2.1.6-macOS-arm64.tar.gz` | New |
+| **macOS Qt** (Apple Silicon arm64) | `Dinero-v2.1.6-macOS-arm64-qt.zip` | New |
+
+### Gatekeeper note
+
+The macOS Qt bundle is Developer ID signed and passes local `codesign --verify`
+checks. It is not notarized in this repository refresh, so first-open warnings
+may still appear on another Mac.
+
+### Scope note
+
+This `v2.1.6` refresh currently ships new **macOS arm64** artifacts. Linux and
+Windows artifacts are unchanged in this release pass.
+
+Commit: `ea10c5044` (daemon/CLI/miners/worker) / `edb227a` (qt) / `566e37b` (solo miner) / `560b170` (stratum)
+
+---
+
 ## v2.1.5 - Restart Recovery + Consensus Persistence Hardening (2026-04-14)
 
 This release refreshes the macOS arm64 Dinero artifacts after the post-fork

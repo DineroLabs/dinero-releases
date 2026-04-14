@@ -1,0 +1,14 @@
+{
+  "schema": "din.release.bundle.v1",
+  "qt": {
+    "repo": "dinero-qt",
+    "version": "2.1.6",
+    "commit": "edb227a755439b7a9bc6716f87bd457c88d63afd",
+    "build_time": "2026-04-14T16:42:32+0000"
+  },
+  "expected_repo_heads": {
+    "dinero": "ea10c5044b227e2e80aaaee28db1c0554baa25fa",
+    "dinero_solo_miner": "566e37b838cd1fcad161b0b68ba32bc8054e01ac",
+    "stratum": "560b170330923510697d368bde0cf33309772fad"
+  }
+}

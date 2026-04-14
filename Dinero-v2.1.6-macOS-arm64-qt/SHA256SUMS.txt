@@ -1,0 +1,2 @@
+9ed46bfefd75cc91803fe53fc1cc38c507e17474092e1e44b4b1bf1d774afe5d  dinero-solo-miner
+d752a40b3de6392560c8f4e0839391bb89c63996c35cad319a0758a8f928e4e7  dinero-stratum-worker
