@@ -2,6 +2,50 @@
 
 Official binary releases for Dinero (DIN) - Real Money for Free People.
 
+## v2.1.7 - Recovery + Version Alignment Refresh (2026-04-14)
+
+This macOS arm64 refresh rebuilds Dinero after the daemon-side missing-undo
+auto-recovery hardening and the build metadata refresh fix landed in core. The
+Qt bundle is rebuilt as `2.1.7`, and the packaged app now reports the current
+core and Qt commits correctly in its embedded release identity manifest.
+
+### What's new
+
+- **Automatic recovery from missing-undo wedges** — the daemon now marks the
+  exact LA/Mac-style chainstate wedge and recovers via chainstate rebuild on the
+  next start instead of silently staying stuck
+- **Rebuild metadata is trustworthy again** — normal rebuilds now refresh the
+  embedded Git commit metadata, so `dinerod --version` and shipped manifests no
+  longer lag behind the actual source revision
+- **Mac bundle refreshed to current core** — the standalone binaries and the Qt
+  app now embed `dinerod 0a19430b5`
+- **Previous 2.1.6 ZK determinism fix retained** — the cross-architecture
+  Spartan/Hyrax verification fixes remain in this refresh
+- **Qt bundle stays trimmed** — the final macOS app still excludes unused Qt
+  PDF, SVG, and Virtual Keyboard baggage
+
+### Downloads
+
+| Platform | File | Status |
+|----------|------|--------|
+| **macOS** (Apple Silicon arm64) | `Dinero-v2.1.7-macOS-arm64.tar.gz` | New |
+| **macOS Qt** (Apple Silicon arm64) | `Dinero-v2.1.7-macOS-arm64-qt.zip` | New |
+
+### Gatekeeper note
+
+The macOS Qt bundle is Developer ID signed and passes local `codesign --verify`
+checks. It is not notarized in this repository refresh, so first-open warnings
+may still appear on another Mac.
+
+### Scope note
+
+This `v2.1.7` refresh currently ships new **macOS arm64** artifacts. Linux and
+Windows artifacts are unchanged in this release pass.
+
+Commit: `0a19430b5` (daemon/CLI/miners/worker) / `0ca6bc9` (qt) / `566e37b` (solo miner) / `560b170` (stratum)
+
+---
+
 ## v2.1.6 - Cross-Architecture ZK Determinism Fix (2026-04-14)
 
 This macOS arm64 release refresh rebuilds Dinero after the Spartan/Hyrax
