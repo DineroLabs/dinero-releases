@@ -2,6 +2,53 @@
 
 Official binary releases for Dinero (DIN) - Real Money for Free People.
 
+## v2.1.8 - Freeze Fork Activation Safeguards (2026-04-16)
+
+This macOS arm64 refresh rebuilds Dinero after the v5 freeze fork activation
+work landed in core and Qt. The daemon now enforces the activation gates at
+block `4000`, filters frozen pre-activation private transactions out of
+post-activation block templates so the chain keeps advancing, and the Qt app
+surfaces a countdown banner before activation and blocks private send/shield
+actions once the freeze is live.
+
+### What's new
+
+- **Freeze fork is armed for mainnet** — the daemon now advertises activation
+  height `4000`, the live gate state, and the remaining blocks through
+  `privacy.getstatus`
+- **Chain-halt risk removed at activation** — stale CT / ring transactions
+  admitted before block `4000` are excluded from post-activation block
+  templates instead of poisoning every new candidate block
+- **Qt warns before freeze and blocks private actions after** — the Overview
+  tab shows a countdown before activation and a red frozen-state banner after,
+  and private wallet actions are rejected cleanly in pre-flight
+- **Mac bundle refreshed to current core** — the standalone binaries and Qt app
+  now embed `dinerod 130eefb0c`
+- **Existing bundled miner/worker paths retained** — GPU miner, CPU miner,
+  Stratum worker, and the clean committed solo miner remain packaged for macOS
+
+### Downloads
+
+| Platform | File | Status |
+|----------|------|--------|
+| **macOS** (Apple Silicon arm64) | `Dinero-v2.1.8-macOS-arm64.tar.gz` | New |
+| **macOS Qt** (Apple Silicon arm64) | `Dinero-v2.1.8-macOS-arm64-qt.zip` | New |
+
+### Gatekeeper note
+
+The macOS Qt bundle is Developer ID signed and passes local `codesign --verify`
+checks. It is not notarized in this repository refresh, so first-open warnings
+may still appear on another Mac.
+
+### Scope note
+
+This `v2.1.8` refresh currently ships new **macOS arm64** artifacts. Linux and
+Windows artifacts are unchanged in this release pass.
+
+Commit: `130eefb0c` (daemon/CLI/miners/worker) / `ff5e15c` (qt) / `566e37b` (solo miner) / `560b170` (stratum)
+
+---
+
 ## v2.1.7 - Recovery + Version Alignment Refresh (2026-04-14)
 
 This macOS arm64 refresh rebuilds Dinero after the daemon-side missing-undo
