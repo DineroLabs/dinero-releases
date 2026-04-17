@@ -42,7 +42,7 @@ may still appear on another Mac.
 This `v2.1.9` refresh currently ships new **macOS arm64** artifacts. Linux and
 Windows artifacts are unchanged in this release pass.
 
-Commit: `d77a719` (daemon/CLI/miners/worker) / `6987651` (qt) / `fa755af` (solo miner)
+Commit: `d77a719` (daemon/CLI/miners/worker) / `ce193c7` (qt) / `fa755af` (solo miner)
 
 ---
 

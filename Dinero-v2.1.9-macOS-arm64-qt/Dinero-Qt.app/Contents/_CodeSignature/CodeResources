@@ -26,7 +26,7 @@
 		</data>
 		<key>Resources/dinero-solo-miner</key>
 		<data>
-		mBhJES2H5TlBYOFuQBPIiCIfH1I=
+		c7E6mgnpCeCRucNZ50uUN+0LM5w=
 		</data>
 		<key>Resources/dinero-stratum-worker</key>
 		<data>
@@ -34,7 +34,7 @@
 		</data>
 		<key>Resources/dinerod</key>
 		<data>
-		NYeOM4uamovJ64d8Vh2HJYbSVQk=
+		LESdIKZjNiWStULQIxkCPtLRDS8=
 		</data>
 		<key>Resources/qt.conf</key>
 		<data>
@@ -42,7 +42,7 @@
 		</data>
 		<key>Resources/release-identity.json</key>
 		<data>
-		nFNkJfZsTfpOz1jeeSFs82mgdcs=
+		aT0Q3moZH6niWepDAv1ZIjTaZRM=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -492,10 +492,10 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			lIkDvV+ElolnT5amZMH5YLdgTBQ=
+			yUA0ltiXPnii9a7TP2aeAi3OIEA=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"948903bd5f849689674f96a664c1f960b7604c14"</string>
+			<string>cdhash H"c9403496d8973e78a2f5aed33f669e022dce2040"</string>
 		</dict>
 		<key>MacOS/dinero-stratum-worker</key>
 		<dict>
@@ -716,7 +716,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Wc0oQSC+r/YYGla0ObrmftIVc/kD3881/cHIguTudjg=
+			Ov4RsGJnhp6ZIYOIEBoIDl2euQBnhw5cR4sggEnKOYA=
 			</data>
 		</dict>
 		<key>Resources/dinero-stratum-worker</key>
@@ -730,7 +730,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ok4qqgawMy1sQ9Xzi7CynanbHoWvLIvlu1TRqvn71JY=
+			Rz+d31d9REunU+Zy8nHXAXr1n53I8tfxl+rV1s5f/oQ=
 			</data>
 		</dict>
 		<key>Resources/qt.conf</key>
@@ -744,7 +744,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Tog6Ce5LWotsPbbRxuBmmE66hV20YMQfa+Hfm9BZNQA=
+			Rqx04lgIMahgOF30eGZOQ2mYUcZIhnEIu5Wv76LxK3Q=
 			</data>
 		</dict>
 	</dict>
