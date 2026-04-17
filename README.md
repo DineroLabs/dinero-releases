@@ -2,6 +2,50 @@
 
 Official binary releases for Dinero (DIN) - Real Money for Free People.
 
+## v2.1.9 - macOS Arm64 Rebuild Refresh (2026-04-17)
+
+This macOS arm64 refresh rebuilds Dinero from the latest pushed core and Qt
+heads after a heavy development pass. The live `v5` behavior from `v2.1.8`
+stays intact, but the packaged binaries, embedded release identities, and the
+Qt bundle itself are refreshed to current source revisions and republished as
+`2.1.9`.
+
+### What's new
+
+- **Mac bundle refreshed to current core** — the standalone binaries and Qt app
+  now embed `dinerod d77a719e0`
+- **Qt app rebuilt as `2.1.9`** — the packaged app reports the current Qt repo
+  commit and refreshed build metadata
+- **Freeze fork protections from `v2.1.8` remain in place** — the activation
+  gate logic, template filtering, and freeze-aware Qt behavior are retained in
+  this rebuild
+- **Developer ID signing refreshed for the Qt bundle** — the local macOS app
+  bundle passes `codesign --verify --deep --strict`
+- **Bundled miner and worker paths retained** — GPU miner, CPU miner, Stratum
+  worker, and the clean committed solo miner remain packaged for macOS
+
+### Downloads
+
+| Platform | File | Status |
+|----------|------|--------|
+| **macOS** (Apple Silicon arm64) | `Dinero-v2.1.9-macOS-arm64.tar.gz` | New |
+| **macOS Qt** (Apple Silicon arm64) | `Dinero-v2.1.9-macOS-arm64-qt.zip` | New |
+
+### Gatekeeper note
+
+The macOS Qt bundle is Developer ID signed and passes local `codesign --verify`
+checks. It is not notarized in this repository refresh, so first-open warnings
+may still appear on another Mac.
+
+### Scope note
+
+This `v2.1.9` refresh currently ships new **macOS arm64** artifacts. Linux and
+Windows artifacts are unchanged in this release pass.
+
+Commit: `d77a719` (daemon/CLI/miners/worker) / `6987651` (qt) / `fa755af` (solo miner)
+
+---
+
 ## v2.1.8 - Freeze Fork Activation Safeguards (2026-04-16)
 
 This macOS arm64 refresh rebuilds Dinero after the v5 freeze fork activation
