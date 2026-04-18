@@ -2,6 +2,56 @@
 
 Official binary releases for Dinero (DIN) - Real Money for Free People.
 
+## v2.1.13 - Unified Receive Filters + P2MR Coinbase Update (2026-04-18)
+
+This macOS arm64 refresh rebuilds Dinero after the Qt wallet Receive tab was
+collapsed into a single filtered address table and the daemon/miner side picked
+up the latest v7 mining update. The packaged core binaries now match current
+`p2p-fix`, the Qt app advances to `2.1.13`, and the macOS bundle continues to
+ship without the stray Qt PDF / SVG / virtual-keyboard baggage.
+
+### What's new
+
+- **Core binaries refreshed to `5aea67246`** — the packaged `dinerod`,
+  `dinero-cli`, CPU miner, GPU miner, and Stratum worker now include the latest
+  v7 mining-side update, including accepting P2MR as a coinbase destination
+- **Qt app rebuilt as `2.1.13`** — the packaged app reports Qt commit
+  `d82d43f` and includes the new unified Receive-tab filter model:
+  `All / Taproot / Quantum-Safe (P2MR)`
+- **Receive tab simplified** — the Qt wallet now uses a single address table,
+  removes the redundant P2MR preview/copy row, and correctly surfaces legacy
+  P2MR rows by both explicit `type` and address prefix
+- **Balance panel cleaned up** — the old confidential/private rows are gone, so
+  the wallet now presents a simpler `Transparent / Pending / Mining /
+  Quantum-safe` breakdown
+- **Bundled solo miner retained** — the packaged standalone solo miner remains
+  `2808786`, aligned with the current v7 genesis checks
+- **Qt deploy sanitization retained** — the shipped macOS app still passes
+  `codesign --verify --deep --strict` and contains no `QtPdf.framework`,
+  `libqpdf.dylib`, `QtSvg.framework`, or virtual-keyboard plugin baggage
+
+### Downloads
+
+| Platform | File | Status |
+|----------|------|--------|
+| **macOS** (Apple Silicon arm64) | `Dinero-v2.1.13-macOS-arm64.tar.gz` | New |
+| **macOS Qt** (Apple Silicon arm64) | `Dinero-v2.1.13-macOS-arm64-qt.zip` | New |
+
+### Gatekeeper note
+
+The macOS Qt bundle is ad-hoc signed in this local rebuild and passes local
+`codesign --verify` checks. It is not notarized in this repository refresh, so
+first-open warnings may still appear on another Mac.
+
+### Scope note
+
+This `v2.1.13` refresh currently ships new **macOS arm64** artifacts. Linux and
+Windows artifacts are unchanged in this release pass.
+
+Commit: `5aea67246` (daemon/CLI/miners/worker) / `d82d43f` (qt) / `2808786` (solo miner) / `64e1a7c` (stratum)
+
+---
+
 ## v2.1.12 - P2MR Receive Fix + Qt Deploy Sanitize (2026-04-18)
 
 This macOS arm64 refresh rebuilds Dinero after the P2MR unified-address listing
