@@ -2,6 +2,55 @@
 
 Official binary releases for Dinero (DIN) - Real Money for Free People.
 
+## v2.1.14 - Mining Console Polish (2026-04-18)
+
+This macOS arm64 refresh rebuilds Dinero after the mining console in the Qt
+wallet was visually softened to better match the rest of the interface. The
+animated matrix output now uses a cool light-grey palette instead of dominant
+green, and the temporary block-found card no longer draws the decorative
+`o-o-o` rails around its content.
+
+### What's new
+
+- **Qt app rebuilt as `2.1.14`** — the packaged app now includes Qt commit
+  `66a8eca`, which polishes the Mining tab output styling without changing the
+  underlying mining workflow
+- **Mining matrix palette softened** — the scrolling console field now uses
+  neutral dark greys and silver-grey glyphs/highlights, so the output sits more
+  naturally inside the existing wallet chrome
+- **Block-found cards cleaned up** — the temporary decorative `o-o-o` border
+  lines and side rails are removed, leaving just the useful status text
+- **Core binaries retained at `5aea67246`** — the packaged `dinerod`,
+  `dinero-cli`, CPU miner, GPU miner, and Stratum worker still match the latest
+  current v7 mining build
+- **Bundled solo miner retained** — the packaged standalone solo miner remains
+  `2808786`, aligned with the current v7 genesis checks
+- **macOS bundle remains sanitized** — the shipped Qt app still passes local
+  `codesign --verify --deep --strict` and remains free of the stray Qt PDF /
+  SVG / virtual-keyboard baggage
+
+### Downloads
+
+| Platform | File | Status |
+|----------|------|--------|
+| **macOS** (Apple Silicon arm64) | `Dinero-v2.1.14-macOS-arm64.tar.gz` | New |
+| **macOS Qt** (Apple Silicon arm64) | `Dinero-v2.1.14-macOS-arm64-qt.zip` | New |
+
+### Gatekeeper note
+
+The macOS Qt bundle is ad-hoc signed in this local rebuild and passes local
+`codesign --verify` checks. It is not notarized in this repository refresh, so
+first-open warnings may still appear on another Mac.
+
+### Scope note
+
+This `v2.1.14` refresh currently ships new **macOS arm64** artifacts. Linux and
+Windows artifacts are unchanged in this release pass.
+
+Commit: `5aea67246` (daemon/CLI/miners/worker) / `66a8eca` (qt) / `2808786` (solo miner) / `64e1a7c` (stratum)
+
+---
+
 ## v2.1.13 - Unified Receive Filters + P2MR Coinbase Update (2026-04-18)
 
 This macOS arm64 refresh rebuilds Dinero after the Qt wallet Receive tab was
