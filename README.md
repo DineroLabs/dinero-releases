@@ -2,6 +2,52 @@
 
 Official binary releases for Dinero (DIN) - Real Money for Free People.
 
+## v2.1.11 - v7 Genesis Refresh + Qt Bundle Cleanup (2026-04-18)
+
+This macOS arm64 refresh rebuilds Dinero after the v7 genesis pin, miner
+identity sync, and Qt-side archive cleanup landed across the active branches.
+The packaged daemon and miners now align with the new v7 genesis hash, the Qt
+bundle advances to `2.1.11`, and the shipped macOS app no longer carries the
+unused Qt PDF / SVG / Virtual Keyboard baggage in the final bundle.
+
+### What's new
+
+- **Core binaries refreshed to `e5995949a`** — the packaged `dinerod`,
+  `dinero-cli`, CPU miner, GPU miner, and Stratum worker now match the current
+  v7 genesis-pinned core build
+- **Qt app rebuilt as `2.1.11`** — the packaged app reports Qt commit
+  `cee3b96` with refreshed embedded release metadata
+- **v7 cleanup now ships end-to-end** — archived ring / CT UI references and
+  dead privacy RPC client methods are removed from the bundle, keeping the app
+  aligned with the post-excision codebase
+- **Qt PDF baggage is absent from the final app** — the shipped macOS bundle
+  contains no `QtPdf.framework` or `libqpdf.dylib`, while still passing
+  `codesign --verify --deep --strict`
+- **Bundled solo miner refreshed** — the packaged standalone solo miner is now
+  `2808786`, aligned with the v7 genesis checks
+
+### Downloads
+
+| Platform | File | Status |
+|----------|------|--------|
+| **macOS** (Apple Silicon arm64) | `Dinero-v2.1.11-macOS-arm64.tar.gz` | New |
+| **macOS Qt** (Apple Silicon arm64) | `Dinero-v2.1.11-macOS-arm64-qt.zip` | New |
+
+### Gatekeeper note
+
+The macOS Qt bundle is Developer ID signed and passes local `codesign --verify`
+checks. It is not notarized in this repository refresh, so first-open warnings
+may still appear on another Mac.
+
+### Scope note
+
+This `v2.1.11` refresh currently ships new **macOS arm64** artifacts. Linux and
+Windows artifacts are unchanged in this release pass.
+
+Commit: `e5995949a` (daemon/CLI/miners/worker) / `cee3b96` (qt) / `2808786` (solo miner) / `64e1a7c` (stratum)
+
+---
+
 ## v2.1.10 - macOS Qt Refresh + Signing Hardening (2026-04-17)
 
 This macOS arm64 refresh republishes Dinero with the latest pushed Qt fixes and
