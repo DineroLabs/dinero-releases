@@ -1,3 +1,0 @@
-2cc8dcb905f402fd0676ba681e94691b971aa6b5f6d40a67b25a2d3a646c06af  dinero-solo-miner
-Qt bundle: bad047318a45240b9fb9b302a8fd7038a907050b34abe494946b189dabebc3e2  Dinero-Qt.app/Contents/MacOS/dinero-qt
-Embedded daemon: 538281ef8a3f095e3cd4e09ac0f84cd87ab5501a95f9d2458e95ef04e31e1fb3  Dinero-Qt.app/Contents/Resources/dinerod

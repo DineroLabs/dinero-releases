@@ -1,2 +1,0 @@
-2cc8dcb905f402fd0676ba681e94691b971aa6b5f6d40a67b25a2d3a646c06af  dinero-solo-miner
-413c6d5e840637cc19711fc2e12fb79dc20cf15d6241f038fafdd96e7ef671e1  Dinero-Qt.app/Contents/Resources/dinerod
