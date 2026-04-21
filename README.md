@@ -2,6 +2,60 @@
 
 Official binary releases for Dinero (DIN) - Real Money for Free People.
 
+## v2.1.16 - Mining Longpoll + Undo Safety Refresh (2026-04-20)
+
+This macOS arm64 refresh rebuilds Dinero after the latest mining-side daemon and
+solo-miner improvements landed on `p2p-fix`. The packaged core binaries now
+include server-side `getblocktemplate` long-polling, stale-job interruption on
+the mining side, safer handling around missing undo rewrites, and the new
+first-seen tie policy for same-work branches. The Qt wallet is rebuilt as
+`2.1.16` so the bundle metadata, embedded daemon, and release identity all
+point at the current branch tip.
+
+### What's new
+
+- **Core binaries refreshed to `de4e8140a`** — the packaged `dinerod`,
+  `dinero-cli`, CPU miner, GPU miner, and Stratum worker now include the latest
+  long-polling mining path, stale-work interruption, shutdown wakeups for
+  waiting miners, and the same-work tie handling refresh
+- **Qt app rebuilt as `2.1.16`** — the packaged app reports Qt commit
+  `d00ef4f` and embeds the refreshed core binaries from the current `p2p-fix`
+  head
+- **Bundled solo miner refreshed to `71ee61e`** — the packaged standalone solo
+  miner now follows the new client-side longpoll loop and matches the refreshed
+  daemon behavior
+- **Quick multi-miner smoke completed** — the refreshed Mac and Dell mining
+  paths ran concurrently without re-entering the earlier `missing undo data`
+  safe-mode wedge during the observation window
+- **Automatic recovery remains conservative** — this release still keeps the
+  automatic chainstate recovery fuse disarmed so the policy decision stays
+  separate from the correctness rollout
+- **macOS bundle remains sanitized** — the shipped Qt app still passes local
+  `codesign --verify --deep --strict` and remains free of the stray Qt PDF /
+  SVG / virtual-keyboard baggage
+
+### Downloads
+
+| Platform | File | Status |
+|----------|------|--------|
+| **macOS** (Apple Silicon arm64) | `Dinero-v2.1.16-macOS-arm64.tar.gz` | New |
+| **macOS Qt** (Apple Silicon arm64) | `Dinero-v2.1.16-macOS-arm64-qt.zip` | New |
+
+### Gatekeeper note
+
+The macOS Qt bundle is Developer ID signed and passes local `codesign --verify`
+checks. It is not notarized in this repository refresh, so first-open warnings
+may still appear on another Mac.
+
+### Scope note
+
+This `v2.1.16` refresh currently ships new **macOS arm64** artifacts. Linux and
+Windows artifacts are unchanged in this release pass.
+
+Commit: `de4e8140a` (daemon/CLI/miners/worker) / `d00ef4f` (qt) / `71ee61e` (solo miner) / `64e1a7c` (stratum)
+
+---
+
 ## v2.1.15 - Canonical Recovery + Shielded Restart Hardening (2026-04-19)
 
 This macOS arm64 refresh rebuilds Dinero after the latest canonical-state and
