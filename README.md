@@ -2,6 +2,54 @@
 
 Official binary releases for Dinero (DIN) - Real Money for Free People.
 
+## v2.1.18 - Local Stratum Launcher + P2MR FFI Refresh (2026-04-22)
+
+This macOS arm64 refresh rebuilds Dinero after the Qt wallet gained a
+one-click local Stratum server launcher and the app-linked NodeCore layer
+picked up local P2MR wallet primitives for DineroDPI. The packaged core
+binaries are refreshed to current `p2p-fix`, the Qt wallet reports `2.1.18`,
+and the release now ships the standalone `dinero-stratum` server alongside
+the existing Stratum worker.
+
+### What's new
+
+- **Qt app rebuilt as `2.1.18`** - reports Qt commit `37fb19c` and embeds
+  refreshed core binaries plus the local Stratum server
+- **Local Stratum launcher added** - Pool mining mode can start/stop a
+  localhost `dinero-stratum` server, bind it to `127.0.0.1:3333`, and set the
+  pool endpoint automatically
+- **Stratum server bind hardening** - `dinero-stratum` commit `2fcfe40` adds
+  `--stratumhost` / `--bind` so the Qt-launched server can stay local-only
+- **Core binaries refreshed to `0ecb8577a`** - packaged `dinerod`, CLI, CPU
+  miner, GPU miner, and Stratum worker report current `p2p-fix`; this is a
+  build-identity refresh, not a daemon consensus/RPC behavior change
+- **Standalone `dinero-stratum` now included** - both macOS core and Qt
+  packages include the Stratum server binary
+- **Release gates completed** - Qt tests passed, checksums verified, Developer
+  ID code-sign verification passed; app is not notarized
+
+### Downloads
+
+| Platform | File | Status |
+|----------|------|--------|
+| **macOS** (Apple Silicon arm64) | `Dinero-v2.1.18-macOS-arm64.tar.gz` | New |
+| **macOS Qt** (Apple Silicon arm64) | `Dinero-v2.1.18-macOS-arm64-qt.zip` | New |
+
+### Gatekeeper note
+
+The macOS Qt bundle is Developer ID signed and passes local `codesign --verify`
+checks. It is not notarized in this repository refresh, so first-open warnings
+may still appear on another Mac.
+
+### Scope note
+
+This `v2.1.18` refresh currently ships new **macOS arm64** artifacts. Linux and
+Windows artifacts are unchanged in this release pass.
+
+Commit: `0ecb8577a` (daemon/CLI/miners/worker) / `37fb19c` (qt) / `71ee61e` (solo miner) / `2fcfe40` (stratum)
+
+---
+
 ## v2.1.16 - Mining Longpoll + Undo Safety Refresh (2026-04-20)
 
 This macOS arm64 refresh rebuilds Dinero after the latest mining-side daemon and
