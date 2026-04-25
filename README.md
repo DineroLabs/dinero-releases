@@ -2,6 +2,58 @@
 
 Official binary releases for Dinero (DIN) - Real Money for Free People.
 
+## v2.1.25 - Qt Wallet Polish + Settings/Backup Rewire (2026-04-25)
+
+This macOS Apple Silicon refresh rolls up the final Qt polish pass after
+v2.1.24: the overview dashboard, wallet receive/seed guidance, advanced-tab
+cleanup, settings backup/runtime wiring, and stale balance RPC fix are all in
+the signed and notarized app.
+
+### What's new
+
+- **Qt app rebuilt as `2.1.25`** - reports Qt commit `1b601eac` and bundle
+  version `2.1.25`
+- **Overview dashboard polished** - compact network/system cards, professional
+  peer labels, supply wired to the economics RPC, and no N/A latency/version
+  noise
+- **Wallet UX refreshed** - seed/mobile restore guidance now documents Taproot
+  `m/86'/1448'` and quantum-safe P2MR `m/88'/1448'`; wallet controls live in
+  the Wallet tab
+- **Mining UI cleanup retained** - SV2 CPU/GPU backend switching, cinematic
+  pool output, hashrate/share parsing, and solo/runtime status fixes remain
+  bundled
+- **Settings/backup rewired** - Settings shows the real per-user daemon data
+  directory, hides bundled daemon AppTranslocation paths, and backs up current
+  wallet/chain data locations
+- **Stale balance RPC removed** - Qt no longer calls unsupported
+  `wallet.gettotalbalance`; the status strip stays clean using
+  `wallet.getbalance`
+- **Notarized macOS app** - every embedded Mach-O binary/framework/plugin is
+  signed inside-out with Developer ID, hardened runtime, and secure timestamp;
+  the app is notarized and stapled
+
+### Downloads
+
+| Platform | File | Status |
+|----------|------|--------|
+| **macOS** (Apple Silicon arm64) | `Dinero-v2.1.25-macOS-arm64.tar.gz` | New |
+| **macOS Qt** (Apple Silicon arm64) | `Dinero-v2.1.25-macOS-arm64-qt.zip` | New |
+
+### Verification
+
+The extracted Qt app passes:
+
+```text
+spctl -a -t exec -vv Dinero-Qt.app
+accepted
+source=Notarized Developer ID
+origin=Developer ID Application: Mirsad Hajdarevic (JXJS6ZA5FJ)
+```
+
+Commit: `11405965` (daemon/CLI/miners) / `1b601eac` (qt) / `608bf83e` (sv2 miners) / `2fcfe408` (stratum)
+
+---
+
 ## v2.1.24 - Bundled SV2 Miner Path Fix + Notarized macOS Refresh (2026-04-24)
 
 This macOS Apple Silicon refresh keeps the final SV2 pool mining UI from
