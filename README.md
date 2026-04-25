@@ -2,6 +2,56 @@
 
 Official binary releases for Dinero (DIN) - Real Money for Free People.
 
+## v2.1.23 - SV2 Pool UI Final Polish + Notarized macOS Refresh (2026-04-24)
+
+This macOS Apple Silicon refresh rebuilds the Qt wallet from the final SV2 pool
+miner polish pass. It keeps the live SV2-JD mining path from v2.1.22, then fixes
+the last UX/runtime edges: GPU/CPU backend switching now selects the matching
+SV2 miner binary automatically, stale saved miner paths are ignored, SV2 output
+uses the same cinematic hash/comet treatment as solo mining, and the mining
+runtime label now populates as `Run:` instead of sitting at `Up: -`.
+
+### What's new
+
+- **Qt app rebuilt as `2.1.23`** - reports Qt commit `0b68d920` and includes
+  the SV2 runtime UI fixes from `9ca7647`
+- **SV2 backend picker fixed** - switching between CPU and GPU loads
+  `dinero-sv2-miner` or `dinero-sv2-gpu-miner` automatically and rejects the
+  wrong binary when browsing manually
+- **SV2 output polished** - pool mining output renders parsed SV2 events,
+  live hashrate, in-place share totals, and the matrix/hash/comet background
+  without changing the solo miner background behavior
+- **Runtime status repaired** - the mining row shows a populated `Run:` elapsed
+  timer for process miners instead of the old empty `Up:` field
+- **Bundle hygiene retained** - SV2 CPU/GPU miners are bundled in both
+  `Contents/MacOS` and `Contents/Resources`, and pool miners are no longer
+  stopped by daemon reconnect/disconnect UI paths
+- **Notarized macOS app** - every embedded Mach-O binary/framework/plugin is
+  signed inside-out with Developer ID, hardened runtime, and secure timestamp;
+  the app is notarized and stapled
+
+### Downloads
+
+| Platform | File | Status |
+|----------|------|--------|
+| **macOS** (Apple Silicon arm64) | `Dinero-v2.1.23-macOS-arm64.tar.gz` | New |
+| **macOS Qt** (Apple Silicon arm64) | `Dinero-v2.1.23-macOS-arm64-qt.zip` | New |
+
+### Verification
+
+The extracted Qt app passes:
+
+```text
+spctl -a -t exec -vv Dinero-Qt.app
+accepted
+source=Notarized Developer ID
+origin=Developer ID Application: Mirsad Hajdarevic (JXJS6ZA5FJ)
+```
+
+Commit: `11405965` (daemon/CLI/miners) / `0b68d920` (qt) / `608bf83e` (sv2 miners) / `2fcfe408` (stratum)
+
+---
+
 ## v2.1.18 - Local Stratum Launcher + P2MR FFI Refresh (2026-04-22)
 
 This macOS arm64 refresh rebuilds Dinero after the Qt wallet gained a
