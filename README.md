@@ -24,7 +24,7 @@ Post-quantum, utreexo-native, fair-launched. Mobile-mineable.
 | **macOS (Apple Silicon, arm64)** | `Dinero-vX.Y.Z-macOS-arm64-qt.zip` | Signed `Dinero-Qt.app` with all helpers embedded |
 | **macOS (CLI, arm64)** | `Dinero-vX.Y.Z-macOS-arm64.tar.gz` | `dinerod`, `dinero-cli`, all miners (CPU/GPU, V1/SV2) |
 
-> Linux and Windows builds are not part of this release line. Build from source — see [Dinero-Coin](https://github.com/DineroLabs/Dinero-Coin).
+> Linux and Windows builds are not part of this release line. Source-build access is currently limited to verified contributors — email `team@dinero-coin.com` if you need it.
 
 ## Verify what you downloaded
 
@@ -91,13 +91,13 @@ A cryptocurrency designed for the post-quantum era and for users who don't trust
 | Repo | Role |
 |---|---|
 | **[dinero-releases](https://github.com/DineroLabs/dinero-releases)** | You are here — signed binaries |
-| [Dinero-Coin](https://github.com/DineroLabs/Dinero-Coin) | Full-node daemon source (`dinerod`) |
 | [dinero-qt](https://github.com/DineroLabs/dinero-qt) | Cross-platform desktop wallet |
 | [DineroDPI](https://github.com/DineroLabs/DineroDPI) | iOS wallet + phone-resident miner |
 | [dinero-sv2](https://github.com/DineroLabs/dinero-sv2) | Stratum V2 protocol + CPU/GPU pool miners |
 | [dinero-stratum](https://github.com/DineroLabs/dinero-stratum) | Legacy Stratum V1 server (ASIC compatibility) |
 | [dinero-explorer](https://github.com/DineroLabs/dinero-explorer) | Web block explorer |
-| [wdin-bridge](https://github.com/DineroLabs/wdin-bridge) | wDIN ↔ Base wrapped-token bridge |
+
+> **Daemon source (`dinerod`) and bridge server are kept private** while the chain is stabilizing. Both are reproducibly signed in the binary releases above; treat the signatures as the trust anchor.
 
 ## Release history
 
