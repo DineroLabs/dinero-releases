@@ -2,6 +2,53 @@
 
 Official binary releases for Dinero (DIN) - Real Money for Free People.
 
+## v2.1.24 - Bundled SV2 Miner Path Fix + Notarized macOS Refresh (2026-04-24)
+
+This macOS Apple Silicon refresh keeps the final SV2 pool mining UI from
+v2.1.23 and fixes the release-app path behavior. Downloaded Qt apps now prefer
+the SV2 CPU/GPU miners bundled inside their own `Dinero-Qt.app` before any
+saved local setting, so a maintainer/dev path like `/Users/.../src/dinero-qt`
+cannot leak into normal user installs.
+
+### What's new
+
+- **Qt app rebuilt as `2.1.24`** - reports Qt commit `df386c14` and includes
+  the bundled SV2 miner discovery fix
+- **Release-safe SV2 miner lookup** - `dinero-sv2-miner` and
+  `dinero-sv2-gpu-miner` are resolved from `Contents/MacOS` /
+  `Contents/Resources` first, then saved/manual paths are considered only if
+  the bundled miner is missing
+- **Stale SV2 settings cleaned up** - when the bundled miner exists, old saved
+  SV2 miner paths are cleared so backend switching stays portable across Macs
+- **v2.1.23 polish retained** - backend switching, live SV2 hashrate/share
+  counters, parsed pool output, and the solo-style matrix/hash/comet background
+  remain intact
+- **Notarized macOS app** - every embedded Mach-O binary/framework/plugin is
+  signed inside-out with Developer ID, hardened runtime, and secure timestamp;
+  the app is notarized and stapled
+
+### Downloads
+
+| Platform | File | Status |
+|----------|------|--------|
+| **macOS** (Apple Silicon arm64) | `Dinero-v2.1.24-macOS-arm64.tar.gz` | New |
+| **macOS Qt** (Apple Silicon arm64) | `Dinero-v2.1.24-macOS-arm64-qt.zip` | New |
+
+### Verification
+
+The extracted Qt app passes:
+
+```text
+spctl -a -t exec -vv Dinero-Qt.app
+accepted
+source=Notarized Developer ID
+origin=Developer ID Application: Mirsad Hajdarevic (JXJS6ZA5FJ)
+```
+
+Commit: `11405965` (daemon/CLI/miners) / `df386c14` (qt) / `608bf83e` (sv2 miners) / `2fcfe408` (stratum)
+
+---
+
 ## v2.1.23 - SV2 Pool UI Final Polish + Notarized macOS Refresh (2026-04-24)
 
 This macOS Apple Silicon refresh rebuilds the Qt wallet from the final SV2 pool
