@@ -2,6 +2,50 @@
 
 Official binary releases for Dinero (DIN) - Real Money for Free People.
 
+## v2.2.1 - Atomic Chainstate Recovery + Qt Wallet Refresh (2026-04-29)
+
+This macOS Apple Silicon release is the post-recovery mainnet build. It ships
+the atomic chainstate persistence hardening, canonical reindex recovery for the
+April 29 Utreexo forest-root incident, and a Qt wallet bundle rebuilt as
+`2.2.1` with the current daemon embedded.
+
+### What's new
+
+- **Qt app rebuilt as `2.2.1`** - reports Qt commit `0380dd9a` and bundle
+  version `2.2.1`
+- **Daemon refreshed to `85652d00b`** - includes atomic shielded/chainstate
+  persistence hardening and the reindex recovery path used for the recovered
+  mainnet fleet
+- **Retired derivation paths rejected** - wallet paths/descriptors using
+  `coin_type 1447` now fail explicitly; v7 wallets use `coin_type 1448` only
+- **Shielded consensus storage aligned** - mutable chainstate pointers,
+  Utreexo/shielded markers, nullifiers, and crash journal rows are covered by
+  the ChainDB-backed atomic persistence path
+- **Notarized macOS app** - every embedded Mach-O binary/framework/plugin is
+  signed inside-out with Developer ID, hardened runtime, and secure timestamp;
+  the app is notarized and stapled
+
+### Downloads
+
+| Platform | File | Status |
+|----------|------|--------|
+| **macOS Qt** (Apple Silicon arm64) | `Dinero-v2.2.1-macOS-arm64-qt.zip` | Latest |
+
+### Verification
+
+The extracted Qt app passes:
+
+```text
+spctl -a -t exec -vv Dinero-Qt.app
+accepted
+source=Notarized Developer ID
+origin=Developer ID Application: Mirsad Hajdarevic (JXJS6ZA5FJ)
+```
+
+Commit: `85652d00b` (daemon/CLI/miners) / `0380dd9a` (qt)
+
+---
+
 ## v2.1.25 - Qt Wallet Polish + Settings/Backup Rewire (2026-04-25)
 
 This macOS Apple Silicon refresh rolls up the final Qt polish pass after

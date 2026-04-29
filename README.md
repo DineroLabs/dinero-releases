@@ -21,8 +21,7 @@ Post-quantum, utreexo-native, fair-launched. Mobile-mineable.
 
 | Platform | Bundle | What's inside |
 |---|---|---|
-| **macOS (Apple Silicon, arm64)** | `Dinero-vX.Y.Z-macOS-arm64-qt.zip` | Signed `Dinero-Qt.app` with all helpers embedded |
-| **macOS (CLI, arm64)** | `Dinero-vX.Y.Z-macOS-arm64.tar.gz` | `dinerod`, `dinero-cli`, all miners (CPU/GPU, V1/SV2) |
+| **macOS (Apple Silicon, arm64)** | `Dinero-v2.2.1-macOS-arm64-qt.zip` | Signed `Dinero-Qt.app` with all helpers embedded |
 
 > Linux and Windows builds are not part of this release line. Source-build access is currently limited to verified contributors — email `team@dinero-coin.com` if you need it.
 
@@ -63,7 +62,7 @@ Block rewards land in your wallet directly via consensus — the pool can't redi
 ### Run a node
 ```bash
 # Use the bundled daemon, with your own datadir:
-./Dinero-v2.1.25-macOS-arm64/dinerod --datadir ~/.dinero
+./Dinero-Qt.app/Contents/MacOS/dinerod --datadir ~/.dinero
 ```
 
 ## What is Dinero?
