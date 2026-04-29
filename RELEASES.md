@@ -2,6 +2,54 @@
 
 Official binary releases for Dinero (DIN) - Real Money for Free People.
 
+## v2.2.2 - Shielded Wallet + Hardware Wallet Release Polish (2026-04-29)
+
+This macOS Apple Silicon release refreshes the signed Qt wallet after the final
+shielded-wallet, hardware-wallet, Rust bridge, and mobile framework cleanup.
+It embeds the latest daemon and helper binaries, keeps the post-recovery
+atomic chainstate build, and updates the app metadata to `2.2.2`.
+
+### What's new
+
+- **Qt app rebuilt as `2.2.2`** - reports Qt commit `9b2f27a` and bundle
+  version `2.2.2`
+- **Daemon refreshed to `aa97c1882`** - keeps the atomic shielded/chainstate
+  persistence hardening from v2.2.1 plus the latest v7 coin-type docs and
+  shielded txid bundle-commit fix
+- **Shielded wallet UX tightened** - receive/balance views stay available for
+  viewing while locked, confirmed and pending note counts are separated, and
+  sending still requires passphrase confirmation
+- **Hardware wallet PSBT flow polished** - user-facing text says "Partially
+  Signed Dinero Transaction", 1447 defaults are retired, styling matches the app
+  chrome, and QR signing shows a decoded transaction summary before QR display
+- **Rust bridge and mobile refs aligned** - Rust Tier-3 bridge commit
+  `db34fea6f` carries v7 chain params; DineroDPI commit `21be2c1` includes the
+  refreshed embedded consensus frameworks
+- **Notarized macOS app** - every embedded Mach-O binary/framework/plugin is
+  signed inside-out with Developer ID, hardened runtime, and secure timestamp;
+  the app is notarized and stapled
+
+### Downloads
+
+| Platform | File | Status |
+|----------|------|--------|
+| **macOS Qt** (Apple Silicon arm64) | `Dinero-v2.2.2-macOS-arm64-qt.zip` | Latest |
+
+### Verification
+
+The extracted Qt app passes:
+
+```text
+spctl -a -t exec -vv Dinero-Qt.app
+accepted
+source=Notarized Developer ID
+origin=Developer ID Application: Mirsad Hajdarevic (JXJS6ZA5FJ)
+```
+
+Commit: `aa97c1882` (daemon/CLI/miners) / `9b2f27a` (qt) / `db34fea6f` (rust bridge) / `21be2c1` (DPI) / `2fcfe40` (stratum) / `91fa22b` (sv2 miners)
+
+---
+
 ## v2.2.1 - Atomic Chainstate Recovery + Qt Wallet Refresh (2026-04-29)
 
 This macOS Apple Silicon release is the post-recovery mainnet build. It ships
