@@ -2,6 +2,57 @@
 
 Official binary releases for Dinero (DIN) - Real Money for Free People.
 
+## v2.2.3 - Chainstate Reorg Hardening + Wallet Privacy UX (2026-04-30)
+
+This macOS Apple Silicon release ships the post-incident daemon hardening and
+the refreshed Qt wallet privacy UX. It embeds the latest daemon, CLI, miners,
+Stratum helpers, solo miner, and SV2 miners inside the signed and notarized
+`Dinero-Qt.app`.
+
+### What's new
+
+- **Qt app rebuilt as `2.2.3`** - reports Qt commit `8557108` and bundle
+  version `2.2.3`
+- **Daemon refreshed to `5a6cc0799`** - ConnectTip durability checks decode
+  undo, bind the UTXO batch, and retain the full missing-undo/reorg recovery
+  hardening deployed to the fleet
+- **Shielded validation equivalence fixed** - live ConnectTip, reindex, and
+  mempool validation share the same shielded validation context, including the
+  tx sighash required by binding-signature verification
+- **Reorg persistence hardened** - undo, UTXO batch binding, Utreexo delta, and
+  shielded reverse material are verified before publishing a new active tip
+- **Wallet balance UX clarified** - Balance separates public transparent
+  Taproot, public P2MR quantum-safe, shielded private, pending, and mining
+  balances
+- **Send UX reflects privacy intent** - Send offers public send, private spend,
+  convert-to-public, and contracts as explicit modes
+- **All helper binaries embedded** - daemon, CLI, CPU/GPU miners, Stratum
+  worker/server, solo miner, and SV2 CPU/GPU miners are inside `Dinero-Qt.app`
+- **Notarized macOS app** - every embedded Mach-O binary/framework/plugin is
+  signed inside-out with Developer ID, hardened runtime, and secure timestamp;
+  the app is notarized and stapled
+
+### Downloads
+
+| Platform | File | Status |
+|----------|------|--------|
+| **macOS Qt** (Apple Silicon arm64) | `Dinero-v2.2.3-macOS-arm64-qt.zip` | Latest |
+
+### Verification
+
+The extracted Qt app passes:
+
+```text
+spctl -a -t exec -vv Dinero-Qt.app
+accepted
+source=Notarized Developer ID
+origin=Developer ID Application: Mirsad Hajdarevic (JXJS6ZA5FJ)
+```
+
+Commit: `5a6cc0799` (daemon/CLI/miners) / `8557108` (qt) / `71ee61e` (solo miner) / `2fcfe40` (stratum) / `91fa22b` (sv2 miners)
+
+---
+
 ## v2.2.2 - Shielded Wallet + Hardware Wallet Release Polish (2026-04-29)
 
 This macOS Apple Silicon release refreshes the signed Qt wallet after the final
@@ -33,7 +84,7 @@ atomic chainstate build, and updates the app metadata to `2.2.2`.
 
 | Platform | File | Status |
 |----------|------|--------|
-| **macOS Qt** (Apple Silicon arm64) | `Dinero-v2.2.2-macOS-arm64-qt.zip` | Latest |
+| **macOS Qt** (Apple Silicon arm64) | `Dinero-v2.2.2-macOS-arm64-qt.zip` | Previous |
 
 ### Verification
 
@@ -77,7 +128,7 @@ April 29 Utreexo forest-root incident, and a Qt wallet bundle rebuilt as
 
 | Platform | File | Status |
 |----------|------|--------|
-| **macOS Qt** (Apple Silicon arm64) | `Dinero-v2.2.1-macOS-arm64-qt.zip` | Latest |
+| **macOS Qt** (Apple Silicon arm64) | `Dinero-v2.2.1-macOS-arm64-qt.zip` | Previous |
 
 ### Verification
 
