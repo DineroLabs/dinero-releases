@@ -5,16 +5,23 @@ Official binary releases for Dinero (DIN) - Real Money for Free People.
 ## v2.2.4 - Chainstate Commit Contract Release (2026-04-30)
 
 This macOS Apple Silicon release refreshes the notarized Qt bundle after the
-final chainstate commit-batch wiring. It embeds the latest daemon, CLI, miners,
-Stratum helpers, solo miner, and SV2 miners inside `Dinero-Qt.app`.
+final chainstate commit-batch wiring, crash-oracle coverage, and safe undo
+metadata audit landed. It embeds the latest daemon, CLI, miners, Stratum
+helpers, solo miner, and SV2 miners inside `Dinero-Qt.app`.
 
 ### What's new
 
 - **Qt app rebuilt as `2.2.4`** - reports Qt commit `2489f64` and bundle
   version `2.2.4`
-- **Daemon refreshed to `efbc5b63a`** - ConnectTip now commits through
+- **Daemon refreshed to `9c53f169f`** - ConnectTip now commits through
   `ChainstateCommitBatch`, refusing to write an active-tip batch when required
   reorg-critical material was not staged
+- **Crash and missing-undo oracles added** - integration coverage now exercises
+  ConnectTip/DisconnectTip interruption boundaries and D.3 full missing-undo
+  regeneration for user-transaction blocks
+- **Undo metadata audit added** - operators can dry-run historical undo metadata
+  coverage; unsafe re-stamps are refused when the underlying undo material is
+  not recoverable
 - **Single active-tip publication path** - direct `active_tip_ = ...` writes
   were consolidated behind `PublishActiveTip(tip, reason)`
 - **Runtime durability checks retained** - post-commit read-back still decodes
@@ -49,7 +56,7 @@ source=Notarized Developer ID
 origin=Developer ID Application: Mirsad Hajdarevic (JXJS6ZA5FJ)
 ```
 
-Commit: `efbc5b63a` (daemon/CLI/miners) / `2489f64` (qt) / `71ee61e` (solo miner) / `2fcfe40` (stratum) / `91fa22b` (sv2 miners)
+Commit: `9c53f169f` (daemon/CLI/miners) / `2489f64` (qt) / `71ee61e` (solo miner) / `2fcfe40` (stratum) / `91fa22b` (sv2 miners)
 
 ---
 

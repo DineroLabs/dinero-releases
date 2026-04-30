@@ -14,39 +14,39 @@
 		</data>
 		<key>Resources/dinero-cli</key>
 		<data>
-		m5hveD2rd4foImd03UPje8TB7Ik=
+		PccWYzeaHwf1TeYWqnCaY5Rv8cc=
 		</data>
 		<key>Resources/dinero-gpu-miner</key>
 		<data>
-		gsVtoQLLgbKpiQlrTt0PJUGo2s8=
+		Z+PLULJwKC98NVRav4dkMD7JJgI=
 		</data>
 		<key>Resources/dinero-miner</key>
 		<data>
-		HdkBNWYUmDNZ/Jptg+VTQGrecDo=
+		O+EHY8I7bn9UMsTGcNQo/DDSgRY=
 		</data>
 		<key>Resources/dinero-solo-miner</key>
 		<data>
-		UH7SY6CGgfBuDj8oHoPO/q+1FvI=
+		2VSjXMD/99Aw8Y3SU6GcParvDo8=
 		</data>
 		<key>Resources/dinero-stratum</key>
 		<data>
-		L22klKT2+/eyObfI6yVqrFsgaHQ=
+		Kl/wwdyfivHrNDyjnZ+DdYIplVs=
 		</data>
 		<key>Resources/dinero-stratum-worker</key>
 		<data>
-		aclTM7L4o35dqMRT2b1cn4PWmc8=
+		tnQxJK7vY35kK1ET+NtckqJeuEg=
 		</data>
 		<key>Resources/dinero-sv2-gpu-miner</key>
 		<data>
-		FMi2RpMJcyzKcBTIj2qndlMZpRs=
+		zDf0/6SxDeY0FH+0uWe2Q+Qteeo=
 		</data>
 		<key>Resources/dinero-sv2-miner</key>
 		<data>
-		onk78MsBZLwqhuaMAG4ihnYP1eE=
+		bVih/1Aa3Mm3RID8XOPyBl7lxYw=
 		</data>
 		<key>Resources/dinerod</key>
 		<data>
-		fEXTndhjZ0zENx/h95Tk3+4/n/o=
+		8yM2eLsUeECM7DEyuUcKxul58Vw=
 		</data>
 		<key>Resources/qt.conf</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Resources/release-identity.json</key>
 		<data>
-		AjhvrYNZXSoC7jKM2/7yvkCHF4c=
+		+xAZ0XSBmiZjpD2KKgh4odLEnjE=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -1026,7 +1026,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			lXda7iz5mV6fsYuowYmHVd0QweY=
+			3SSD6iz59IZpEvmTQ8jem48Srjg=
 			</data>
 			<key>requirement</key>
 			<string>identifier "dinero-gpu-miner" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = JXJS6ZA5FJ</string>
@@ -1035,7 +1035,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			YlMT3TKJjb2IlAT6EqvFIsxSw50=
+			HKlp1bbTo8IUcwaKNiXsa50YS/0=
 			</data>
 			<key>requirement</key>
 			<string>identifier "dinero-miner" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = JXJS6ZA5FJ</string>
@@ -1044,7 +1044,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			H6/SeMcAA8W2fx6JEzl9Zz9PxGo=
+			SbpH3qmaw30khEEDNAKhDby0ikI=
 			</data>
 			<key>requirement</key>
 			<string>identifier "dinero-solo-miner" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = JXJS6ZA5FJ</string>
@@ -1062,7 +1062,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			CQbAIXrnqJyO9emlYH0rBwxgrj0=
+			2qdI2nLQCyEWJ8LXljP4eLh17r0=
 			</data>
 			<key>requirement</key>
 			<string>identifier "dinero-stratum-worker" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = JXJS6ZA5FJ</string>
@@ -1089,7 +1089,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			ty6TUkQvOcy5HCMguSUT6XmWMZ8=
+			LJi8vJV12jarIXYq1oeIynZJav4=
 			</data>
 			<key>requirement</key>
 			<string>identifier dinerod and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = JXJS6ZA5FJ</string>
@@ -1193,63 +1193,63 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			+llcx1ehAU71zVEf5bmhpqtL/GvAFPRSNqa5WnY/DP0=
+			LHTxkx/u2ltUWgEVGIE/EW6TPP7sbvz8SbQcRWxFkTc=
 			</data>
 		</dict>
 		<key>Resources/dinero-gpu-miner</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			vbiVmjNLqqEuwVuFeJqcoM+zg9j536AJEGOdHeF9Nq0=
+			AoEGkVVuSrV8NuY6YU50r301wInGCvoMKsEAUu5YpEo=
 			</data>
 		</dict>
 		<key>Resources/dinero-miner</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			HbbLt3GJAaVmCr6oO/uX4OEj9c6GWuzH5hTdtMhHpQ8=
+			sLQga+Tj3pSMIYDHH7d8ANqeR8b0d+ndjwPKdSLS0FU=
 			</data>
 		</dict>
 		<key>Resources/dinero-solo-miner</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			gTl74pfKJd7UcNRd8pid5aHMrqXx4oMXLyt7/mQtAKM=
+			o4Yvnm8zwM32MZ8xegOh1xyEXBoVMAmkfbRowuSuKZ4=
 			</data>
 		</dict>
 		<key>Resources/dinero-stratum</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			wm9Lx6TWdUMEQnTm2p4xQWFgAZ6e+paAFwruNpyldIU=
+			TlyXrxxIFHIvNTfk/ecdSUuXwZ440H6YqOEdVXxhH+A=
 			</data>
 		</dict>
 		<key>Resources/dinero-stratum-worker</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			wd6VN5wD7dEcF4tCZWnMIOsBww0avp3leSrsx9fDcgM=
+			0iArBZUMP76M1B4pp5637HZaF1Bai0xxM2Udz+Mq3SI=
 			</data>
 		</dict>
 		<key>Resources/dinero-sv2-gpu-miner</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			h+Hj2nhpT7pjIeQZaHrQM5b8sXvaHxcg1iyPrCASlzM=
+			0jEH3SRlmBXTdj5KiyfQ1tE3dWQ1aziOp1+Wo6FS6PY=
 			</data>
 		</dict>
 		<key>Resources/dinero-sv2-miner</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			wlxp5XY/rsM+aSP8V0P5X6y6Z2EJZ5iWHwiF0VP1p5o=
+			K7khf3UX32pCfY6BcYXK/P7G7uXuq2Gf80cH78Mzl/E=
 			</data>
 		</dict>
 		<key>Resources/dinerod</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZDZEOXOS19cncgBfBzaabucKZZKygSpckPpmcaAtK7Q=
+			YJdOZ6VOfeIA+OkO3J2eNlMo9eZCqbKtcO4EZk1kL9g=
 			</data>
 		</dict>
 		<key>Resources/qt.conf</key>
@@ -1263,7 +1263,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			FZoTy66fHcULIPtZWYUo19hYSD7XuwCarGV/iVqIqXc=
+			UGOfdAMR7L4ibItFAOxLG3D14+ftuT/HY70ed7piQmQ=
 			</data>
 		</dict>
 	</dict>

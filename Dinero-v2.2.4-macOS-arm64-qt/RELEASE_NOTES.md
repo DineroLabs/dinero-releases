@@ -11,7 +11,7 @@ miners inside the signed and notarized `Dinero-Qt.app`.
 
 | Component | Ref | Notes |
 |---|---:|---|
-| Daemon / CLI / miners | `efbc5b63a` | ConnectTip commits through `ChainstateCommitBatch` and refuses incomplete active-tip batches |
+| Daemon / CLI / miners | `9c53f169f` | ConnectTip commit contract plus crash oracles, missing-undo coverage, and safe undo metadata audit |
 | Qt wallet | `2489f64` | v2.2.4 bundle metadata plus public/private wallet balance and send UX |
 | Solo miner | `71ee61e` | embedded solo miner CLI |
 | Stratum V1 server | `2fcfe40` | localhost bind support |
@@ -25,6 +25,10 @@ miners inside the signed and notarized `Dinero-Qt.app`.
   material through `ChainstateCommitBatch` before committing the active tip.
 - **Incomplete commits fail early** - missing required batch fields now produce
   a clean `commit-batch-incomplete-*` failure instead of a latent reorg wedge.
+- **Crash and missing-undo oracles added** - ConnectTip/DisconnectTip restart
+  boundaries and user-transaction missing-undo regeneration are covered.
+- **Undo metadata audit added** - historical undo metadata can be audited
+  safely, with re-stamp refusal when undo material is not recoverable.
 - **Active-tip publication centralized** - direct `active_tip_ = ...` writes are
   consolidated behind `PublishActiveTip(tip, reason)`.
 - **Runtime durability checks retained** - undo decoding, UTXO read-back,
@@ -58,7 +62,7 @@ Release identity inside the app:
     "commit": "2489f6437c77acd1164256c936270afc9d12270f"
   },
   "expected_repo_heads": {
-    "dinero": "efbc5b63a56a30243adfe2b291858b367b3884d3"
+    "dinero": "9c53f169f788f310384e978c8372079ac42bbae4"
   }
 }
 ```
