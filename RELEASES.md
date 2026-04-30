@@ -2,6 +2,57 @@
 
 Official binary releases for Dinero (DIN) - Real Money for Free People.
 
+## v2.2.4 - Chainstate Commit Contract Release (2026-04-30)
+
+This macOS Apple Silicon release refreshes the notarized Qt bundle after the
+final chainstate commit-batch wiring. It embeds the latest daemon, CLI, miners,
+Stratum helpers, solo miner, and SV2 miners inside `Dinero-Qt.app`.
+
+### What's new
+
+- **Qt app rebuilt as `2.2.4`** - reports Qt commit `2489f64` and bundle
+  version `2.2.4`
+- **Daemon refreshed to `efbc5b63a`** - ConnectTip now commits through
+  `ChainstateCommitBatch`, refusing to write an active-tip batch when required
+  reorg-critical material was not staged
+- **Single active-tip publication path** - direct `active_tip_ = ...` writes
+  were consolidated behind `PublishActiveTip(tip, reason)`
+- **Runtime durability checks retained** - post-commit read-back still decodes
+  undo, checks Utreexo sidecar presence, verifies UTXO batch binding, and blocks
+  publication if durable disconnect material is missing
+- **Reorg recovery retained** - missing-undo regeneration remains available for
+  transparent and shielded block shapes
+- **Wallet privacy UX retained** - Balance separates public transparent
+  Taproot, public P2MR quantum-safe, shielded private, pending, and mining
+  balances; Send exposes public send, private spend, convert-to-public, and
+  contracts modes
+- **All helper binaries embedded** - daemon, CLI, CPU/GPU miners, Stratum
+  worker/server, solo miner, and SV2 CPU/GPU miners are inside `Dinero-Qt.app`
+- **Notarized macOS app** - every embedded Mach-O binary/framework/plugin is
+  signed inside-out with Developer ID, hardened runtime, and secure timestamp;
+  the app is notarized and stapled
+
+### Downloads
+
+| Platform | File | Status |
+|----------|------|--------|
+| **macOS Qt** (Apple Silicon arm64) | `Dinero-v2.2.4-macOS-arm64-qt.zip` | Latest |
+
+### Verification
+
+The extracted Qt app passes:
+
+```text
+spctl -a -t exec -vv Dinero-Qt.app
+accepted
+source=Notarized Developer ID
+origin=Developer ID Application: Mirsad Hajdarevic (JXJS6ZA5FJ)
+```
+
+Commit: `efbc5b63a` (daemon/CLI/miners) / `2489f64` (qt) / `71ee61e` (solo miner) / `2fcfe40` (stratum) / `91fa22b` (sv2 miners)
+
+---
+
 ## v2.2.3 - Chainstate Reorg Hardening + Wallet Privacy UX (2026-04-30)
 
 This macOS Apple Silicon release ships the post-incident daemon hardening and
@@ -36,7 +87,7 @@ Stratum helpers, solo miner, and SV2 miners inside the signed and notarized
 
 | Platform | File | Status |
 |----------|------|--------|
-| **macOS Qt** (Apple Silicon arm64) | `Dinero-v2.2.3-macOS-arm64-qt.zip` | Latest |
+| **macOS Qt** (Apple Silicon arm64) | `Dinero-v2.2.3-macOS-arm64-qt.zip` | Previous |
 
 ### Verification
 
