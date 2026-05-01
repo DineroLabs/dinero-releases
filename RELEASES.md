@@ -2,6 +2,52 @@
 
 Official binary releases for Dinero (DIN) - Real Money for Free People.
 
+## v2.2.5 - Undo Rebuilder + Mac Launch Repair (2026-05-01)
+
+This macOS Apple Silicon release refreshes the notarized Qt bundle after the
+undo-rebuilder hole-only fix and Mac wallet-socket launch fix landed. It embeds
+the latest daemon, CLI, miners, Stratum helpers, solo miner, and SV2 miners
+inside `Dinero-Qt.app`.
+
+### What's new
+
+- **Qt app rebuilt as `2.2.5`** - reports Qt commit `a4006ea` and bundle
+  version `2.2.5`
+- **Daemon refreshed to `0786b9e10`** - preserves the configured wallet socket
+  port after `DaemonApp::Init()`, fixing the macOS `50051` bind failure
+- **Undo-rebuilder hole-only mode fixed** - already-ok blocks still populate the
+  temporary UTXO DB, so historical undo holes rebuild cleanly
+- **Fleet repair validated** - CN, LA, VA, MO, and Mac repair paths completed;
+  Mac rebuilt 247 holes with zero verifier failures
+- **Regression guard added** - hole-only optimization now has coverage against
+  skipping temp-DB mutation
+- **All helper binaries embedded** - daemon, CLI, CPU/GPU miners, Stratum
+  worker/server, solo miner, and SV2 CPU/GPU miners are inside `Dinero-Qt.app`
+- **Notarized macOS app** - every embedded Mach-O binary/framework/plugin is
+  signed inside-out with Developer ID, hardened runtime, and secure timestamp;
+  the app is notarized and stapled
+
+### Downloads
+
+| Platform | File | Status |
+|----------|------|--------|
+| **macOS Qt** (Apple Silicon arm64) | `Dinero-v2.2.5-macOS-arm64-qt.zip` | Latest |
+
+### Verification
+
+The extracted Qt app passes:
+
+```text
+spctl -a -t exec -vv Dinero-Qt.app
+accepted
+source=Notarized Developer ID
+origin=Developer ID Application: Mirsad Hajdarevic (JXJS6ZA5FJ)
+```
+
+Commit: `0786b9e10` (daemon/CLI/miners) / `a4006ea` (qt) / `71ee61e` (solo miner) / `2fcfe40` (stratum) / `91fa22b` (sv2 miners)
+
+---
+
 ## v2.2.4 - Chainstate Commit Contract Release (2026-04-30)
 
 This macOS Apple Silicon release refreshes the notarized Qt bundle after the
