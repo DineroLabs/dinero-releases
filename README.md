@@ -22,8 +22,9 @@ Post-quantum, utreexo-native, fair-launched. Mobile-mineable.
 | Platform | Bundle | What's inside |
 |---|---|---|
 | **macOS (Apple Silicon, arm64)** | `Dinero-v2.2.4-macOS-arm64-qt.zip` | Signed and notarized `Dinero-Qt.app` with all helpers embedded |
+| **Linux (Ubuntu 24.04+, amd64)** | `dinero-core_<VERSION>_amd64.deb` | Packaged-service full node — `dinerod`, `dinero-cli`, `dinero-backup`, systemd unit, signed `SHA256SUMS.asc` |
 
-> Linux and Windows builds are not part of this release line. Source-build access is currently limited to verified contributors — email `team@dinero-coin.com` if you need it.
+> Windows builds are not part of this release line. Source-build access is currently limited to verified contributors — email `team@dinero-coin.com` if you need it.
 
 ## Verify what you downloaded
 
@@ -59,7 +60,56 @@ In `Dinero-Qt.app` → **Mining** tab:
 
 Block rewards land in your wallet directly via consensus — the pool can't redirect them. Coinbase outputs require **100 confirmations** before they become spendable (standard Bitcoin-family rule).
 
-### Run a node
+### Run a node (Linux, packaged-service)
+
+The `.deb` ships a full FHS-compliant install — dedicated `dinero`
+system user, datadir at `/var/lib/dinero/`, systemd unit, journald
+rotation. After install the daemon **auto-discovers the network**
+via the four hardcoded DNS seeds (`seed1-4.dinero-coin.com`); no
+manual peer config is needed.
+
+```bash
+# 1. Prerequisites for the verifier
+sudo apt-get update && sudo apt-get install -y binutils python3 wget gpg
+
+# 2. Pull the four release artifacts. Replace TAG + DEB with the
+#    values from the latest release page. Today (May 2026):
+#      TAG=v2.2.5-rc2 ; DEB=dinero-core_2.2.5-2_amd64.deb
+TAG=v2.2.5-rc2
+DEB=dinero-core_2.2.5-2_amd64.deb
+BASE=https://github.com/DineroLabs/dinero-releases/releases/download/$TAG
+for f in $DEB dinero-core-release.asc SHA256SUMS SHA256SUMS.asc; do
+    wget "$BASE/$f"
+done
+
+# 3. Verify signature against the published fingerprint
+gpg --import dinero-core-release.asc
+gpg --fingerprint "Dinero Core Release Signing"
+# MUST match: 4ED3 65CE 6604 B722 D281  EC77 3A61 4979 B8A4 8C02
+
+gpg --verify SHA256SUMS.asc SHA256SUMS
+sha256sum -c SHA256SUMS
+
+# 4. Install + start
+sudo dpkg -i $DEB
+sudo systemctl enable --now dinero
+
+# 5. Confirm health and connectivity
+sudo -u dinero dinero-cli -datadir=/var/lib/dinero health
+sudo -u dinero dinero-cli -datadir=/var/lib/dinero getconnectioncount
+```
+
+Within ~60 seconds, `getconnectioncount` should return `≥3` and
+`health` should print `OK`. If `getconnectioncount` returns `0`, your
+firewall is blocking outbound to port `20999`.
+
+For shell access from your normal user account:
+```bash
+sudo usermod -a -G dinero $USER   # one-time, log out and back in
+dinero-cli health
+```
+
+### Run a node (macOS, bundled daemon)
 ```bash
 # Use the bundled daemon, with your own datadir:
 ./Dinero-Qt.app/Contents/MacOS/dinerod --datadir ~/.dinero
