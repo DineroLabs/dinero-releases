@@ -23,7 +23,8 @@ GitHub shows all files in one asset list, so use this table first.
 |---|---|---|---|
 | **macOS Apple Silicon** | `Dinero-v2.2.5-macOS-arm64-qt.zip` | [`v2.2.5`](https://github.com/DineroLabs/dinero-releases/releases/tag/v2.2.5) | Stable signed/notarized Qt wallet |
 | **Linux Ubuntu 24.04+ operators** | `dinero-core_2.2.5-3_amd64.deb` | [`v2.2.5-rc3`](https://github.com/DineroLabs/dinero-releases/releases/tag/v2.2.5-rc3) | Core `.deb` release candidate |
-| **Windows 64-bit users** | `dinero-core-2.2.5-rc4-preview-win64.zip` | [`v2.2.5-rc4`](https://github.com/DineroLabs/dinero-releases/releases/tag/v2.2.5-rc4) | Windows Core/Qt preview |
+| **Windows desktop users** | `dinero-qt-2.2.5-rc4-windows-win64-preview.zip` | [`v2.2.5-rc4`](https://github.com/DineroLabs/dinero-releases/releases/tag/v2.2.5-rc4) | Windows Qt wallet preview (mirrors macOS `Dinero-Qt.app`) |
+| **Windows server operators** | `dinero-core-...windows-win64-preview.zip` | _Planned for_ [`v2.2.5-rc5`](https://github.com/DineroLabs/dinero-releases/releases) | Daemon + CLI only, no GUI — not shipped yet |
 | **Fast-sync / node bootstrap** | `utxo-snapshot-13000.dat` + manifest | [`v2.2.5-rc3`](https://github.com/DineroLabs/dinero-releases/releases/tag/v2.2.5-rc3) | Operator snapshot asset |
 
 ## What The Names Mean
@@ -32,7 +33,8 @@ GitHub shows all files in one asset list, so use this table first.
 |---|---|
 | `Dinero-...macOS...qt.zip` | macOS desktop wallet app |
 | `dinero-core_...amd64.deb` | Linux full-node package for operators |
-| `dinero-core-...win64...zip` | Windows preview bundle |
+| `dinero-qt-...windows-win64...zip` | Windows desktop wallet bundle (mirrors macOS `Dinero-Qt.app`) |
+| `dinero-core-...windows-win64...zip` | Windows operator-only daemon/CLI bundle (planned for rc5) |
 | `dinero-miner-...win64...zip` | Miner-only preview, not the wallet |
 | `utxo-snapshot-...` | AssumeUTXO / Utreexo bootstrap data, not an app |
 | `SHA256SUMS.asc` | GPG signature for release checksums |
@@ -54,7 +56,7 @@ GitHub shows all files in one asset list, so use this table first.
 |---|---|---|
 | **macOS (Apple Silicon, arm64)** | `Dinero-v2.2.5-macOS-arm64-qt.zip` | Signed and notarized `Dinero-Qt.app` with all helpers embedded |
 | **Linux (Ubuntu 24.04+, amd64)** | `dinero-core_<VERSION>_amd64.deb` | Packaged-service full node — `dinerod`, `dinero-cli`, `dinero-backup`, systemd unit, signed `SHA256SUMS.asc` |
-| **Windows (64-bit, preview)** | `dinero-core-2.2.5-rc4-preview-win64.zip` | Preview bundle with `dinerod.exe`, `dinero-cli.exe`, `dinero-qt.exe`, and the solo miner. Not yet stable — see the [`v2.2.5-rc4`](https://github.com/DineroLabs/dinero-releases/releases/tag/v2.2.5-rc4) page. |
+| **Windows (64-bit, preview)** | `dinero-qt-2.2.5-rc4-windows-win64-preview.zip` | Desktop wallet preview — `dinero-qt.exe`, embedded `dinerod.exe`, `dinero-cli.exe`, and the solo miner. Extracts to `Dinero-Qt/`. Not yet stable — see the [`v2.2.5-rc4`](https://github.com/DineroLabs/dinero-releases/releases/tag/v2.2.5-rc4) page. A daemon-only Windows Core build for server operators is planned for rc5. |
 
 ## Verify what you downloaded
 
