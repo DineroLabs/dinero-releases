@@ -15,16 +15,46 @@ Post-quantum, utreexo-native, fair-launched. Mobile-mineable.
 
 ---
 
+## Choose By Platform
+
+GitHub shows all files in one asset list, so use this table first.
+
+| Platform / Need | Download | Release Page | Status |
+|---|---|---|---|
+| **macOS Apple Silicon** | `Dinero-v2.2.5-macOS-arm64-qt.zip` | [`v2.2.5`](https://github.com/DineroLabs/dinero-releases/releases/tag/v2.2.5) | Stable signed/notarized Qt wallet |
+| **Linux Ubuntu 24.04+ operators** | `dinero-core_2.2.5-3_amd64.deb` | [`v2.2.5-rc3`](https://github.com/DineroLabs/dinero-releases/releases/tag/v2.2.5-rc3) | Core `.deb` release candidate |
+| **Windows 64-bit users** | `dinero-core-2.2.5-rc4-preview-win64.zip` | [`v2.2.5-rc4`](https://github.com/DineroLabs/dinero-releases/releases/tag/v2.2.5-rc4) | Windows Core/Qt preview |
+| **Fast-sync / node bootstrap** | `utxo-snapshot-13000.dat` + manifest | [`v2.2.5-rc3`](https://github.com/DineroLabs/dinero-releases/releases/tag/v2.2.5-rc3) | Operator snapshot asset |
+
+## What The Names Mean
+
+| Prefix | Meaning |
+|---|---|
+| `Dinero-...macOS...qt.zip` | macOS desktop wallet app |
+| `dinero-core_...amd64.deb` | Linux full-node package for operators |
+| `dinero-core-...win64...zip` | Windows preview bundle |
+| `dinero-miner-...win64...zip` | Miner-only preview, not the wallet |
+| `utxo-snapshot-...` | AssumeUTXO / Utreexo bootstrap data, not an app |
+| `SHA256SUMS.asc` | GPG signature for release checksums |
+| `dinero-core-release.asc` | Public GPG release signing key |
+
+## Release Channels
+
+| Channel | Meaning |
+|---|---|
+| Stable release | Best choice for ordinary users |
+| RC / pre-release | Operator or preview build; read the notes before using |
+| Snapshot asset | Bootstrap data for Core; not an app |
+
 ## Download
 
 👉 **[Get the latest release](https://github.com/DineroLabs/dinero-releases/releases/latest)** — signed and Apple-notarized.
 
 | Platform | Bundle | What's inside |
 |---|---|---|
-| **macOS (Apple Silicon, arm64)** | `Dinero-v2.2.4-macOS-arm64-qt.zip` | Signed and notarized `Dinero-Qt.app` with all helpers embedded |
+| **macOS (Apple Silicon, arm64)** | `Dinero-v2.2.5-macOS-arm64-qt.zip` | Signed and notarized `Dinero-Qt.app` with all helpers embedded |
 | **Linux (Ubuntu 24.04+, amd64)** | `dinero-core_<VERSION>_amd64.deb` | Packaged-service full node — `dinerod`, `dinero-cli`, `dinero-backup`, systemd unit, signed `SHA256SUMS.asc` |
-
-> Windows builds are not part of this release line. Source-build access is currently limited to verified contributors — email `team@dinero-coin.com` if you need it.
+| **Windows (64-bit, preview)** | `dinero-core-2.2.5-rc4-preview-win64.zip` | Preview bundle with `dinerod.exe`, `dinero-cli.exe`, `dinero-qt.exe`, and the solo miner. Not yet stable — see the [`v2.2.5-rc4`](https://github.com/DineroLabs/dinero-releases/releases/tag/v2.2.5-rc4) page. |
 
 ## Verify what you downloaded
 
@@ -74,9 +104,9 @@ sudo apt-get update && sudo apt-get install -y binutils python3 wget gpg
 
 # 2. Pull the four release artifacts. Replace TAG + DEB with the
 #    values from the latest release page. Today (May 2026):
-#      TAG=v2.2.5-rc2 ; DEB=dinero-core_2.2.5-2_amd64.deb
-TAG=v2.2.5-rc2
-DEB=dinero-core_2.2.5-2_amd64.deb
+#      TAG=v2.2.5-rc3 ; DEB=dinero-core_2.2.5-3_amd64.deb
+TAG=v2.2.5-rc3
+DEB=dinero-core_2.2.5-3_amd64.deb
 BASE=https://github.com/DineroLabs/dinero-releases/releases/download/$TAG
 for f in $DEB dinero-core-release.asc SHA256SUMS SHA256SUMS.asc; do
     wget "$BASE/$f"
