@@ -23,8 +23,8 @@ GitHub shows all files in one asset list, so use this table first.
 |---|---|---|---|
 | **macOS Apple Silicon** | `Dinero-v2.2.5-macOS-arm64-qt.zip` | [`v2.2.5`](https://github.com/DineroLabs/dinero-releases/releases/tag/v2.2.5) | Stable signed/notarized Qt wallet |
 | **Linux Ubuntu 24.04+ operators** | `dinero-core_2.2.5-3_amd64.deb` | [`v2.2.5-rc3`](https://github.com/DineroLabs/dinero-releases/releases/tag/v2.2.5-rc3) | Core `.deb` release candidate |
-| **Windows desktop users** | `dinero-qt-2.2.5-rc6-windows-win64-preview.zip` | [`v2.2.5-rc6`](https://github.com/DineroLabs/dinero-releases/releases/tag/v2.2.5-rc6) | Windows Qt wallet preview — proper app icon, Help → About, canonical datadir |
-| **Windows server operators** | `dinero-core-2.2.5-rc6-windows-win64-preview.zip` | [`v2.2.5-rc6`](https://github.com/DineroLabs/dinero-releases/releases/tag/v2.2.5-rc6) | Daemon + CLI + service install/uninstall scripts; canonical Windows datadir |
+| **Windows desktop users** | ⬇ [`dinero-qt-2.2.5-rc6-windows-win64-preview.zip`](https://github.com/DineroLabs/dinero-releases/releases/download/v2.2.5-rc6/dinero-qt-2.2.5-rc6-windows-win64-preview.zip) | [`v2.2.5-rc6`](https://github.com/DineroLabs/dinero-releases/releases/tag/v2.2.5-rc6) | Windows Qt wallet preview — proper app icon, Help → About, canonical datadir |
+| **Windows server operators** | ⬇ [`dinero-core-2.2.5-rc6-windows-win64-preview.zip`](https://github.com/DineroLabs/dinero-releases/releases/download/v2.2.5-rc6/dinero-core-2.2.5-rc6-windows-win64-preview.zip) | [`v2.2.5-rc6`](https://github.com/DineroLabs/dinero-releases/releases/tag/v2.2.5-rc6) | Daemon + CLI + service install/uninstall scripts; canonical Windows datadir |
 | **Fast-sync / node bootstrap** | `utxo-snapshot-13000.dat` + manifest | [`v2.2.5-rc3`](https://github.com/DineroLabs/dinero-releases/releases/tag/v2.2.5-rc3) | Operator snapshot asset |
 
 ## What The Names Mean
