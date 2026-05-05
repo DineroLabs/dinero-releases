@@ -19,6 +19,11 @@ Post-quantum, utreexo-native, fair-launched. Mobile-mineable.
 
 GitHub shows all files in one asset list, so use this table first.
 
+> **Windows users:** use `v2.2.5-rc7.2` or newer. The older rc7 / rc7.1
+> Windows desktop artifacts were superseded because rc7 could hang at first
+> launch and rc7.1's embedded miner had a stale v7 genesis-hash guard. Those
+> older desktop downloads are intentionally de-emphasized/hidden.
+
 | Platform / Need | Download | Release Page | Status |
 |---|---|---|---|
 | **macOS Apple Silicon** | `Dinero-v2.2.5-macOS-arm64-qt.zip` | [`v2.2.5`](https://github.com/DineroLabs/dinero-releases/releases/tag/v2.2.5) | Stable signed/notarized Qt wallet |
@@ -146,9 +151,13 @@ dinero-cli health
 
 ### Run a node (macOS, bundled daemon)
 ```bash
-# Use the bundled daemon, with your own datadir:
-./Dinero-Qt.app/Contents/MacOS/dinerod --datadir ~/.dinero
+# Use the bundled daemon, with the macOS-conventional datadir:
+./Dinero-Qt.app/Contents/MacOS/dinerod --datadir "$HOME/Library/Application Support/Dinero"
 ```
+
+Older development builds used `~/.dinero`. Current release guidance uses
+`~/Library/Application Support/Dinero` on macOS and `%APPDATA%\Dinero` on
+Windows; uninstallers and upgrades must preserve those datadirs.
 
 ## What is Dinero?
 
