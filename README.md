@@ -23,8 +23,8 @@ GitHub shows all files in one asset list, so use this table first.
 |---|---|---|---|
 | **macOS Apple Silicon** | `Dinero-v2.2.5-macOS-arm64-qt.zip` | [`v2.2.5`](https://github.com/DineroLabs/dinero-releases/releases/tag/v2.2.5) | Stable signed/notarized Qt wallet |
 | **Linux Ubuntu 24.04+ operators** | `dinero-core_2.2.5-3_amd64.deb` | [`v2.2.5-rc3`](https://github.com/DineroLabs/dinero-releases/releases/tag/v2.2.5-rc3) | Core `.deb` release candidate |
-| **Windows desktop users** | `dinero-qt-2.2.5-rc5-windows-win64-preview.zip` | [`v2.2.5-rc5`](https://github.com/DineroLabs/dinero-releases/releases/tag/v2.2.5-rc5) | Windows Qt wallet preview (mirrors macOS `Dinero-Qt.app`) |
-| **Windows server operators** | `dinero-core-2.2.5-rc5-windows-win64-preview.zip` | [`v2.2.5-rc5`](https://github.com/DineroLabs/dinero-releases/releases/tag/v2.2.5-rc5) | Daemon + CLI only, no GUI — for Windows server operators |
+| **Windows desktop users** | `dinero-qt-2.2.5-rc6-windows-win64-preview.zip` | [`v2.2.5-rc6`](https://github.com/DineroLabs/dinero-releases/releases/tag/v2.2.5-rc6) | Windows Qt wallet preview — proper app icon, Help → About, canonical datadir |
+| **Windows server operators** | `dinero-core-2.2.5-rc6-windows-win64-preview.zip` | [`v2.2.5-rc6`](https://github.com/DineroLabs/dinero-releases/releases/tag/v2.2.5-rc6) | Daemon + CLI + service install/uninstall scripts; canonical Windows datadir |
 | **Fast-sync / node bootstrap** | `utxo-snapshot-13000.dat` + manifest | [`v2.2.5-rc3`](https://github.com/DineroLabs/dinero-releases/releases/tag/v2.2.5-rc3) | Operator snapshot asset |
 
 ## What The Names Mean
@@ -56,8 +56,8 @@ GitHub shows all files in one asset list, so use this table first.
 |---|---|---|
 | **macOS (Apple Silicon, arm64)** | `Dinero-v2.2.5-macOS-arm64-qt.zip` | Signed and notarized `Dinero-Qt.app` with all helpers embedded |
 | **Linux (Ubuntu 24.04+, amd64)** | `dinero-core_<VERSION>_amd64.deb` | Packaged-service full node — `dinerod`, `dinero-cli`, `dinero-backup`, systemd unit, signed `SHA256SUMS.asc` |
-| **Windows desktop (64-bit, preview)** | `dinero-qt-2.2.5-rc5-windows-win64-preview.zip` | Desktop wallet preview — `dinero-qt.exe`, embedded `dinerod.exe`, `dinero-cli.exe`, and the solo miner. Extracts to `Dinero-Qt/`. Not yet stable — see the [`v2.2.5-rc5`](https://github.com/DineroLabs/dinero-releases/releases/tag/v2.2.5-rc5) page. |
-| **Windows server operator (64-bit, preview)** | `dinero-core-2.2.5-rc5-windows-win64-preview.zip` | Daemon + CLI only, no GUI — `dinerod.exe`, `dinero-cli.exe`, minimal MinGW + libcurl runtime DLLs. Extracts to `Dinero-Core/`. ~16 MB. See the [`v2.2.5-rc5`](https://github.com/DineroLabs/dinero-releases/releases/tag/v2.2.5-rc5) page. |
+| **Windows desktop (64-bit, preview)** | `dinero-qt-2.2.5-rc6-windows-win64-preview.zip` | Desktop wallet preview — `dinero-qt.exe` (with proper Windows app icon and Help → About), embedded `dinerod.exe`, `dinero-cli.exe`, and the solo miner. Extracts to `Dinero-Qt/`. Not yet stable — see the [`v2.2.5-rc6`](https://github.com/DineroLabs/dinero-releases/releases/tag/v2.2.5-rc6) page. |
+| **Windows server operator (64-bit, preview)** | `dinero-core-2.2.5-rc6-windows-win64-preview.zip` | Daemon + CLI only, no GUI — `dinerod.exe`, `dinero-cli.exe`, runtime DLLs, plus `install-service.ps1` / `uninstall-service.ps1` for Windows service registration. Canonical Windows-aware datadir. Extracts to `Dinero-Core/`. ~16 MB. See the [`v2.2.5-rc6`](https://github.com/DineroLabs/dinero-releases/releases/tag/v2.2.5-rc6) page. |
 
 ## Verify what you downloaded
 
