@@ -54,6 +54,18 @@ GitHub shows all files in one asset list, so use this table first.
 | RC / pre-release | Operator or preview build; read the notes before using |
 | Snapshot asset | Bootstrap data for Core; not an app |
 
+## Default Datadirs
+
+Dinero uses the native convention for each install mode. These paths are
+intentional; do not treat every leading-dot directory as a bug.
+
+| Platform / mode | Default datadir | Why |
+|---|---|---|
+| **Windows desktop / Core zip** | `%APPDATA%\Dinero` | Windows application-data convention |
+| **macOS desktop** | `~/Library/Application Support/Dinero` | macOS application-data convention |
+| **Linux packaged-service** | `/var/lib/dinero` | FHS/systemd daemon convention under the `dinero` service user |
+| **Linux manual-user / developer mode** | `~/.dinero` | Standard Linux CLI/daemon dot-directory convention |
+
 ## Download
 
 👉 **[Get the latest release](https://github.com/DineroLabs/dinero-releases/releases/latest)** — signed and Apple-notarized.
@@ -156,8 +168,10 @@ dinero-cli health
 ```
 
 Older development builds used `~/.dinero`. Current release guidance uses
-`~/Library/Application Support/Dinero` on macOS and `%APPDATA%\Dinero` on
-Windows; uninstallers and upgrades must preserve those datadirs.
+`~/Library/Application Support/Dinero` on macOS, `%APPDATA%\Dinero` on
+Windows, `/var/lib/dinero` for Linux packaged-service nodes, and `~/.dinero`
+for Linux manual-user/dev mode. Uninstallers and upgrades must preserve those
+datadirs.
 
 ## What is Dinero?
 
