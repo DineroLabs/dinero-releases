@@ -19,18 +19,19 @@ Post-quantum, utreexo-native, fair-launched. Mobile-mineable.
 
 GitHub shows all files in one asset list, so use this table first.
 
-> **Windows users:** use `v2.2.5-rc7.2` or newer. The older rc7 / rc7.1
-> Windows desktop artifacts were superseded because rc7 could hang at first
-> launch and rc7.1's embedded miner had a stale v7 genesis-hash guard. Those
-> older desktop downloads are intentionally de-emphasized/hidden.
+> **Windows users:** use `v2.2.5-rc8` or newer. Older rc7 / rc7.1 / rc7.2
+> Windows desktop artifacts are superseded — rc7 hung at first launch,
+> rc7.1's miner had a stale genesis hash, rc7.2's Send-tab fee priority was
+> cosmetic and the miner submitted stale blocks under high churn. rc8 fixes
+> all of the above. Older desktop downloads are intentionally de-emphasized.
 
 | Platform / Need | Download | Release Page | Status |
 |---|---|---|---|
 | **macOS Apple Silicon** | `Dinero-v2.2.5-macOS-arm64-qt.zip` | [`v2.2.5`](https://github.com/DineroLabs/dinero-releases/releases/tag/v2.2.5) | Stable signed/notarized Qt wallet |
 | **Linux Ubuntu 24.04+ operators** | `dinero-core_2.2.5-3_amd64.deb` | [`v2.2.5-rc3`](https://github.com/DineroLabs/dinero-releases/releases/tag/v2.2.5-rc3) | Core `.deb` release candidate |
-| **Windows desktop users (recommended)** | ⬇ **[`Dinero-Setup-2.2.5-rc7.2.exe`](https://github.com/DineroLabs/dinero-releases/releases/download/v2.2.5-rc7.2/Dinero-Setup-2.2.5-rc7.2.exe)** | [`v2.2.5-rc7.2`](https://github.com/DineroLabs/dinero-releases/releases/tag/v2.2.5-rc7.2) | One-click NSIS installer (24.45 MB, LZMA-solid). Installs to `C:\Program Files\Dinero\`, Start Menu shortcut, Add/Remove entry. Wallet datadir at `%APPDATA%\Dinero` is never touched by uninstall. Embedded miner now starts correctly on v7 mainnet. |
-| **Windows desktop power users / portable** | ⬇ [`dinero-qt-2.2.5-rc7.2-windows-win64-preview.zip`](https://github.com/DineroLabs/dinero-releases/releases/download/v2.2.5-rc7.2/dinero-qt-2.2.5-rc7.2-windows-win64-preview.zip) | [`v2.2.5-rc7.2`](https://github.com/DineroLabs/dinero-releases/releases/tag/v2.2.5-rc7.2) | Portable zip — extract and double-click `dinero-qt.exe`. Same binaries as the installer, useful for testers and sandboxed environments. |
-| **Windows server operators** | ⬇ [`dinero-core-2.2.5-rc7.2-windows-win64-preview.zip`](https://github.com/DineroLabs/dinero-releases/releases/download/v2.2.5-rc7.2/dinero-core-2.2.5-rc7.2-windows-win64-preview.zip) | [`v2.2.5-rc7.2`](https://github.com/DineroLabs/dinero-releases/releases/tag/v2.2.5-rc7.2) | Daemon + CLI + service install/uninstall scripts. rc7.2 hardens Windows datadir policy to `%APPDATA%\Dinero` only — existing operators with `%USERPROFILE%\.dinero` data must migrate or pin via `-datadir` (see Core README + rc7.2 release body). No Core installer by design (operators want manual control). |
+| **Windows desktop users (recommended)** | ⬇ **[`Dinero-Setup-2.2.5-rc8.exe`](https://github.com/DineroLabs/dinero-releases/releases/download/v2.2.5-rc8/Dinero-Setup-2.2.5-rc8.exe)** | [`v2.2.5-rc8`](https://github.com/DineroLabs/dinero-releases/releases/tag/v2.2.5-rc8) | One-click NSIS installer (24.45 MB, LZMA-solid). Installs to `C:\Program Files\Dinero\`, Start Menu shortcut, Add/Remove entry. Wallet datadir at `%APPDATA%\Dinero` is never touched by uninstall. Embedded miner now starts correctly on v7 mainnet. |
+| **Windows desktop power users / portable** | ⬇ [`dinero-qt-2.2.5-rc8-windows-win64-preview.zip`](https://github.com/DineroLabs/dinero-releases/releases/download/v2.2.5-rc8/dinero-qt-2.2.5-rc8-windows-win64-preview.zip) | [`v2.2.5-rc8`](https://github.com/DineroLabs/dinero-releases/releases/tag/v2.2.5-rc8) | Portable zip — extract and double-click `dinero-qt.exe`. Same binaries as the installer, useful for testers and sandboxed environments. |
+| **Windows server operators** | ⬇ [`dinero-core-2.2.5-rc8-windows-win64-preview.zip`](https://github.com/DineroLabs/dinero-releases/releases/download/v2.2.5-rc8/dinero-core-2.2.5-rc8-windows-win64-preview.zip) | [`v2.2.5-rc8`](https://github.com/DineroLabs/dinero-releases/releases/tag/v2.2.5-rc8) | Daemon + CLI + service install/uninstall scripts. rc7.2 hardens Windows datadir policy to `%APPDATA%\Dinero` only — existing operators with `%USERPROFILE%\.dinero` data must migrate or pin via `-datadir` (see Core README + rc7.2 release body). No Core installer by design (operators want manual control). |
 | **Fast-sync / node bootstrap** | `utxo-snapshot-13000.dat` + manifest | [`v2.2.5-rc3`](https://github.com/DineroLabs/dinero-releases/releases/tag/v2.2.5-rc3) | Operator snapshot asset |
 
 ## What The Names Mean
@@ -74,9 +75,9 @@ intentional; do not treat every leading-dot directory as a bug.
 |---|---|---|
 | **macOS (Apple Silicon, arm64)** | `Dinero-v2.2.5-macOS-arm64-qt.zip` | Signed and notarized `Dinero-Qt.app` with all helpers embedded |
 | **Linux (Ubuntu 24.04+, amd64)** | `dinero-core_<VERSION>_amd64.deb` | Packaged-service full node — `dinerod`, `dinero-cli`, `dinero-backup`, systemd unit, signed `SHA256SUMS.asc` |
-| **Windows desktop installer (64-bit, preview)** | `Dinero-Setup-2.2.5-rc7.2.exe` | Recommended Windows desktop download. NSIS installer, ~24 MB. Per-machine install to `C:\Program Files\Dinero\`, Start Menu shortcut, Add/Remove Programs entry. Uninstall preserves your wallet at `%APPDATA%\Dinero`. Embedded miner v7-genesis-aware. See the [`v2.2.5-rc7.2`](https://github.com/DineroLabs/dinero-releases/releases/tag/v2.2.5-rc7.2) page. |
-| **Windows desktop portable (64-bit, preview)** | `dinero-qt-2.2.5-rc7.2-windows-win64-preview.zip` | Same binaries as the installer, packaged as a portable zip. Extracts to `Dinero-Qt/`; double-click `dinero-qt.exe`. Useful for testers and sandboxed environments. |
-| **Windows server operator (64-bit, preview)** | `dinero-core-2.2.5-rc7.2-windows-win64-preview.zip` | Daemon + CLI only, no GUI — `dinerod.exe`, `dinero-cli.exe`, runtime DLLs, plus `install-service.ps1` / `uninstall-service.ps1` for Windows service registration. Canonical Windows-aware datadir at `%APPDATA%\Dinero`. Extracts to `Dinero-Core/`. ~16 MB. **rc7.2 hardens datadir policy** — existing operators must migrate or use `-datadir` override; see the [`v2.2.5-rc7.2`](https://github.com/DineroLabs/dinero-releases/releases/tag/v2.2.5-rc7.2) page. |
+| **Windows desktop installer (64-bit, preview)** | `Dinero-Setup-2.2.5-rc8.exe` | Recommended Windows desktop download. NSIS installer, ~24 MB. Per-machine install to `C:\Program Files\Dinero\`, Start Menu shortcut, Add/Remove Programs entry. Uninstall preserves your wallet at `%APPDATA%\Dinero`. Embedded miner v7-genesis-aware. See the [`v2.2.5-rc8`](https://github.com/DineroLabs/dinero-releases/releases/tag/v2.2.5-rc8) page. |
+| **Windows desktop portable (64-bit, preview)** | `dinero-qt-2.2.5-rc8-windows-win64-preview.zip` | Same binaries as the installer, packaged as a portable zip. Extracts to `Dinero-Qt/`; double-click `dinero-qt.exe`. Useful for testers and sandboxed environments. |
+| **Windows server operator (64-bit, preview)** | `dinero-core-2.2.5-rc8-windows-win64-preview.zip` | Daemon + CLI only, no GUI — `dinerod.exe`, `dinero-cli.exe`, runtime DLLs, plus `install-service.ps1` / `uninstall-service.ps1` for Windows service registration. Canonical Windows-aware datadir at `%APPDATA%\Dinero`. Extracts to `Dinero-Core/`. ~16 MB. **rc7.2 hardens datadir policy** — existing operators must migrate or use `-datadir` override; see the [`v2.2.5-rc8`](https://github.com/DineroLabs/dinero-releases/releases/tag/v2.2.5-rc8) page. |
 
 ## Verify what you downloaded
 
