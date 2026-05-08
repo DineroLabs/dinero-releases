@@ -32,6 +32,10 @@ GitHub shows all files in one asset list, so use this table first.
 | **Windows desktop users (recommended)** | ⬇ **[`Dinero-Setup-2.2.5-rc8.exe`](https://github.com/DineroLabs/dinero-releases/releases/download/v2.2.5-rc8/Dinero-Setup-2.2.5-rc8.exe)** | [`v2.2.5-rc8`](https://github.com/DineroLabs/dinero-releases/releases/tag/v2.2.5-rc8) | One-click NSIS installer (24.45 MB, LZMA-solid). Installs to `C:\Program Files\Dinero\`, Start Menu shortcut, Add/Remove entry. Wallet datadir at `%APPDATA%\Dinero` is never touched by uninstall. Embedded miner now starts correctly on v7 mainnet. |
 | **Windows desktop power users / portable** | ⬇ [`dinero-qt-2.2.5-rc8-windows-win64-preview.zip`](https://github.com/DineroLabs/dinero-releases/releases/download/v2.2.5-rc8/dinero-qt-2.2.5-rc8-windows-win64-preview.zip) | [`v2.2.5-rc8`](https://github.com/DineroLabs/dinero-releases/releases/tag/v2.2.5-rc8) | Portable zip — extract and double-click `dinero-qt.exe`. Same binaries as the installer, useful for testers and sandboxed environments. |
 | **Windows server operators** | ⬇ [`dinero-core-2.2.5-rc8-windows-win64-preview.zip`](https://github.com/DineroLabs/dinero-releases/releases/download/v2.2.5-rc8/dinero-core-2.2.5-rc8-windows-win64-preview.zip) | [`v2.2.5-rc8`](https://github.com/DineroLabs/dinero-releases/releases/tag/v2.2.5-rc8) | Daemon + CLI + service install/uninstall scripts. rc7.2 hardens Windows datadir policy to `%APPDATA%\Dinero` only — existing operators with `%USERPROFILE%\.dinero` data must migrate or pin via `-datadir` (see Core README + rc7.2 release body). No Core installer by design (operators want manual control). |
+| **Solo CPU mining** | Built into the desktop wallet; standalone artifact planned | [`dinero-solo-miner`](https://github.com/DineroLabs/dinero-solo-miner) | Wallet users should use the Mining tab. A separate signed `dinero-solo-miner-...` download is planned for power users and scripted miners. |
+| **Solo GPU mining** | Separate artifact planned | [`Dinero-Coin`](https://github.com/DineroLabs/Dinero-Coin) | Standalone `dinero-gpu-miner` source lives in Core. It is intentionally separate from Linux operator Core packages so node operators do not get GPU/OpenCL dependencies by surprise. |
+| **SV2 pool workers** | Separate artifacts planned | [`dinero-sv2`](https://github.com/DineroLabs/dinero-sv2) | `dinero-sv2-miner` is the CPU pool worker; `dinero-sv2-gpu-miner` is the Metal/OpenCL pool worker. They connect to an SV2 pool and let the miner own the coinbase outputs. |
+| **SV2 pool operators** | Separate artifact planned | [`dinero-sv2`](https://github.com/DineroLabs/dinero-sv2) | `dinero-sv2-pool` is the reference pool server; `dinero-tp` is the Template Provider that binds to `dinerod`. This is operator software, not a wallet download. |
 | **Fast-sync / node bootstrap** | `utxo-snapshot-13000.dat` + manifest | [`v2.2.5-rc3`](https://github.com/DineroLabs/dinero-releases/releases/tag/v2.2.5-rc3) | Operator snapshot asset |
 
 ## What The Names Mean
@@ -42,10 +46,36 @@ GitHub shows all files in one asset list, so use this table first.
 | `dinero-core_...amd64.deb` | Linux full-node package for operators |
 | `dinero-qt-...windows-win64...zip` | Windows desktop wallet bundle (mirrors macOS `Dinero-Qt.app`) |
 | `dinero-core-...windows-win64...zip` | Windows operator-only daemon/CLI bundle (no GUI) |
-| `dinero-miner-...win64...zip` | Miner-only preview, not the wallet |
+| `dinero-solo-miner-...` | Standalone solo CPU miner |
+| `dinero-gpu-miner-...` | Standalone solo GPU miner (Metal/OpenCL/CUDA-shaped Core miner lane) |
+| `dinero-sv2-miner-...` | Stratum V2 CPU pool worker |
+| `dinero-sv2-gpu-miner-...` | Stratum V2 GPU pool worker (Metal on macOS, OpenCL on Linux/Windows) |
+| `dinero-sv2-pool-...` | Stratum V2 reference pool server for operators |
+| `dinero-tp-...` | Stratum V2 Template Provider; binds `dinerod` and emits templates to the pool |
+| `dinero-miner-...win64...zip` | Legacy miner-only preview; prefer the clearer `dinero-solo-miner-...` / `dinero-gpu-miner-...` lanes going forward |
 | `utxo-snapshot-...` | AssumeUTXO / Utreexo bootstrap data, not an app |
 | `SHA256SUMS.asc` | GPG signature for release checksums |
 | `dinero-core-release.asc` | Public GPG release signing key |
+
+## Mining And Pool Software
+
+Dinero has several miner-shaped binaries. They are deliberately separate so
+desktop users, node operators, solo miners, and pool operators do not download
+the wrong thing.
+
+| Lane | Binary | Repo | Audience | Notes |
+|---|---|---|---|---|
+| **Wallet mining** | embedded `dinero-solo-miner` | [`dinero-qt`](https://github.com/DineroLabs/dinero-qt) + [`dinero-solo-miner`](https://github.com/DineroLabs/dinero-solo-miner) | Ordinary desktop users | Use the Mining tab in `Dinero-Qt.app` / `dinero-qt.exe`. |
+| **Standalone solo CPU miner** | `dinero-solo-miner` | [`dinero-solo-miner`](https://github.com/DineroLabs/dinero-solo-miner) | Power users / scripted solo miners | Connects to your local `dinerod` RPC and mines directly to your wallet address. |
+| **Standalone solo GPU miner** | `dinero-gpu-miner` | [`Dinero-Coin`](https://github.com/DineroLabs/Dinero-Coin) | GPU solo miners | Core-side standalone GPU miner. Separate release lane planned; not bundled into Linux `.deb` operator packages. |
+| **SV2 CPU pool worker** | `dinero-sv2-miner` | [`dinero-sv2`](https://github.com/DineroLabs/dinero-sv2) | Pool miners | Connects to an SV2 pool over Noise/SV2 and submits shares. |
+| **SV2 GPU pool worker** | `dinero-sv2-gpu-miner` | [`dinero-sv2`](https://github.com/DineroLabs/dinero-sv2) | GPU pool miners | Metal on Apple Silicon, OpenCL on Linux/Windows. This is the “SV2 pool worker” GPU lane. |
+| **SV2 pool server** | `dinero-sv2-pool` | [`dinero-sv2`](https://github.com/DineroLabs/dinero-sv2) | Pool operators | Accepts SV2 workers, validates shares, submits found blocks. |
+| **SV2 Template Provider** | `dinero-tp` | [`dinero-sv2`](https://github.com/DineroLabs/dinero-sv2) | Pool operators | Talks to `dinerod` and serves templates to the pool. |
+
+Rule of thumb: if you want a wallet, download `Dinero-Qt`. If you want a node,
+download `dinero-core`. If you want to mine outside the wallet, choose the
+solo-miner or SV2-worker lane explicitly.
 
 ## Release Channels
 
@@ -78,6 +108,7 @@ intentional; do not treat every leading-dot directory as a bug.
 | **Windows desktop installer (64-bit, preview)** | `Dinero-Setup-2.2.5-rc8.exe` | Recommended Windows desktop download. NSIS installer, ~24 MB. Per-machine install to `C:\Program Files\Dinero\`, Start Menu shortcut, Add/Remove Programs entry. Uninstall preserves your wallet at `%APPDATA%\Dinero`. Embedded miner v7-genesis-aware. See the [`v2.2.5-rc8`](https://github.com/DineroLabs/dinero-releases/releases/tag/v2.2.5-rc8) page. |
 | **Windows desktop portable (64-bit, preview)** | `dinero-qt-2.2.5-rc8-windows-win64-preview.zip` | Same binaries as the installer, packaged as a portable zip. Extracts to `Dinero-Qt/`; double-click `dinero-qt.exe`. Useful for testers and sandboxed environments. |
 | **Windows server operator (64-bit, preview)** | `dinero-core-2.2.5-rc8-windows-win64-preview.zip` | Daemon + CLI only, no GUI — `dinerod.exe`, `dinero-cli.exe`, runtime DLLs, plus `install-service.ps1` / `uninstall-service.ps1` for Windows service registration. Canonical Windows-aware datadir at `%APPDATA%\Dinero`. Extracts to `Dinero-Core/`. ~16 MB. **rc7.2 hardens datadir policy** — existing operators must migrate or use `-datadir` override; see the [`v2.2.5-rc8`](https://github.com/DineroLabs/dinero-releases/releases/tag/v2.2.5-rc8) page. |
+| **Mining / pool software** | `dinero-solo-miner-*`, `dinero-gpu-miner-*`, `dinero-sv2-miner-*`, `dinero-sv2-gpu-miner-*`, `dinero-sv2-pool-*`, `dinero-tp-*` | Separate signed artifacts planned. Until then, build from the canonical repos listed in **Mining And Pool Software** above. |
 
 ## Verify what you downloaded
 
