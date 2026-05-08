@@ -27,7 +27,7 @@ GitHub shows all files in one asset list, so use this table first.
 
 | Platform / Need | Download | Release Page | Status |
 |---|---|---|---|
-| **macOS Apple Silicon** | `Dinero-v2.2.5-macOS-arm64-qt.zip` | [`v2.2.5`](https://github.com/DineroLabs/dinero-releases/releases/tag/v2.2.5) | Stable signed/notarized Qt wallet |
+| **macOS Apple Silicon** | ⬇ [`Dinero-v2.2.6-rc1-macOS-arm64-qt.zip`](https://github.com/DineroLabs/dinero-releases/releases/download/v2.2.6-rc1/Dinero-v2.2.6-rc1-macOS-arm64-qt.zip) | [`v2.2.6-rc1`](https://github.com/DineroLabs/dinero-releases/releases/tag/v2.2.6-rc1) | Signed/notarized Qt wallet release candidate with wallet-switch, datadir, fee-priority, embedded Core, and miner fixes |
 | **Linux Ubuntu 24.04+ operators** | `dinero-core_2.2.5-3_amd64.deb` | [`v2.2.5-rc3`](https://github.com/DineroLabs/dinero-releases/releases/tag/v2.2.5-rc3) | Core `.deb` release candidate |
 | **Windows desktop users (recommended)** | ⬇ **[`Dinero-Setup-2.2.5-rc8.exe`](https://github.com/DineroLabs/dinero-releases/releases/download/v2.2.5-rc8/Dinero-Setup-2.2.5-rc8.exe)** | [`v2.2.5-rc8`](https://github.com/DineroLabs/dinero-releases/releases/tag/v2.2.5-rc8) | One-click NSIS installer (24.45 MB, LZMA-solid). Installs to `C:\Program Files\Dinero\`, Start Menu shortcut, Add/Remove entry. Wallet datadir at `%APPDATA%\Dinero` is never touched by uninstall. Embedded miner now starts correctly on v7 mainnet. |
 | **Windows desktop power users / portable** | ⬇ [`dinero-qt-2.2.5-rc8-windows-win64-preview.zip`](https://github.com/DineroLabs/dinero-releases/releases/download/v2.2.5-rc8/dinero-qt-2.2.5-rc8-windows-win64-preview.zip) | [`v2.2.5-rc8`](https://github.com/DineroLabs/dinero-releases/releases/tag/v2.2.5-rc8) | Portable zip — extract and double-click `dinero-qt.exe`. Same binaries as the installer, useful for testers and sandboxed environments. |
@@ -73,7 +73,7 @@ intentional; do not treat every leading-dot directory as a bug.
 
 | Platform | Bundle | What's inside |
 |---|---|---|
-| **macOS (Apple Silicon, arm64)** | `Dinero-v2.2.5-macOS-arm64-qt.zip` | Signed and notarized `Dinero-Qt.app` with all helpers embedded |
+| **macOS (Apple Silicon, arm64)** | `Dinero-v2.2.6-rc1-macOS-arm64-qt.zip` | Signed and notarized `Dinero-Qt.app` with wallet-switch, datadir, fee-priority, embedded Core, and miner fixes. See the [`v2.2.6-rc1`](https://github.com/DineroLabs/dinero-releases/releases/tag/v2.2.6-rc1) page. |
 | **Linux (Ubuntu 24.04+, amd64)** | `dinero-core_<VERSION>_amd64.deb` | Packaged-service full node — `dinerod`, `dinero-cli`, `dinero-backup`, systemd unit, signed `SHA256SUMS.asc` |
 | **Windows desktop installer (64-bit, preview)** | `Dinero-Setup-2.2.5-rc8.exe` | Recommended Windows desktop download. NSIS installer, ~24 MB. Per-machine install to `C:\Program Files\Dinero\`, Start Menu shortcut, Add/Remove Programs entry. Uninstall preserves your wallet at `%APPDATA%\Dinero`. Embedded miner v7-genesis-aware. See the [`v2.2.5-rc8`](https://github.com/DineroLabs/dinero-releases/releases/tag/v2.2.5-rc8) page. |
 | **Windows desktop portable (64-bit, preview)** | `dinero-qt-2.2.5-rc8-windows-win64-preview.zip` | Same binaries as the installer, packaged as a portable zip. Extracts to `Dinero-Qt/`; double-click `dinero-qt.exe`. Useful for testers and sandboxed environments. |
