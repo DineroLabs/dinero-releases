@@ -30,7 +30,7 @@ GitHub shows all files in one asset list, so use this table first.
 | Platform / Need | Download | Release Page | Status |
 |---|---|---|---|
 | **macOS Apple Silicon** | ⬇ [`Dinero-v2.2.6-rc1-macOS-arm64-qt.zip`](https://github.com/DineroLabs/dinero-releases/releases/download/v2.2.6-rc1/Dinero-v2.2.6-rc1-macOS-arm64-qt.zip) | [`v2.2.6-rc1`](https://github.com/DineroLabs/dinero-releases/releases/tag/v2.2.6-rc1) | Signed/notarized Qt wallet release candidate with wallet-switch, datadir, fee-priority, embedded Core, and miner fixes |
-| **Linux Ubuntu 24.04+ operators** | `dinero-core_2.2.5-3_amd64.deb` | [`v2.2.5-rc3`](https://github.com/DineroLabs/dinero-releases/releases/tag/v2.2.5-rc3) | Core `.deb` release candidate |
+| **Linux Ubuntu 24.04+ operators** | ⬇ [`dinero-core_2.2.6.rc1-1_amd64.deb`](https://github.com/DineroLabs/dinero-releases/releases/download/v2.2.6-rc1/dinero-core_2.2.6.rc1-1_amd64.deb) | [`v2.2.6-rc1`](https://github.com/DineroLabs/dinero-releases/releases/tag/v2.2.6-rc1) | Packaged-service Core `.deb` for Ubuntu 24.04+ amd64 operators |
 | **Linux x86_64 desktop / portable** | ⬇ [`dinero-qt-2.2.6-rc1-linux-x86_64.tar.gz`](https://github.com/DineroLabs/dinero-releases/releases/download/v2.2.6-rc1/dinero-qt-2.2.6-rc1-linux-x86_64.tar.gz) | [`v2.2.6-rc1`](https://github.com/DineroLabs/dinero-releases/releases/tag/v2.2.6-rc1) | Portable Qt6 GUI wallet for Ubuntu 24.04-class x86_64 desktops. Extract and run `./dinero-qt`. |
 | **Linux x86_64 server / portable** | ⬇ [`dinero-core-2.2.6-rc1-linux-x86_64.tar.gz`](https://github.com/DineroLabs/dinero-releases/releases/download/v2.2.6-rc1/dinero-core-2.2.6-rc1-linux-x86_64.tar.gz) | [`v2.2.6-rc1`](https://github.com/DineroLabs/dinero-releases/releases/tag/v2.2.6-rc1) | Portable daemon + CLI + stratum worker tarball from the Dell Ubuntu 24.04 x86_64 builder. |
 | **Windows desktop users (recommended)** | ⬇ **[`Dinero-Setup-2.2.6-rc1.exe`](https://github.com/DineroLabs/dinero-releases/releases/download/v2.2.6-rc1/Dinero-Setup-2.2.6-rc1.exe)** | [`v2.2.6-rc1`](https://github.com/DineroLabs/dinero-releases/releases/tag/v2.2.6-rc1) | One-click NSIS installer (24.37 MB, LZMA-solid). Installs to `C:\Program Files\Dinero\`, Start Menu shortcut, Add/Remove entry. Wallet datadir at `%APPDATA%\Dinero` is never touched by uninstall. |
@@ -108,7 +108,7 @@ intentional; do not treat every leading-dot directory as a bug.
 | Platform | Bundle | What's inside |
 |---|---|---|
 | **macOS (Apple Silicon, arm64)** | `Dinero-v2.2.6-rc1-macOS-arm64-qt.zip` | Signed and notarized `Dinero-Qt.app` with wallet-switch, datadir, fee-priority, embedded Core, and miner fixes. See the [`v2.2.6-rc1`](https://github.com/DineroLabs/dinero-releases/releases/tag/v2.2.6-rc1) page. |
-| **Linux (Ubuntu 24.04+, amd64)** | `dinero-core_<VERSION>_amd64.deb` | Packaged-service full node — `dinerod`, `dinero-cli`, `dinero-backup`, systemd unit, signed `SHA256SUMS.asc` |
+| **Linux (Ubuntu 24.04+, amd64)** | `dinero-core_2.2.6.rc1-1_amd64.deb` | Packaged-service full node — `dinerod`, `dinero-cli`, `dinero-backup`, systemd unit, verified by `SHA256SUMS-v2.2.6-rc1` |
 | **Linux portable tarballs** | `dinero-*-2.2.6-rc1-linux-{aarch64,x86_64}.tar.gz` | Portable Core, Qt, solo miner, GPU miner, SV2 workers, SV2 pool, and Template Provider tarballs are live on [`v2.2.6-rc1`](https://github.com/DineroLabs/dinero-releases/releases/tag/v2.2.6-rc1). |
 | **Windows desktop installer (64-bit, preview)** | `Dinero-Setup-2.2.6-rc1.exe` | Recommended Windows desktop download. NSIS installer, ~24 MB. Per-machine install to `C:\Program Files\Dinero\`, Start Menu shortcut, Add/Remove Programs entry. Uninstall preserves your wallet at `%APPDATA%\Dinero`. See the [`v2.2.6-rc1`](https://github.com/DineroLabs/dinero-releases/releases/tag/v2.2.6-rc1) page. |
 | **Windows desktop portable (64-bit, preview)** | `dinero-qt-2.2.6-rc1-windows-win64-preview.zip` | Same binaries as the installer, packaged as a portable zip. Extracts to `Dinero-Qt/`; double-click `dinero-qt.exe`. Useful for testers and sandboxed environments. |
@@ -161,23 +161,18 @@ manual peer config is needed.
 # 1. Prerequisites for the verifier
 sudo apt-get update && sudo apt-get install -y binutils python3 wget gpg
 
-# 2. Pull the four release artifacts. Replace TAG + DEB with the
+# 2. Pull the release artifacts. Replace TAG + DEB with the
 #    values from the latest release page. Today (May 2026):
-#      TAG=v2.2.5-rc3 ; DEB=dinero-core_2.2.5-3_amd64.deb
-TAG=v2.2.5-rc3
-DEB=dinero-core_2.2.5-3_amd64.deb
+#      TAG=v2.2.6-rc1 ; DEB=dinero-core_2.2.6.rc1-1_amd64.deb
+TAG=v2.2.6-rc1
+DEB=dinero-core_2.2.6.rc1-1_amd64.deb
 BASE=https://github.com/DineroLabs/dinero-releases/releases/download/$TAG
-for f in $DEB dinero-core-release.asc SHA256SUMS SHA256SUMS.asc; do
+for f in $DEB SHA256SUMS-v2.2.6-rc1; do
     wget "$BASE/$f"
 done
 
-# 3. Verify signature against the published fingerprint
-gpg --import dinero-core-release.asc
-gpg --fingerprint "Dinero Core Release Signing"
-# MUST match: 4ED3 65CE 6604 B722 D281  EC77 3A61 4979 B8A4 8C02
-
-gpg --verify SHA256SUMS.asc SHA256SUMS
-sha256sum -c SHA256SUMS
+# 3. Verify checksum
+sha256sum -c <(grep "$DEB" SHA256SUMS-v2.2.6-rc1)
 
 # 4. Install + start
 sudo dpkg -i $DEB
